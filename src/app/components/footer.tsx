@@ -25,7 +25,7 @@ export default function Footer() {
             </Link>
 
             <p className="max-w-xs text-sm text-slate-400">
-              Got a project in mind? Let's build something amazing together !
+              Got a project in mind? Let&apos;s build something amazing together !
             </p>
           </div>
 
