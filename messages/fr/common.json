@@ -1,3 +1,18 @@
 {
-    
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact",
+    "en": "EN",
+    "fr": "FR"
+  },
+  "footer": {
+    "cta": "Contactez-moi !",
+    "tagline": "Vous avez un projet en tête ? Construisons quelque chose d’extraordinaire ensemble !"
+  },
+  "social": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  }
 }

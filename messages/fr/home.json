@@ -1,3 +1,7 @@
 {
-    
+  "greeting": "Bonjour, je suis",
+  "name": "Quentin Petiteville",
+  "title": "Étudiant en ingénierie logicielle",
+  "description": "Je conçois des expériences web accessibles et pixel-perfect. Je poursuis actuellement mon diplôme en ingénierie logicielle tout en créant des solutions réfléchies qui allient robustesse technique et design intuitif.",
+  "availability": "Disponible pour un stage ! À partir du 4 mars 2026"
 }
