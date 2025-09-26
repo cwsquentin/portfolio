@@ -22,8 +22,6 @@ export default function Header() {
   const router = useRouter();
   const locale = useLocale();
   const t = useTranslations("common");
-
-  // --- FIX: comparer des chemins sans le préfixe de langue ---
   const normalize = (p: string) => p.replace(/^\/(en|fr)(?=\/|$)/, "");
   const isActive = (href: string) => {
     const current = normalize(pathname || "/");
@@ -57,7 +55,6 @@ export default function Header() {
                   "group flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition",
                   "focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60",
                   isActive(item.href)
-                    // Actif = même logique visuelle que les boutons de langue
                     ? "text-teal-400 border-b-2 border-teal-500"
                     : "text-slate-300 hover:text-white hover:bg-white/5",
                 ].join(" ")}

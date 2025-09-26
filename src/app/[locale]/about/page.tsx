@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
-import { Github, Linkedin } from "lucide-react"; // <-- ajout pour les pills sociales
+import { Github, Linkedin } from "lucide-react";
 
 type TimelineItem = {
   year: string;
