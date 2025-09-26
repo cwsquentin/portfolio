@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight, Github, Linkedin } from "lucide-react";
-import { Link, getPathname } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
 type NavKey = "home" | "about" | "projects" | "contact";
@@ -36,20 +36,15 @@ export default function Footer() {
 
           <div className="flex items-start gap-10">
             <nav className="flex flex-col">
-              {NAV.map((item) => {
-                const locale = typeof window !== "undefined"
-                  ? window.location.pathname.split("/")[1]
-                  : "en";
-                return (
-                  <Link
-                    key={item.key}
-                    href={getPathname({ href: item.href, locale })}
-                    className="py-1 text-sm font-medium text-slate-200 hover:text-white"
-                  >
-                    {t(`navigation.${item.key}`)}
-                  </Link>
-                );
-              })}
+              {NAV.map((item) => (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  className="py-1 text-sm font-medium text-slate-200 hover:text-white"
+                >
+                  {t(`navigation.${item.key}`)}
+                </Link>
+              ))}
             </nav>
 
             <div className="flex flex-col gap-4 pt-1">
