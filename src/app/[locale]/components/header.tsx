@@ -1,13 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import {
-  Home,
-  UserRound,
-  LayoutGrid,
-  Mail,
-} from "lucide-react";
+import { Home, UserRound, LayoutGrid, Mail } from "lucide-react";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
+import { useLocale } from "next-intl";
 
 type Item = {
   name: string;
@@ -24,14 +19,27 @@ const NAV: Item[] = [
 
 export default function Header() {
   const pathname = usePathname();
+  const router = useRouter();
+  const locale = useLocale();
+
   const isActive = (href: string) => pathname === href;
+
+  const switchLanguage = (newLocale: "en" | "fr") => {
+    // Remplace la même route en changeant la locale
+    router.replace(pathname, { locale: newLocale });
+  };
 
   return (
     <header className="fixed inset-x-0 top-4 z-50">
       <div className="flex justify-center px-4">
         <div className="flex items-center gap-3 rounded-full border border-white/10 bg-black/70 px-3 py-2 shadow-lg backdrop-blur-md">
+          {/* Home (icône circulaire) */}
           <NavIconOnly item={NAV[0]} active={isActive(NAV[0].href)} />
+
+          {/* Séparateur */}
           <span className="mx-1 h-6 w-px bg-white/10" aria-hidden />
+
+          {/* Nav items */}
           <nav className="flex items-center gap-1">
             {NAV.slice(1).map((item) => (
               <Link
@@ -51,6 +59,39 @@ export default function Header() {
               </Link>
             ))}
           </nav>
+
+          {/* Séparateur avant les langues */}
+          <span className="mx-1 h-6 w-px bg-white/10" aria-hidden />
+
+          {/* Lang switcher */}
+          <div className="flex items-center gap-1">
+            <button
+              type="button"
+              onClick={() => switchLanguage("en")}
+              className={[
+                "rounded-md px-2 py-1 text-xs font-semibold transition",
+                "focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60",
+                locale === "en"
+                  ? "text-teal-400 border-b-2 border-teal-500"
+                  : "text-slate-300 hover:text-white hover:bg-white/5",
+              ].join(" ")}
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              onClick={() => switchLanguage("fr")}
+              className={[
+                "rounded-md px-2 py-1 text-xs font-semibold transition",
+                "focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60",
+                locale === "fr"
+                  ? "text-teal-400 border-b-2 border-teal-500"
+                  : "text-slate-300 hover:text-white hover:bg-white/5",
+              ].join(" ")}
+            >
+              FR
+            </button>
+          </div>
         </div>
       </div>
     </header>
