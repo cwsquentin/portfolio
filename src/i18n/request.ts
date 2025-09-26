@@ -19,7 +19,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
 async function loadMessages(locale: string) {
   const messages: Record<string, object> = {};
-  const messageFiles = ['common', 'home']; // fichiers par page
+  const messageFiles = ['common', 'home', 'about']; // fichiers par page
 
   for (const file of messageFiles) {
     try {

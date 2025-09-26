@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "intro": "My name is",
+    "prefix": "",
+    "name": "Quentin Petiteville",
+    "subtitle": "Software Engineering Student",
+    "p1": "I focus on building accessible, pixel-perfect experiences for the web using modern tooling and thoughtful UX.",
+    "p2": "I enjoy solving real problems, turning ideas into robust, maintainable solutions, and continuously improving performance and quality.",
+    "p3": "I’m currently pursuing my degree in Software Engineering and love blending solid engineering with design that feels intuitive.",
+    "ctaLead": "Sharing the same philosophy?",
+    "ctaBtn": "Contact Me !"
+  },
+  "resume": {
+    "button": "Download My Resume",
+    "href": "/cv.pdf"
+  },
+  "experience": [
+    {
+      "year": "April 2025 - September 2025",
+      "title": "Web Development Internship",
+      "institution": "Music Story, Lille",
+      "description": "Redesign of the Music Story website, migrating WordPress content to Next.js/Tailwind CSS. Focused on improving website performance, maintainability, and user experience.",
+      "side": "right"
+    },
+    {
+      "year": "May 2022 - August 2022",
+      "title": "Web Development Internship",
+      "institution": "Celaneo, Paris",
+      "description": "Worked on website design, developed algorithms, and cleaned databases. Contributed to real-world projects, improving web-based applications and interfaces.",
+      "side": "left"
+    }
+  ],
+  "education": [
+    {
+      "year": "2021 - Present",
+      "title": "Master's in Engineering Program (Big Data & Management)",
+      "institution": "Junia ISEN Lille",
+      "description": "Courses entirely in English with a major in Big Data and a minor in Management. Focus on Data Analysis, AI, and Software/Web Development.",
+      "side": "right"
+    },
+    {
+      "year": "2023 - 2024",
+      "title": "Bachelor's Degree in Information and Communications Technology",
+      "institution": "JAMK University of Applied Sciences, Jyväskylä, Finland",
+      "description": "Specialization in Software Development, Data Analysis, and AI. Hands-on experience with advanced labs and real-world projects in an international ICT environment.",
+      "side": "left"
+    }
+  ]
+}

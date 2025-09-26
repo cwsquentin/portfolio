@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "intro": "Je m’appelle",
+    "prefix": "",
+    "name": "Quentin Petiteville",
+    "subtitle": "Étudiant en ingénierie logicielle",
+    "p1": "Je conçois des expériences web accessibles et soignées au pixel près, avec des outils modernes et une UX réfléchie.",
+    "p2": "J’aime résoudre des problèmes concrets, transformer des idées en solutions robustes et maintenables, et améliorer en continu la performance et la qualité.",
+    "p3": "Je poursuis actuellement mon diplôme en ingénierie logicielle et j’aime allier une base technique solide à un design intuitif.",
+    "ctaLead": "Vous partagez la même philosophie ?",
+    "ctaBtn": "Contactez-moi !"
+  },
+  "resume": {
+    "button": "Télécharger mon CV",
+    "href": "/cv.pdf"
+  },
+  "experience": [
+    {
+      "year": "Avril 2025 - Septembre 2025",
+      "title": "Stage en développement web",
+      "institution": "Music Story, Lille",
+      "description": "Refonte du site Music Story, migration de contenus WordPress vers Next.js/Tailwind CSS. Accent sur la performance, la maintenabilité et l’expérience utilisateur.",
+      "side": "right"
+    },
+    {
+      "year": "Mai 2022 - Août 2022",
+      "title": "Stage en développement web",
+      "institution": "Celaneo, Paris",
+      "description": "Travail sur le design de sites, développement d’algorithmes et nettoyage de bases de données. Contribution à des projets réels en améliorant des applications web.",
+      "side": "left"
+    }
+  ],
+  "education": [
+    {
+      "year": "2021 - Présent",
+      "title": "Cycle ingénieur JUNIA",
+      "institution": "Junia ISEN Lille",
+      "description": "Cours intégralement en anglais, spécialité Big Data et Management. Focus sur l’analyse de données, l’IA et le développement logiciel/web.",
+      "side": "right"
+    },
+    {
+      "year": "2023 - 2024",
+      "title": "Bachelor's Degree in Information and Communications Technology",
+      "institution": "JAMK University of Applied Sciences, Jyväskylä, Finlande",
+      "description": "Spécialisation en développement logiciel, analyse de données et IA. Expérience pratique en laboratoires avancés et sur des projets concrets dans un environnement IT international.",
+      "side": "left"
+    }
+  ]
+}
