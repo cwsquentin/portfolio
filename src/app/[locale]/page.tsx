@@ -3,8 +3,11 @@
 import { SnakeBackground } from "./components/snake-background";
 import { motion } from "framer-motion";
 import { Github, Linkedin } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("home");
+
   return (
     <div className="min-h-screen bg-background">
       <section className="relative flex min-h-screen items-center justify-center px-8 overflow-hidden">
@@ -18,7 +21,7 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
                 className="text-primary text-lg font-medium"
               >
-                Hello, I am
+                {t("greeting")}
               </motion.p>
 
               <motion.h1
@@ -27,7 +30,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-6xl font-bold text-foreground text-balance font-heading"
               >
-                Quentin Petiteville
+                {t("name")}
               </motion.h1>
 
               <motion.h2
@@ -36,7 +39,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-3xl text-muted-foreground font-light"
               >
-                Software Engineering Student
+                {t("title")}
               </motion.h2>
             </div>
 
@@ -46,9 +49,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed"
             >
-              I build accessible, pixel-perfect digital experiences for the web.
-              Currently pursuing my degree in Software Engineering while crafting
-              thoughtful solutions that blend robust engineering with intuitive design.
+              {t("description")}
             </motion.p>
 
             <motion.div
@@ -64,7 +65,7 @@ export default function Home() {
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
                 />
                 <span className="text-muted-foreground">
-                  Available for internships ! Starting 4th of March 2026
+                  {t("availability")}
                 </span>
               </motion.div>
             </motion.div>

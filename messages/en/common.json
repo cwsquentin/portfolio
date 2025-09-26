@@ -1,0 +1,18 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "en": "EN",
+    "fr": "FR"
+  },
+  "footer": {
+    "cta": "Contact Me !",
+    "tagline": "Got a project in mind? Let's build something amazing together !"
+  },
+  "social": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  }
+}
