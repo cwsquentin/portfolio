@@ -7,7 +7,21 @@ interface Point {
   y: number
 }
 
-export function SnakeBackground() {
+type SnakeBackgroundProps = {
+  tickMs?: number
+  gridSize?: number
+  maxFoods?: number
+  spawnIntervalMs?: number
+  initialFoods?: number
+}
+
+export function SnakeBackground({
+  tickMs = 300,
+  gridSize: gridSizeProp = 25,
+  maxFoods = 5,
+  spawnIntervalMs = 2000,
+  initialFoods = 2,
+}: SnakeBackgroundProps = {}) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -17,7 +31,6 @@ export function SnakeBackground() {
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
-    // Set canvas size
     const resizeCanvas = () => {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
@@ -25,20 +38,44 @@ export function SnakeBackground() {
     resizeCanvas()
     window.addEventListener("resize", resizeCanvas)
 
-    // Snake game variables
-    const gridSize = 25
-    const snake: Point[] = [{ x: 10, y: 10 }]
-    let food: Point = { x: 15, y: 15 }
-    let direction: Point = { x: 1, y: 0 }
+  const gridSize = gridSizeProp
+  const snake: Point[] = [{ x: 10, y: 10 }]
+  const foods: Point[] = []
+  let direction: Point = { x: 1, y: 0 }
 
     const snakeColor = "#3b82f6" // Blue color
-    const foodColor = "#10b981" // Green color
+  const foodColor = "#10b981" // Green color
     const gridColor = "#e5e7eb" // Light gray
 
-    const generateFood = () => {
-      food = {
-        x: Math.floor(Math.random() * (canvas.width / gridSize)),
-        y: Math.floor(Math.random() * (canvas.height / gridSize)),
+    // Prevent 180° turns: reject opposite direction
+    const trySetDirection = (next: Point) => {
+      if (snake.length > 1) {
+        const isOpposite = next.x === -direction.x && next.y === -direction.y
+        if (isOpposite) return
+      }
+      direction = next
+    }
+
+    const randomFood = (): Point => ({
+      x: Math.floor(Math.random() * (canvas.width / gridSize)),
+      y: Math.floor(Math.random() * (canvas.height / gridSize)),
+    })
+
+    const cellOccupiedBySnake = (p: Point) =>
+      snake.some((s) => s.x === p.x && s.y === p.y)
+
+    const cellOccupiedByFood = (p: Point) =>
+      foods.some((f) => f.x === p.x && f.y === p.y)
+
+    const spawnFood = () => {
+      if (foods.length >= maxFoods) return
+      // Try a few times to find a free cell
+      for (let i = 0; i < 10; i++) {
+        const p = randomFood()
+        if (!cellOccupiedBySnake(p) && !cellOccupiedByFood(p)) {
+          foods.push(p)
+          return
+        }
       }
     }
 
@@ -76,9 +113,17 @@ export function SnakeBackground() {
     const drawFood = () => {
       ctx.fillStyle = foodColor
       ctx.globalAlpha = 0.2
-      ctx.beginPath()
-      ctx.arc(food.x * gridSize + gridSize / 2, food.y * gridSize + gridSize / 2, gridSize / 3, 0, 2 * Math.PI)
-      ctx.fill()
+      for (const f of foods) {
+        ctx.beginPath()
+        ctx.arc(
+          f.x * gridSize + gridSize / 2,
+          f.y * gridSize + gridSize / 2,
+          gridSize / 3,
+          0,
+          2 * Math.PI
+        )
+        ctx.fill()
+      }
       ctx.globalAlpha = 1
     }
 
@@ -95,28 +140,36 @@ export function SnakeBackground() {
 
       snake.unshift(head)
 
-      // Check if food is eaten
-      if (head.x === food.x && head.y === food.y) {
-        generateFood()
+      // Check if any food is eaten
+      const eatenIndex = foods.findIndex((f) => f.x === head.x && f.y === head.y)
+      if (eatenIndex !== -1) {
+        // Grow by not popping tail
+        foods.splice(eatenIndex, 1)
       } else {
-        snake.pop()
-      }
-
-      // Keep snake at reasonable length
-      if (snake.length > 8) {
+        // Move without growing
         snake.pop()
       }
 
       // Auto-pilot: simple AI to follow food
-      const dx = food.x - head.x
-      const dy = food.y - head.y
+      // Pick nearest food (if any)
+      let target: Point | null = null
+      let best = Infinity
+      for (const f of foods) {
+        const d = Math.abs(f.x - head.x) + Math.abs(f.y - head.y)
+        if (d < best) {
+          best = d
+          target = f
+        }
+      }
+      const dx = target ? target.x - head.x : 0
+      const dy = target ? target.y - head.y : 0
 
       // Add some randomness to make it more interesting
       if (Math.random() > 0.8) {
         if (Math.abs(dx) > Math.abs(dy)) {
-          direction = { x: dx > 0 ? 1 : -1, y: 0 }
+          trySetDirection({ x: dx > 0 ? 1 : -1, y: 0 })
         } else {
-          direction = { x: 0, y: dy > 0 ? 1 : -1 }
+          trySetDirection({ x: 0, y: dy > 0 ? 1 : -1 })
         }
       }
     }
@@ -130,11 +183,14 @@ export function SnakeBackground() {
     }
 
     // Start the game
-    generateFood()
-    const gameInterval = setInterval(gameLoop, 300)
+    // Seed initial foods
+    for (let i = 0; i < initialFoods; i++) spawnFood()
+    const gameInterval = setInterval(gameLoop, tickMs)
+    const spawnInterval = setInterval(spawnFood, spawnIntervalMs)
 
     return () => {
       clearInterval(gameInterval)
+      clearInterval(spawnInterval)
       window.removeEventListener("resize", resizeCanvas)
     }
   }, [])
