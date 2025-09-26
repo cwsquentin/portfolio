@@ -1,6 +1,6 @@
 "use client";
 
-import { SnakeBackground } from "./components/snake-background";
+import { SnakeBackground } from "../components/snake-background";
 import { motion } from "framer-motion";
 import { Github, Linkedin } from "lucide-react";
 import { useTranslations } from "next-intl";
