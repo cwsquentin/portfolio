@@ -9,7 +9,7 @@ export default function Home() {
   const t = useTranslations("home");
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <section className="relative flex min-h-screen items-center justify-center px-8 overflow-hidden">
         <SnakeBackground />
         <div className="relative z-10 max-w-4xl text-center">
@@ -19,7 +19,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-primary text-lg font-medium"
+                className="text-lg font-medium"
               >
                 {t("greeting")}
               </motion.p>
@@ -28,7 +28,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-6xl font-bold text-foreground text-balance font-heading"
+                className="text-6xl font-bold"
               >
                 {t("name")}
               </motion.h1>
@@ -37,7 +37,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-3xl text-muted-foreground font-light"
+                className="text-3xl font-light"
               >
                 {t("title")}
               </motion.h2>
@@ -47,7 +47,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed"
+              className="mx-auto max-w-2xl text-xl leading-relaxed"
             >
               {t("description")}
             </motion.p>
@@ -60,11 +60,11 @@ export default function Home() {
             >
               <motion.div className="flex items-center space-x-2" whileHover={{ scale: 1.05 }}>
                 <motion.span
-                  className="h-2 w-2 rounded-full bg-accent"
+                  className="h-2 w-2 rounded-full"
                   animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
                 />
-                <span className="text-muted-foreground">
+                <span className="">
                   {t("availability")}
                 </span>
               </motion.div>
@@ -82,7 +82,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 5, color: "#3b82f6" }}
                 whileTap={{ scale: 0.9 }}
-                className="text-muted-foreground transition-colors duration-300 hover:text-primary"
+                className="transition-colors duration-300"
                 aria-label="GitHub"
               >
                 <Github size={28} />
@@ -94,7 +94,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: -5, color: "#3b82f6" }}
                 whileTap={{ scale: 0.9 }}
-                className="text-muted-foreground transition-colors duration-300 hover:text-primary"
+                className="transition-colors duration-300"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={28} />

@@ -7,7 +7,7 @@ export default function ContactPage() {
   const t = useTranslations("contact");
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center py-20">
+    <div className="min-h-screen flex items-center justify-center py-20">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -28,7 +28,7 @@ export default function ContactPage() {
               y: { duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
               x: { duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
             }}
-            className="text-2xl font-medium text-foreground mb-8"
+            className="text-2xl font-medium mb-8"
           >
             {t("title")}
           </motion.h1>
@@ -50,7 +50,7 @@ export default function ContactPage() {
               rotateX: { duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
             }}
             whileHover={{ scale: 1.05, y: -5 }}
-            className="inline-block text-4xl md:text-6xl font-bold text-foreground cursor-pointer"
+            className="inline-block text-4xl md:text-6xl font-bold cursor-pointer"
           >
             contact@quentinpetiteville.me
           </motion.a>
@@ -74,12 +74,12 @@ export default function ContactPage() {
               y: { duration: 2.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
               x: { duration: 3.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
             }}
-            className="text-2xl font-medium text-foreground mb-8"
+            className="text-2xl font-medium mb-8"
           >
             {t("socialsTitle")}
           </motion.h2>
 
-          <div className="flex justify-center items-center gap-8 text-3xl md:text-5xl font-bold text-foreground">
+          <div className="flex justify-center items-center gap-8 text-3xl md:text-5xl font-bold">
             <motion.div
               initial={{ opacity: 0, y: 20, rotateX: -90 }}
               animate={{

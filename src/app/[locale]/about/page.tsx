@@ -43,7 +43,7 @@ export default function AboutPage() {
               href="https://github.com/cwsquentin"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-foreground/90 transition hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm transition hover:bg-white/10"
               aria-label="GitHub"
               title="GitHub"
             >
@@ -54,7 +54,7 @@ export default function AboutPage() {
               href="https://www.linkedin.com/in/quentin-petiteville/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-foreground/90 transition hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm transition hover:bg-white/10"
               aria-label="LinkedIn"
               title="LinkedIn"
             >
@@ -63,7 +63,7 @@ export default function AboutPage() {
             </a>
           </div>
 
-          <div className="mt-6 space-y-4 text-base leading-relaxed text-foreground/85">
+          <div className="mt-6 space-y-4 text-base leading-relaxed">
             <p>{t("hero.p1")}</p>
             <p>{t("hero.p2")}</p>
             <p>{t("hero.p3")}</p>
@@ -150,9 +150,9 @@ function ItemRow({ item, idx }: { item: TimelineItem; idx: number }) {
           >
             {item.year}
           </motion.div>
-          <h3 className="mb-2 text-xl font-bold text-foreground">{item.title}</h3>
+          <h3 className="mb-2 text-xl font-bold">{item.title}</h3>
           <div className="mb-3 font-medium text-teal-400">{item.institution}</div>
-          <p className="text-sm leading-relaxed text-foreground/70">{item.description}</p>
+          <p className="text-sm leading-relaxed">{item.description}</p>
         </motion.div>
       </div>
 
@@ -165,7 +165,7 @@ function ItemRow({ item, idx }: { item: TimelineItem; idx: number }) {
       >
         <motion.div
           whileHover={{ scale: 1.2 }}
-          className="h-4 w-4 cursor-pointer rounded-full border-4 border-background bg-teal-500"
+          className="h-4 w-4 cursor-pointer rounded-full border-4 bg-teal-500"
         />
       </motion.div>
 
