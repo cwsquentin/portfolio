@@ -1,0 +1,26 @@
+{
+  "metaTitle": "Projects",
+  "title": "Projects",
+  "intro": "A selection of projects that showcase my skills and passion for creating meaningful digital experiences.",
+  "label": {
+    "code": "Code",
+    "demo": "Demo",
+    "codePrivate": "Private code",
+    "demoUnavailable": "Preview unavailable",
+    "confidential": "Confidential"
+  },
+  "items": {
+    "musicStory": {
+      "title": "Homepage redesign — Music Story",
+      "description": "Migration of the WordPress homepage to Next.js (App Router) with TailwindCSS, a scroll-reactive header and localization (next-intl). Deliverables are confidential."
+    },
+    "paris92": {
+      "title": "Homepage redesign — Paris 92",
+      "description": "Next.js rebuild with modern UI and localization. Details and deliverables are confidential."
+    },
+    "taskFlow": {
+      "title": "TaskFlow",
+      "description": "A collaborative project management tool with real-time updates, drag-and-drop tasks and team features."
+    }
+  }
+}

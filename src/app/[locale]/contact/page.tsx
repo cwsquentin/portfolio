@@ -1,7 +1,5 @@
-"use client";
-
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import * as motion from "motion/react-client";
 
 export default function ContactPage() {
   const t = useTranslations("contact");

@@ -1,0 +1,26 @@
+{
+  "metaTitle": "Projets",
+  "title": "Projets",
+  "intro": "Une sélection de projets illustrant mes compétences et mon envie de créer des expériences utiles.",
+  "label": {
+    "code": "Code",
+    "demo": "Démo",
+    "codePrivate": "Code confidentiel",
+    "demoUnavailable": "Démo indisponible",
+    "confidential": "Confidentiel"
+  },
+  "items": {
+    "musicStory": {
+      "title": "Refonte homepage – Music Story",
+      "description": "Refonte de la page d’accueil WordPress vers Next.js (App Router) avec TailwindCSS, header réactif au scroll et i18n (next-intl). Livrables confidentiels."
+    },
+    "paris92": {
+      "title": "Refonte homepage – Paris 92",
+      "description": "Refonte Next.js avec interface moderne et internationalisation. Détails et livrables confidentiels."
+    },
+    "taskFlow": {
+      "title": "TaskFlow",
+      "description": "Un outil de gestion de projet collaboratif avec mises à jour en temps réel, drag-and-drop et travail en équipe."
+    }
+  }
+}
