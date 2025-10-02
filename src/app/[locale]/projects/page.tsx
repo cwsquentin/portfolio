@@ -1,4 +1,3 @@
-// src/app/[locale]/projects/page.tsx
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { ProjectCard } from "@/app/components/projects";

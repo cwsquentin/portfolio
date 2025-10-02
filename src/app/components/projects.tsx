@@ -1,4 +1,3 @@
-// src/app/components/projects.tsx
 import * as motion from "motion/react-client";
 import Image, { type StaticImageData } from "next/image";
 

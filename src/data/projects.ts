@@ -1,10 +1,9 @@
-// src/data/projects.ts
 import type { StaticImageData } from "next/image";
 import MusicStory from "/public/projects/musicstory.webp";
 import Paris92 from "/public/projects/paris92.webp";
 
 export type ProjectItem = {
-  id: "musicStory" | "paris92" | "taskFlow"; // ajoute ici tes ids
+  id: "musicStory" | "paris92" | "taskFlow";
   image: string | StaticImageData;
   technologies: string[];
   github?: string;
