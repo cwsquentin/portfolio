@@ -2,6 +2,21 @@ import { useTranslations } from "next-intl";
 import * as motion from "motion/react-client";
 import { Link } from "@/i18n/navigation";
 import { Icon } from "@iconify/react";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'about' });
+  
+  return {
+    title: t('page.title'),
+  };
+}
 
 type TimelineItem = {
   year: string;

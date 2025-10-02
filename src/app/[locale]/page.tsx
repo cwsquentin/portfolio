@@ -2,6 +2,21 @@ import { SnakeBackground } from "@/app/components/snake-background";
 import * as motion from "motion/react-client";
 import { Icon } from "@iconify/react";
 import { useTranslations } from "next-intl";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'home' });
+  
+  return {
+    title: `Quentin Petiteville - ${t('page.title')}`
+  };
+}
 
 export default function Home() {
   const t = useTranslations("home");

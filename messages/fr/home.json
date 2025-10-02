@@ -1,4 +1,7 @@
 {
+  "page": {
+    "title": "Accueil"
+  },
   "greeting": "Bonjour, je suis",
   "name": "Quentin Petiteville",
   "title": "Étudiant en ingénierie logicielle",

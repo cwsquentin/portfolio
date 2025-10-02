@@ -1,5 +1,7 @@
 {
-  "metaTitle": "Projects",
+  "page": {
+      "title": "Projects"
+    },
   "title": "Projects",
   "intro": "A selection of projects that showcase my skills and passion for creating meaningful digital experiences.",
   "label": {
