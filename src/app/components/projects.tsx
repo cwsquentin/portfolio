@@ -1,5 +1,6 @@
 import * as motion from "motion/react-client";
 import Image, { type StaticImageData } from "next/image";
+import { Icon } from "@iconify/react";
 
 export type ProjectProps = {
   title: string;
@@ -105,9 +106,7 @@ export function ProjectCard({
                     className="inline-flex cursor-not-allowed items-center rounded-md border border-slate-600 px-3 py-2 text-sm font-medium text-slate-100 opacity-70"
                     title={labels.codePrivate}
                   >
-                    <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2a5 5 0 00-5 5v3H6a2 2 0 00-2 2v7a2 2 0 002 2h12a2 2 0 002-2v-7a2 2 0 00-2-2h-1V7a5 5 0 00-5-5zm-3 8V7a3 3 0 116 0v3H9z" />
-                    </svg>
+                    <Icon icon="uis:lock" className="mr-2 h-4 w-4" />
                     {labels.codePrivate}
                   </button>
                   <button
@@ -116,9 +115,7 @@ export function ProjectCard({
                     className="inline-flex cursor-not-allowed items-center rounded-md bg-slate-700/60 px-3 py-2 text-sm font-medium text-slate-300 opacity-70"
                     title={labels.demoUnavailable}
                   >
-                    <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
+                    <Icon icon="ph:arrow-square-out" className="mr-2 h-4 w-4" />
                     {labels.demoUnavailable}
                   </button>
                 </>
@@ -133,6 +130,7 @@ export function ProjectCard({
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
+                      <Icon icon="mdi:github" className="mr-2 h-4 w-4" />
                       {labels.code}
                     </motion.a>
                   )}
@@ -145,6 +143,7 @@ export function ProjectCard({
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
+                      <Icon icon="ph:arrow-square-out" className="mr-2 h-4 w-4" />
                       {labels.demo}
                     </motion.a>
                   )}

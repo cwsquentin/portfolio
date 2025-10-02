@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import * as motion from "motion/react-client";
 import { Link } from "@/i18n/navigation";
-import { Github, Linkedin } from "lucide-react";
+import { Icon } from "@iconify/react";
 
 type TimelineItem = {
   year: string;
@@ -45,7 +45,7 @@ export default function AboutPage() {
               aria-label="GitHub"
               title="GitHub"
             >
-              <Github className="h-4 w-4" />
+              <Icon icon="mdi:github" className="h-4 w-4" />
               <span>GitHub</span>
             </a>
             <a
@@ -56,7 +56,7 @@ export default function AboutPage() {
               aria-label="LinkedIn"
               title="LinkedIn"
             >
-              <Linkedin className="h-4 w-4" />
+              <Icon icon="mdi:linkedin" className="h-4 w-4" />
               <span>LinkedIn</span>
             </a>
           </div>
@@ -112,10 +112,7 @@ export default function AboutPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-teal-500 px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-teal-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60"
           >
-            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293L18.707 8.414A1 1 0 0119 9.121V19a2 2 0 01-2 2z" />
-            </svg>
+            <Icon icon="streamline:download-file" className="h-4 w-4" />
             {t("resume.button")}
           </a>
         </motion.div>
