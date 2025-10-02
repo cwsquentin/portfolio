@@ -23,8 +23,8 @@ export default function ContactPage() {
             transition={{
               duration: 0.6,
               delay: 0.2,
-              y: { duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-              x: { duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+              y: { duration: 1.5, repeat: 1, ease: "easeInOut" },
+              x: { duration: 2, repeat: 1, ease: "easeInOut" },
             }}
             className="text-2xl font-medium mb-8"
           >
@@ -43,9 +43,9 @@ export default function ContactPage() {
             transition={{
               duration: 0.6,
               delay: 0.4,
-              scale: { duration: 2.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-              y: { duration: 3.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-              rotateX: { duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+              scale: { duration: 1.5, repeat: 1, ease: "easeInOut" },
+              y: { duration: 2.5, repeat: 1, ease: "easeInOut" },
+              rotateX: { duration: 3, repeat: 1, ease: "easeInOut" },
             }}
             whileHover={{ scale: 1.05, y: -5 }}
             className="inline-block text-4xl md:text-6xl font-bold cursor-pointer"
@@ -69,8 +69,8 @@ export default function ContactPage() {
             }}
             transition={{
               delay: 1,
-              y: { duration: 2.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-              x: { duration: 3.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+              y: { duration: 2, repeat: 1, ease: "easeInOut" },
+              x: { duration: 2.5, repeat: 1, ease: "easeInOut" },
             }}
             className="text-2xl font-medium mb-8"
           >
@@ -91,8 +91,8 @@ export default function ContactPage() {
                 delay: 1.2,
                 type: "spring",
                 stiffness: 100,
-                y: { duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-                x: { duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+                y: { duration: 2, repeat: 1, ease: "easeInOut" },
+                x: { duration: 2.5, repeat: 1, ease: "easeInOut" },
               }}
               whileHover={{
                 scale: 1.1,
@@ -114,7 +114,6 @@ export default function ContactPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.7 }}
               transition={{ delay: 1.3 }}
-              className="text-muted-foreground"
             >
               •
             </motion.span>
@@ -132,8 +131,8 @@ export default function ContactPage() {
                 delay: 1.4,
                 type: "spring",
                 stiffness: 100,
-                y: { duration: 2.2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-                x: { duration: 3.3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+                y: { duration: 2, repeat: 1, ease: "easeInOut" },
+                x: { duration: 2.8, repeat: 1, ease: "easeInOut" },
               }}
               whileHover={{
                 scale: 1.1,
