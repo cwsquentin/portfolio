@@ -1,6 +1,6 @@
 import { SnakeBackground } from "@/app/components/snake-background";
 import * as motion from "motion/react-client";
-import { Github, Linkedin } from "lucide-react";
+import { Icon } from "@iconify/react";
 import { useTranslations } from "next-intl";
 
 export default function Home() {
@@ -62,9 +62,7 @@ export default function Home() {
                   animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
                 />
-                <span className="">
-                  {t("availability")}
-                </span>
+                <span className="">{t("availability")}</span>
               </motion.div>
             </motion.div>
 
@@ -83,7 +81,7 @@ export default function Home() {
                 className="transition-colors duration-300"
                 aria-label="GitHub"
               >
-                <Github size={28} />
+                <Icon icon="lucide:github" width={28} height={28} />
               </motion.a>
 
               <motion.a
@@ -95,7 +93,7 @@ export default function Home() {
                 className="transition-colors duration-300"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={28} />
+                <Icon icon="lucide:linkedin" width={28} height={28} />
               </motion.a>
             </motion.div>
           </div>

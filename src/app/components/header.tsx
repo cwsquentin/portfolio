@@ -1,20 +1,20 @@
 "use client";
 
-import { Home, UserRound, LayoutGrid, Mail } from "lucide-react";
+import { Icon } from "@iconify/react";
 import { Link, usePathname, useRouter, getPathname } from "@/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
 
 type Item = {
   key: "home" | "about" | "projects" | "contact";
   href: string;
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  icon: string;
 };
 
 const NAV: Item[] = [
-  { key: "home", href: "/", icon: Home },
-  { key: "about", href: "/about", icon: UserRound },
-  { key: "projects", href: "/projects", icon: LayoutGrid },
-  { key: "contact", href: "/contact", icon: Mail },
+  { key: "home", href: "/", icon: "mdi:home" },
+  { key: "about", href: "/about", icon: "mdi:account-circle" },
+  { key: "projects", href: "/projects", icon: "mdi:grid" },
+  { key: "contact", href: "/contact", icon: "mdi:email" },
 ];
 
 export default function Header() {
@@ -51,7 +51,7 @@ export default function Header() {
                 key={item.key}
                 href={item.href}
                 aria-current={isActive(item.href) ? "page" : undefined}
-                className={[
+                className={[ 
                   "group flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition",
                   "focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60",
                   isActive(item.href)
@@ -59,7 +59,7 @@ export default function Header() {
                     : "text-slate-300 hover:text-white hover:bg-white/5",
                 ].join(" ")}
               >
-                <item.icon className="h-4 w-4 opacity-90" />
+                <Icon icon={item.icon} className="h-4 w-4 opacity-90" />
                 <span className="font-heading">{t(`navigation.${item.key}`)}</span>
               </Link>
             ))}
@@ -109,7 +109,6 @@ function NavIconOnly({
   label: string;
   active: boolean;
 }) {
-  const Icon = item.icon;
   return (
     <Link
       href={item.href}
@@ -124,7 +123,7 @@ function NavIconOnly({
       ].join(" ")}
       title={label}
     >
-      <Icon className="h-4 w-4" />
+      <Icon icon={item.icon} className="h-4 w-4" />
       <span
         className={[
           "pointer-events-none absolute inset-0 rounded-full",

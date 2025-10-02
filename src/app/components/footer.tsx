@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Github, Linkedin } from "lucide-react";
+import { Icon } from "@iconify/react";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
@@ -26,7 +26,7 @@ export default function Footer() {
               className="group inline-flex items-center gap-2 text-3xl font-bold text-teal-400 font-heading"
             >
               <span>{t("footer.cta")}</span>
-              <ArrowRight className="h-6 w-6 transition-transform duration-200 group-hover:translate-x-1" />
+              <Icon icon="lucide:arrow-right" className="size-6 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
 
             <p className="max-w-xs text-sm text-slate-400">
@@ -56,7 +56,7 @@ export default function Footer() {
                 aria-label={t("social.github")}
                 title={t("social.github")}
               >
-                <Github className="h-5 w-5" />
+                <Icon icon="mdi:github" width={20} height={20} />
               </a>
               <a
                 href="https://www.linkedin.com/in/quentin-petiteville/"
@@ -66,7 +66,7 @@ export default function Footer() {
                 aria-label={t("social.linkedin")}
                 title={t("social.linkedin")}
               >
-                <Linkedin className="h-5 w-5" />
+                <Icon icon="mdi:linkedin" width={20} height={20} />
               </a>
             </div>
           </div>
