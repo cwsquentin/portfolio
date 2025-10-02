@@ -14,5 +14,8 @@
   "social": {
     "github": "GitHub",
     "linkedin": "LinkedIn"
+  },
+  "error404":{
+    "notfound": "Page Not Found"
   }
 }
