@@ -1,4 +1,7 @@
 {
+  "page": {
+    "title": "About"
+  },
   "hero": {
     "intro": "My name is",
     "prefix": "",

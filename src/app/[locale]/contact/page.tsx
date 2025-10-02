@@ -1,5 +1,20 @@
 import { useTranslations } from "next-intl";
 import * as motion from "motion/react-client";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'contact' });
+  
+  return {
+    title: t('page.title'),
+  };
+}
 
 export default function ContactPage() {
   const t = useTranslations("contact");

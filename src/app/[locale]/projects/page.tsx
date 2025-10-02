@@ -1,15 +1,22 @@
-import { getTranslations } from "next-intl/server";
-import type { Metadata } from "next";
 import { ProjectCard } from "@/app/components/projects";
 import { projectsData } from "@/data/projects";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'projects' });
+  
+  return {
+    title: t('page.title'),
+  };
+}
 
 type Params = { params: Promise<{ locale: string }> };
-
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "projects" });
-  return { title: t("metaTitle") };
-}
 
 export default async function ProjectsPage({ params }: Params) {
   const { locale } = await params;

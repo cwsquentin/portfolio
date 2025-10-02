@@ -1,4 +1,7 @@
 {
+  "page": {
+    "defaultDescription": "Portfolio de Quentin Petiteville"
+  },
   "navigation": {
     "home": "Accueil",
     "about": "À propos",
