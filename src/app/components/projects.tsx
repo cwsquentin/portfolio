@@ -1,6 +1,6 @@
 import * as motion from "motion/react-client";
-import Image, { type StaticImageData } from "next/image";
 import { Icon } from "@iconify/react";
+import Image, { type StaticImageData } from "next/image";
 
 export type ProjectProps = {
   title: string;
@@ -39,9 +39,7 @@ export function ProjectCard({
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
       transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-      whileHover={{ y: -8 }}
       className="w-full overflow-hidden rounded-2xl border border-slate-700 bg-slate-800/60 shadow-md transition-all duration-300 hover:border-indigo-500/50"
     >
       <div className="md:flex">
@@ -63,23 +61,17 @@ export function ProjectCard({
               placeholder={"blur" in image && image.blurDataURL ? "blur" : "empty"}
             />
           )}
-
-          <motion.div
-            className="absolute inset-0 bg-indigo-500/20"
-            initial={{ opacity: 0 }}
-            whileHover={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-          />
         </div>
 
         <div className="p-6 md:w-1/2">
           <div className="space-y-4">
-            <div>
-              <motion.h3 className="text-2xl font-bold text-slate-100" whileHover={{ x: 4 }}>
-                {title}
-              </motion.h3>
-              <p className="mt-2 leading-relaxed text-slate-300">{description}</p>
-            </div>
+            <motion.h3
+              className="text-2xl font-bold text-slate-100"
+              whileHover={{ x: 4 }}
+            >
+              {title}
+            </motion.h3>
+            <p className="mt-2 leading-relaxed text-slate-300">{description}</p>
 
             <div className="flex flex-wrap gap-2">
               {technologies.map((tech, i) => (
