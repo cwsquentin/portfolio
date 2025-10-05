@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import * as motion from "motion/react-client";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { itemVariants } from "@/animation";
 
 export async function generateMetadata({
   params,
@@ -23,8 +24,9 @@ export default function ContactPage() {
     <div className="min-h-screen flex items-center justify-center py-20">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          variants={itemVariants.fromBottom}
+          initial="hidden"
+          animate="visible"
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
@@ -70,8 +72,9 @@ export default function ContactPage() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          variants={itemVariants.fromBottom}
+          initial="hidden"
+          animate="visible"
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-20"
         >
@@ -109,11 +112,7 @@ export default function ContactPage() {
                 y: { duration: 2, repeat: 1, ease: "easeInOut" },
                 x: { duration: 2.5, repeat: 1, ease: "easeInOut" },
               }}
-              whileHover={{
-                scale: 1.1,
-                y: -5,
-                rotateY: 5,
-              }}
+              whileHover={{ scale: 1.1, y: -5, rotateY: 5 }}
             >
               <a
                 href="https://github.com/cwsquentin"
@@ -149,11 +148,7 @@ export default function ContactPage() {
                 y: { duration: 2, repeat: 1, ease: "easeInOut" },
                 x: { duration: 2.8, repeat: 1, ease: "easeInOut" },
               }}
-              whileHover={{
-                scale: 1.1,
-                y: -5,
-                rotateY: -5,
-              }}
+              whileHover={{ scale: 1.1, y: -5, rotateY: -5 }}
             >
               <a
                 href="https://www.linkedin.com/in/quentin-petiteville/"

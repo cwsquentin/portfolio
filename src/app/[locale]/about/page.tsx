@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { Icon } from "@iconify/react";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { itemVariants } from "@/animation"; // <-- ajout
 
 export async function generateMetadata({
   params,
@@ -35,8 +36,9 @@ export default function AboutPage() {
     <section className="py-40">
       <div className="mx-auto max-w-6xl px-5">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
+          variants={itemVariants.fromBottom}
+          initial="hidden"
+          animate="visible"
           transition={{ duration: 0.7 }}
           className="mx-auto max-w-3xl"
         >
@@ -115,8 +117,9 @@ export default function AboutPage() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={itemVariants.fromBottom}
+          initial="hidden"
+          whileInView="visible"
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
           className="mt-16 text-center"
@@ -140,8 +143,9 @@ function ItemRow({ item, idx }: { item: TimelineItem; idx: number }) {
   const isLeft = item.side === "left";
   return (
     <motion.div
-      initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      variants={isLeft ? itemVariants.fromLeft : itemVariants.fromRight}
+      initial="hidden"
+      whileInView="visible"
       transition={{ duration: 0.6, delay: idx * 0.15 }}
       viewport={{ once: true }}
       className={`flex items-center ${isLeft ? "flex-row-reverse" : ""}`}
@@ -156,6 +160,7 @@ function ItemRow({ item, idx }: { item: TimelineItem; idx: number }) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.25 + idx * 0.15 }}
+            viewport={{ once: true }}
             className="mb-2 text-sm font-semibold text-teal-400"
           >
             {item.year}
@@ -174,8 +179,8 @@ function ItemRow({ item, idx }: { item: TimelineItem; idx: number }) {
         className="relative z-10"
       >
         <motion.div
-          whileHover={{ scale: 1.2 }}
-          className="h-4 w-4 cursor-pointer rounded-full border-4 bg-teal-500"
+            whileHover={{ scale: 1.2 }}
+            className="h-4 w-4 cursor-pointer rounded-full border-4 bg-teal-500"
         />
       </motion.div>
 
