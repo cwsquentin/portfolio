@@ -22,7 +22,12 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-220 flex items-center justify-center py-20">
-      <div className="w-full px-6 text-center">
+      <motion.div 
+        variants={itemVariants.fromBottom}
+        initial="hidden"
+        animate="visible"
+        className="w-full px-6 text-center"
+      >
         <div className="mb-16">
           <h2 className="text-2xl font-medium mb-8">
             {t("title")}
@@ -98,7 +103,7 @@ export default function ContactPage() {
             </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
