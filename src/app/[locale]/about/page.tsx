@@ -4,7 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { Icon } from "@iconify/react";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { itemVariants } from "@/animation"; // <-- ajout
+import { itemVariants } from "@/animation";
 
 export async function generateMetadata({
   params,
