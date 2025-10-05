@@ -2,6 +2,7 @@ import "@/app/globals.css";
 import type { Metadata } from "next";
 import Header from "@/app/components/header";
 import Footer from "@/app/components/footer";
+import Motion from "@/app/components/motion";
 import { Geist } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations } from 'next-intl/server';
@@ -38,9 +39,11 @@ export default async function RootLayout({
     <html lang={locale} className={geist.className}>
       <body className="bg-slate-950 text-slate-100 antialiased">
         <NextIntlClientProvider locale={locale}>
-          <Header />
-            <main className="overflow-hidden">{children}</main>
-          <Footer />
+          <Motion>
+            <Header />
+              <main className="overflow-hidden">{children}</main>
+            <Footer />
+          </Motion>
         </NextIntlClientProvider>
       </body>
     </html>
