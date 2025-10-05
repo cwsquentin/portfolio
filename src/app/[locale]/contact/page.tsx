@@ -21,146 +21,83 @@ export default function ContactPage() {
   const t = useTranslations("contact");
 
   return (
-    <div className="min-h-screen flex items-center justify-center py-20">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <motion.div
-          variants={itemVariants.fromBottom}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.8 }}
-          className="mb-16"
-        >
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{
-              opacity: 1,
-              y: [0, -10, 0],
-              x: [0, 5, -5, 0],
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 0.2,
-              y: { duration: 1.5, repeat: 1, ease: "easeInOut" },
-              x: { duration: 2, repeat: 1, ease: "easeInOut" },
-            }}
-            className="text-2xl font-medium mb-8"
-          >
+    <div className="min-h-220 flex items-center justify-center py-20">
+      <div className="w-full px-6 text-center">
+        <div className="mb-16">
+          <h2 className="text-2xl font-medium mb-8">
             {t("title")}
-          </motion.h1>
+          </h2>
 
-          <motion.a
-            href="mailto:contact@quentinpetiteville.me"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{
-              opacity: 1,
-              scale: [1, 1.02, 1],
-              y: [0, -8, 0],
-              rotateX: [0, 2, 0],
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 0.4,
-              scale: { duration: 1.5, repeat: 1, ease: "easeInOut" },
-              y: { duration: 2.5, repeat: 1, ease: "easeInOut" },
-              rotateX: { duration: 3, repeat: 1, ease: "easeInOut" },
-            }}
-            whileHover={{ scale: 1.05, y: -5 }}
-            className="inline-block text-4xl md:text-6xl font-bold cursor-pointer"
-          >
-            contact@quentinpetiteville.me
-          </motion.a>
-        </motion.div>
-
-        <motion.div
-          variants={itemVariants.fromBottom}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-20"
-        >
-          <motion.h2
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-              y: [0, -5, 0],
-              x: [0, -3, 3, 0],
-            }}
-            transition={{
-              delay: 1,
-              y: { duration: 2, repeat: 1, ease: "easeInOut" },
-              x: { duration: 2.5, repeat: 1, ease: "easeInOut" },
-            }}
-            className="text-2xl font-medium mb-8"
-          >
-            {t("socialsTitle")}
-          </motion.h2>
-
-          <div className="flex justify-center items-center gap-8 text-3xl md:text-5xl font-bold">
+          <div className="relative overflow-hidden whitespace-nowrap">
             <motion.div
-              initial={{ opacity: 0, y: 20, rotateX: -90 }}
-              animate={{
-                opacity: 1,
-                y: [0, -3, 0],
-                rotateX: 0,
-                x: [0, 2, 0],
-              }}
+              animate={{ x: [0, -1000] }}
               transition={{
-                duration: 0.6,
-                delay: 1.2,
-                type: "spring",
-                stiffness: 100,
-                y: { duration: 2, repeat: 1, ease: "easeInOut" },
-                x: { duration: 2.5, repeat: 1, ease: "easeInOut" },
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+                repeatType: "loop"
               }}
-              whileHover={{ scale: 1.1, y: -5, rotateY: 5 }}
+              className="inline-flex text-4xl md:text-6xl font-bold"
             >
-              <a
-                href="https://github.com/cwsquentin"
-                className="hover:text-teal-400 group-hover:text-teal-400 transition-colors duration-300"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-            </motion.div>
-
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.7 }}
-              transition={{ delay: 1.3 }}
-            >
-              •
-            </motion.span>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20, rotateX: -90 }}
-              animate={{
-                opacity: 1,
-                y: [0, -3, 0],
-                rotateX: 0,
-                x: [0, -2, 0],
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 1.4,
-                type: "spring",
-                stiffness: 100,
-                y: { duration: 2, repeat: 1, ease: "easeInOut" },
-                x: { duration: 2.8, repeat: 1, ease: "easeInOut" },
-              }}
-              whileHover={{ scale: 1.1, y: -5, rotateY: -5 }}
-            >
-              <a
-                href="https://www.linkedin.com/in/quentin-petiteville/"
-                className="hover:text-teal-400 group-hover:text-teal-400 transition-colors duration-300"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
+              {Array.from({ length: 10 }).map((_, i) => (
+                <span key={i} className="inline-flex items-center">
+                  <a
+                    href="mailto:contact@quentinpetiteville.me"
+                    className="hover:text-teal-400 transition-colors cursor-pointer whitespace-nowrap"
+                  >
+                    contact@quentinpetiteville.me
+                  </a>
+                  <span className="mx-8 opacity-70">•</span>
+                </span>
+              ))}
             </motion.div>
           </div>
-        </motion.div>
+        </div>
+
+        <div className="mt-20">
+          <h2 className="text-2xl font-medium mb-8">
+            {t("socialsTitle")}
+          </h2>
+
+          <div className="relative overflow-hidden whitespace-nowrap">
+            <motion.div
+              animate={{ x: [0, -1000] }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+                repeatType: "loop"
+              }}
+              className="inline-flex text-3xl md:text-5xl font-bold"
+              style={{
+                width: "200%"
+              }}
+            >
+              {Array.from({ length: 10 }).map((_, i) => (
+                <span key={i} className="inline-flex items-center">
+                  <a
+                    href="https://github.com/cwsquentin"
+                    className="hover:text-teal-400 transition-colors whitespace-nowrap"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                  <span className="mx-6 opacity-70">•</span>
+                  <a
+                    href="https://www.linkedin.com/in/quentin-petiteville/"
+                    className="hover:text-teal-400 transition-colors whitespace-nowrap"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn
+                  </a>
+                  <span className="mx-6 opacity-70">•</span>
+                </span>
+              ))}
+            </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   );
