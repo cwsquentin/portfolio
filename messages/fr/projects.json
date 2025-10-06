@@ -4,13 +4,11 @@
   },
   "title": "Projets",
   "intro": "Une sélection de projets illustrant mes compétences et mon envie de créer des expériences utiles.",
-  "label": {
-    "code": "Code",
-    "demo": "Démo",
-    "codePrivate": "Code confidentiel",
-    "demoUnavailable": "Démo indisponible",
-    "confidential": "Confidentiel"
-  },
+  "code": "Code",
+  "demo": "Démo",
+  "codePrivate": "Code confidentiel",
+  "demoUnavailable": "Démo indisponible",
+  "confidential": "Confidentiel",
   "items": {
     "musicStory": {
       "title": "Refonte homepage – Music Story",
