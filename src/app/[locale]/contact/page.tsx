@@ -74,9 +74,6 @@ export default function ContactPage() {
                 repeatType: "loop"
               }}
               className="inline-flex text-3xl md:text-5xl font-bold"
-              style={{
-                width: "200%"
-              }}
             >
               {Array.from({ length: 10 }).map((_, i) => (
                 <span key={i} className="inline-flex items-center">
