@@ -22,14 +22,6 @@ export default async function ProjectsPage({ params }: Params) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "projects" });
 
-  const labels = {
-    code: t("label.code"),
-    demo: t("label.demo"),
-    codePrivate: t("label.codePrivate"),
-    demoUnavailable: t("label.demoUnavailable"),
-    confidential: t("label.confidential"),
-  };
-
   return (
     <section id="projects" className="min-h-screen px-6 py-20">
       <div className="mx-auto w-full max-w-6xl">
@@ -50,7 +42,6 @@ export default async function ProjectsPage({ params }: Params) {
               github={p.github}
               demo={p.demo}
               confidential={p.confidential}
-              labels={labels}
             />
           ))}
         </div>

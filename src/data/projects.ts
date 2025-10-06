@@ -26,7 +26,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "taskFlow",
-    image: "/project-management-dashboard.png",
+    image: Paris92,
     technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Tailwind CSS"],
     github: "https://github.com",
     demo: "https://taskflow-demo.com",

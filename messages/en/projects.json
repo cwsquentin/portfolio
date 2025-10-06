@@ -4,13 +4,11 @@
     },
   "title": "Projects",
   "intro": "A selection of projects that showcase my skills and passion for creating meaningful digital experiences.",
-  "label": {
-    "code": "Code",
-    "demo": "Demo",
-    "codePrivate": "Private code",
-    "demoUnavailable": "Preview unavailable",
-    "confidential": "Confidential"
-  },
+  "code": "Code",
+  "demo": "Demo",
+  "codePrivate": "Private code",
+  "demoUnavailable": "Preview unavailable",
+  "confidential": "Confidential",
   "items": {
     "musicStory": {
       "title": "Homepage redesign — Music Story",
