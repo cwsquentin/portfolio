@@ -115,7 +115,7 @@ export default function Header() {
         </div>
 
         <button
-          className="lg:hidden bg-teal-400 text-white font-bold uppercase px-4 py-3 rounded-full shadow-lg hover:bg-teal-500 transition"
+          className="lg:hidden bg-black/70 text-xs font-bold uppercase px-4 py-3 rounded-full shadow-lg text-slate-300 hover:text-white hover:bg-white/5 transition"
           onClick={() => setMobileMenuOpen(true)}
           aria-label={t("menubtn")}
         >
@@ -138,7 +138,7 @@ export default function Header() {
         className={clsx(
           "fixed top-0 right-0 bottom-0 w-64 z-50 transition-transform duration-300 ease-in-out transform",
           mobileMenuOpen ? "translate-x-0" : "translate-x-full",
-          "bg-teal-400 text-white shadow-2xl"
+          "bg-black/70 text-white shadow-2xl"
         )}
       >
         <div
@@ -187,7 +187,7 @@ export default function Header() {
                     )}
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {t(`languages.${lng}`)}
+                    {t(`navigation.${lng}`)}
                   </Link>
                 ))}
               </div>
