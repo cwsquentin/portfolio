@@ -193,7 +193,7 @@ export function SnakeBackground({
       clearInterval(spawnInterval)
       window.removeEventListener("resize", resizeCanvas)
     }
-  }, [])
+  }, [gridSizeProp, initialFoods, maxFoods, spawnIntervalMs, tickMs])
 
   return <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }} />
 }

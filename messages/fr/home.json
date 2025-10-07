@@ -6,5 +6,90 @@
   "name": "Quentin Petiteville",
   "title": "Étudiant en ingénierie logicielle",
   "description": "Je conçois des expériences web accessibles et pixel-perfect. Je poursuis actuellement mon diplôme en ingénierie logicielle tout en créant des solutions réfléchies qui allient robustesse technique et design intuitif.",
-  "availability": "Disponible pour un stage ! À partir du 4 mars 2026"
+  "availability": "Disponible pour un stage de 6 mois à partir du 4 mars 2026 !",
+  "cta": {
+    "primary": "Découvrir mes projets",
+    "secondary": "Télécharger mon CV",
+  "secondaryHref": "/downloads/CV_FR_EN.pdf"
+  },
+  "highlights": {
+    "eyebrow": "Créer de la valeur",
+    "title": "Un regard produit au service du code",
+    "description": "J’assemble UX, outils modernes et fiabilité pour livrer des expériences sur lesquelles les équipes peuvent compter.",
+    "items": {
+      "craft": {
+        "title": "Interfaces soignées",
+        "description": "Design systems, maquettes responsives et interactions accessibles pour transformer des parcours complexes en expériences fluides."
+      },
+      "performance": {
+        "title": "Obsédé par la performance",
+        "description": "Mesurer, itérer et optimiser — Core Web Vitals, outils de build et déploiement pour des applications rapides et stables."
+      },
+      "collaboration": {
+        "title": "Esprit d’équipe",
+        "description": "Co-créer avec designers, product managers et parties prenantes afin de clarifier les besoins et livrer à temps."
+      },
+      "delivery": {
+        "title": "Livraison de bout en bout",
+        "description": "De l’idée à la prod : cadrage, automatisation de la qualité et itérations guidées par les retours pour délivrer un impact concret."
+      }
+    }
+  },
+  "skills": {
+    "eyebrow": "Compétences",
+    "title": "Expertises clés",
+    "description": "Un ensemble d’outils forgé par des stages, des projets personnels et des missions orientées livraison.",
+    "categories": [
+      {
+        "title": "Front-end",
+        "items": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Next Intl"]
+      },
+      {
+        "title": "Back-end & data",
+        "items": ["Node.js", "Express", "APIs REST", "MongoDB", "PostgreSQL", "Prisma"]
+      },
+      {
+        "title": "Workflow & qualité",
+        "items": ["Git & GitHub", "CI/CD", "Playwright", "Jest", "Storybook", "Design Systems"]
+      }
+    ]
+  },
+  "projectsPreview": {
+    "eyebrow": "Réalisations",
+    "title": "Projets mis en avant",
+    "description": "Un aperçu des dernières initiatives : refontes, localisation et livraisons prêtes pour la production.",
+    "viewAll": "Voir tous les projets",
+    "viewProject": "Voir le projet",
+    "badge": "Étude de cas",
+    "github": "GitHub",
+    "demo": "Démo en ligne"
+  },
+  "experience": {
+    "eyebrow": "Expérience",
+    "title": "Missions récentes",
+    "description": "Des rôles où j’ai piloté des refontes d’interface, amélioré les performances et collaboré avec des équipes pluridisciplinaires.",
+    "cta": "Découvrir mon parcours",
+    "items": [
+      {
+        "period": "Avr. 2025 — Sep. 2025",
+        "role": "Stagiaire développeur front-end",
+        "company": "Music Story, Lille",
+        "summary": "Refonte du site marketing avec Next.js App Router, Tailwind et localisation — meilleure maintenance et scores Lighthouse."
+      },
+      {
+        "period": "Mai 2022 — Août 2022",
+        "role": "Stagiaire développeur web",
+        "company": "Celaneo, Paris",
+        "summary": "Conception d’écrans data-driven, automatisation des reportings et amélioration de la fiabilité produit avec des outils modernes."
+      }
+    ]
+  },
+  "ctaBanner": {
+    "eyebrow": "Travaillons ensemble",
+    "title": "Prêt à lancer votre prochain projet ?",
+    "description": "Je recherche un stage où je peux faire progresser le front-end, livrer vite avec qualité et apprendre au contact d’une équipe ambitieuse.",
+    "primary": "Entrer en contact",
+    "secondary": "Voir mon CV",
+  "secondaryHref": "/downloads/CV_FR_EN.pdf"
+  }
 }

@@ -10,12 +10,12 @@
     "p1": "Je conçois des expériences web accessibles et soignées au pixel près, avec des outils modernes et une UX réfléchie.",
     "p2": "J’aime résoudre des problèmes concrets, transformer des idées en solutions robustes et maintenables, et améliorer en continu la performance et la qualité.",
     "p3": "Je poursuis actuellement mon diplôme en ingénierie logicielle et j’aime allier une base technique solide à un design intuitif.",
-    "ctaLead": "Vous partagez la même philosophie ?",
+    "ctaLead": "Un projet en tête ?",
     "ctaBtn": "Contactez-moi !"
   },
   "resume": {
     "button": "Télécharger mon CV",
-    "href": "/cv.pdf"
+    "href": "/downloads/CV_FR_EN.pdf"
   },
   "experience": [
     {

@@ -10,11 +10,11 @@ const nextConfig: NextConfig = {
     config.plugins.push(
       Icons({
         compiler: 'jsx',
-        jsx: 'react', 
+        jsx: 'react'
       })
     );
     return config;
-  },
+  }
 };
 
 export default withNextIntl(nextConfig);

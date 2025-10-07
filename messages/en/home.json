@@ -6,5 +6,90 @@
   "name": "Quentin Petiteville",
   "title": "Software Engineering Student",
   "description": "I build accessible, pixel-perfect digital experiences for the web. Currently pursuing my degree in Software Engineering while crafting thoughtful solutions that blend robust engineering with intuitive design.",
-  "availability": "Available for internships ! Starting 4th of March 2026"
+  "availability": "Available for a 6-month internship starting 4th of March 2026 !",
+  "cta": {
+    "primary": "View my projects",
+    "secondary": "Download My Resume",
+  "secondaryHref": "/downloads/CV_FR_EN.pdf"
+  },
+  "highlights": {
+    "eyebrow": "Crafting value",
+    "title": "Product-minded engineering that ships",
+    "description": "I bridge thoughtful UX, modern tooling, and reliable delivery to create experiences that teams can trust.",
+    "items": {
+      "craft": {
+        "title": "Pixel-perfect interfaces",
+        "description": "Design systems, responsive layouts, and accessible interactions that make complex products feel effortless."
+      },
+      "performance": {
+        "title": "Performance obsessed",
+        "description": "Measure, iterate, and optimize for speed — from Core Web Vitals to build tooling and deployment workflows."
+      },
+      "collaboration": {
+        "title": "Team-first collaborator",
+        "description": "Pair with designers, product owners, and stakeholders to clarify requirements and ship reliable releases on time."
+      },
+      "delivery": {
+        "title": "End-to-end delivery",
+        "description": "From idea to production: plan scopes, automate quality checks, and iterate with feedback to achieve measurable impact."
+      }
+    }
+  },
+  "skills": {
+    "eyebrow": "Skill snapshot",
+    "title": "Core capabilities",
+    "description": "A toolkit shaped by real-world shipping experience across startups, internships, and personal projects.",
+    "categories": [
+      {
+        "title": "Frontend craft",
+        "items": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Next Intl"]
+      },
+      {
+        "title": "Backend & data",
+        "items": ["Node.js", "Express", "REST APIs", "MongoDB", "PostgreSQL", "Prisma"]
+      },
+      {
+        "title": "Workflow & quality",
+        "items": ["Git & GitHub", "CI/CD", "Playwright", "Jest", "Storybook", "Design Systems"]
+      }
+    ]
+  },
+  "projectsPreview": {
+    "eyebrow": "Selected work",
+    "title": "Featured projects",
+    "description": "A quick tour of recent initiatives highlighting craftsmanship, localization, and production-ready delivery.",
+    "viewAll": "See every project",
+    "viewProject": "View project",
+    "badge": "Case study",
+    "github": "GitHub",
+    "demo": "Live demo"
+  },
+  "experience": {
+    "eyebrow": "Experience",
+    "title": "Recent missions",
+    "description": "Hands-on roles where I led UI rebuilds, improved performance, and collaborated with cross-functional teams.",
+    "cta": "Explore my journey",
+    "items": [
+      {
+        "period": "Apr 2025 — Sep 2025",
+        "role": "Frontend Developer Intern",
+        "company": "Music Story, Lille",
+        "summary": "Rebuilt the marketing website with Next.js App Router, Tailwind, and localization — improving maintainability and Lighthouse scores."
+      },
+      {
+        "period": "May 2022 — Aug 2022",
+        "role": "Web Developer Intern",
+        "company": "Celaneo, Paris",
+        "summary": "Designed data-heavy screens, automated reporting workflows, and enhanced product reliability with modern tooling."
+      }
+    ]
+  },
+  "ctaBanner": {
+    "eyebrow": "Let’s collaborate",
+    "title": "Ready to build your next experience?",
+    "description": "I’m currently looking for internship opportunities where I can elevate the frontend, move fast with quality, and learn from a great team.",
+    "primary": "Start a conversation",
+    "secondary": "View résumé",
+  "secondaryHref": "/downloads/CV_FR_EN.pdf"
+  }
 }
