@@ -88,6 +88,10 @@ export default function ContactAnimations() {
   const t = useTranslations("contact");
   const [emailHovered, setEmailHovered] = useState(false);
   const [socialsHovered, setSocialsHovered] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const email = "contact@quentinpetiteville.me";
+  const mailtoSubject = encodeURIComponent(t("mailtoSubject"));
+  const mailtoBody = encodeURIComponent(t("mailtoBody"));
   const emailOffset = useMarqueeOffset({
     baseSpeed: EMAIL_BASE_SPEED,
     decelRate: EMAIL_DECEL_RATE,
@@ -104,6 +108,23 @@ export default function ContactAnimations() {
     hovered: socialsHovered
   });
 
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      const textarea = document.createElement("textarea");
+      textarea.value = email;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    }
+  };
+
   return (
     <div className="flex min-h-[25rem] items-center justify-center px-4 py-50 sm:px-6 sm:py-70">
       <motion.div
@@ -112,6 +133,64 @@ export default function ContactAnimations() {
         animate="visible"
         className="w-full max-w-5xl text-center"
       >
+        <div className="mb-14">
+          <h1 className="mb-3 text-2xl font-semibold sm:text-3xl">
+            {t("cta.title")}
+          </h1>
+          <p className="mx-auto mb-8 max-w-2xl text-balance text-sm opacity-80 sm:text-base">
+            {t("cta.subtitle")}
+          </p>
+
+          <div className="mx-auto grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2">
+            <button
+              onClick={handleCopy}
+              className="rounded-md border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
+              aria-live="polite"
+            >
+              {copied ? t("actions.copied") : t("actions.copy")}
+            </button>
+            <Link
+              href={`mailto:${email}?subject=${mailtoSubject}&body=${mailtoBody}`}
+              className="rounded-md border border-teal-500/20 bg-teal-500/10 px-4 py-2 text-sm font-medium text-teal-300 transition hover:bg-teal-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
+            >
+              {t("actions.email")}
+            </Link>
+            <Link
+              href={t("resumeHref")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
+            >
+              {t("actions.resume")}
+            </Link>
+            <div className="flex items-center justify-center gap-3">
+              <Link
+                href="https://www.linkedin.com/in/quentin-petiteville/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
+              >
+                LinkedIn
+              </Link>
+              <Link
+                href="https://github.com/cwsquentin"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
+              >
+                GitHub
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-6 text-xs opacity-70 sm:text-sm">
+            <span className="mr-3">{t("meta.timezone")}</span>
+            <span className="mr-3">•</span>
+            <span className="mr-3">{t("meta.response")}</span>
+            <span className="mr-3">•</span>
+            <span>{t("meta.remote")}</span>
+          </div>
+        </div>
         <div className="mb-16">
           <h2 className="mb-6 text-xl font-medium sm:text-2xl">
             {t("title")}
@@ -125,12 +204,12 @@ export default function ContactAnimations() {
               {Array.from({ length: REPEAT_COUNT }).map((_, i) => (
                 <span key={i} className="inline-flex items-center">
                   <Link
-                    href="mailto:contact@quentinpetiteville.me"
+                    href={`mailto:${email}?subject=${mailtoSubject}&body=${mailtoBody}`}
                     className="cursor-pointer whitespace-nowrap transition-colors hover:text-teal-400"
                     onMouseEnter={() => setEmailHovered(true)}
                     onMouseLeave={() => setEmailHovered(false)}
                   >
-                    contact@quentinpetiteville.me
+                    {email}
                   </Link>
                   <span className="mx-4 text-lg opacity-70 sm:mx-6 md:mx-8">•</span>
                 </span>

@@ -7,6 +7,29 @@
   "title": "Étudiant en ingénierie logicielle",
   "description": "Je conçois des expériences web accessibles et pixel-perfect. Je poursuis actuellement mon diplôme en ingénierie logicielle tout en créant des solutions réfléchies qui allient robustesse technique et design intuitif.",
   "availability": "Disponible pour un stage de 6 mois à partir du 4 mars 2026 !",
+  "hero": {
+    "subtitle": "Allier rigueur technique et sens du produit pour aider les équipes à livrer des expériences fiables.",
+    "socialLabel": "Réseaux",
+    "focus": [
+      "Ingénierie front-end avec React, TypeScript, Next.js et Motion",
+      "Flux design-to-code avec accessibilité et localisation intégrées",
+      "Collaboration bilingue auprès d'équipes françaises et internationales"
+    ],
+    "stats": [
+      { "label": "Basé à", "value": "Lille, France" },
+      { "label": "Expertise", "value": "Ingénierie front-end" },
+      { "label": "Actuellement", "value": "Étudiant en M2 d'ingénierie logicielle" }
+    ],
+    "sidebar": {
+      "eyebrow": "Instantané",
+      "title": "Ce que j'apporte à votre équipe",
+      "description": "Un profil orienté produit qui aime relier design systems, performance et livraison.",
+      "availabilityLabel": "Prochaine disponibilité",
+      "note": "Ouvert aux collaborations remote ou sur site dans la région lilloise.",
+      "timezone": "Fuseau horaire Europe centrale (UTC+1).",
+      "contact": "Discutons de votre projet"
+    }
+  },
   "cta": {
     "primary": "Découvrir mes projets",
     "secondary": "Télécharger mon CV",

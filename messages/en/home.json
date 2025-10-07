@@ -7,6 +7,29 @@
   "title": "Software Engineering Student",
   "description": "I build accessible, pixel-perfect digital experiences for the web. Currently pursuing my degree in Software Engineering while crafting thoughtful solutions that blend robust engineering with intuitive design.",
   "availability": "Available for a 6-month internship starting 4th of March 2026 !",
+  "hero": {
+    "subtitle": "Pairing clean engineering with thoughtful UX to help product teams ship confident experiences.",
+    "socialLabel": "Connect",
+    "focus": [
+      "Frontend engineering with React, TypeScript, Next.js and Motion",
+      "Design-to-code workflows with accessibility and localization in mind",
+      "Bilingual collaboration across French and English product teams"
+    ],
+    "stats": [
+      { "label": "Based in", "value": "Lille, France" },
+      { "label": "Focus", "value": "Frontend engineering" },
+      { "label": "Currently", "value": "M2 Software Engineering student" }
+    ],
+    "sidebar": {
+      "eyebrow": "Profile snapshot",
+      "title": "What I bring to your team",
+      "description": "A product-minded engineer who enjoys bridging design systems, performance and delivery.",
+      "availabilityLabel": "Next availability",
+      "note": "Open to remote or on-site collaborations with ambitious teams.",
+      "timezone": "Operating in Central European Time (UTC+1).",
+      "contact": "Let's discuss your project"
+    }
+  },
   "cta": {
     "primary": "View my projects",
     "secondary": "Download My Resume",

@@ -3,5 +3,23 @@
         "title": "Contact"
     },
     "title": "Contactez-moi ici !",
-    "socialsTitle": "Vous pouvez me trouver sur"
+    "socialsTitle": "Vous pouvez me trouver sur",
+    "cta": {
+        "title": "Travaillons ensemble",
+        "subtitle": "Ouvert aux collaborations, opportunités et questions. Discutons de vos projets, de postes ou simplement de React/TypeScript/Next.js."
+    },
+    "actions": {
+        "copy": "Copier l’e‑mail",
+        "copied": "Copié !",
+        "email": "Écrire un e‑mail",
+        "resume": "Télécharger le CV"
+    },
+    "resumeHref": "/downloads/CV_FR_EN.pdf",
+    "mailtoSubject": "Contact portfolio",
+    "mailtoBody": "Bonjour Quentin, j’ai découvert votre portfolio et souhaite échanger à propos de...",
+    "meta": {
+        "timezone": "Fuseau CET",
+        "response": "Réponse sous 1–2 jours ouvrés",
+        "remote": "Ouvert au remote"
+    }
 }

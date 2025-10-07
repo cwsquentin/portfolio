@@ -57,103 +57,194 @@ export default function Home() {
   ];
 
   const featuredProjects = projectsData.slice(0, 3);
+  const heroFocus = (t.raw("hero.focus") as string[]) ?? [];
+  const heroStats =
+    (t.raw("hero.stats") as Array<{ label: string; value: string }>) ?? [];
 
   return (
     <div className="min-h-screen">
       <section className="relative flex min-h-[65svh] flex-col items-center justify-center overflow-hidden px-4 py-20 sm:px-8 sm:py-24 lg:min-h-220 lg:py-28">
-        <SnakeBackground />
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="relative z-10 max-w-5xl text-center"
-        >
-          <motion.p variants={itemVariants.fromBottom} className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-teal-300/80 sm:text-base">
-            {t("greeting")}
-          </motion.p>
-
-          <motion.h1 variants={itemVariants.fromBottom} className="text-4xl font-bold sm:text-5xl lg:text-6xl">
-            {t("name")}
-          </motion.h1>
-
-          <motion.h2 variants={itemVariants.fromBottom} className="mt-3 text-xl font-light text-slate-200 sm:text-2xl lg:text-3xl">
-            {t("title")}
-          </motion.h2>
-
-          <motion.p
-            variants={itemVariants.fromBottom}
-            className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-slate-200 sm:text-lg"
-          >
-            {t("description")}
-          </motion.p>
+        <div className="relative w-full max-w-6xl">
+          <div className="pointer-events-none absolute inset-x-0 -top-24 mx-auto h-56 w-[80%] rounded-full bg-teal-500/20 blur-3xl" />
 
           <motion.div
-            variants={itemVariants.fromBottom}
-            className="flex flex-col items-center justify-center gap-3 pt-6 text-sm sm:flex-row sm:text-base"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/60 shadow-[0_30px_80px_-40px_rgba(15,118,110,0.65)] backdrop-blur-xl"
           >
-            <motion.span
-              className="h-2 w-2 rounded-full"
-              animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
-              transition={{
-                duration: 2,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: "easeInOut",
-              }}
-            />
-            <span>{t("availability")}</span>
-          </motion.div>
+            <SnakeBackground gridSize={28} tickMs={260} />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-950/85 via-slate-900/30 to-teal-500/15" />
+            <div className="pointer-events-none absolute inset-0 opacity-60 [mask-image:radial-gradient(circle_at_top,white,transparent_65%)]">
+              <div className="absolute -left-10 top-10 h-32 w-32 rounded-full bg-teal-500/30 blur-3xl" />
+              <div className="absolute bottom-10 -right-10 h-40 w-40 rounded-full bg-sky-500/30 blur-3xl" />
+            </div>
 
-          <motion.div
-            variants={itemVariants.fromBottom}
-            className="flex items-center justify-center gap-4 pt-6 sm:gap-6"
-          >
-            <motion.a
-              href="https://github.com/cwsquentin"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: 5, color: "#3b82f6" }}
-              whileTap={{ scale: 0.9 }}
-              className="transition-colors duration-300"
-              aria-label="GitHub"
-            >
-              <GithubIcon className="h-7 w-7" />
-            </motion.a>
+            <div className="relative z-10 flex flex-col gap-10 p-8 sm:p-12 lg:flex-row lg:items-center lg:gap-14">
+              <div className="flex-1 text-left">
+                <motion.p
+                  variants={itemVariants.fromBottom}
+                  className="text-xs font-semibold uppercase tracking-[0.35em] text-teal-300/80 sm:text-sm"
+                >
+                  {t("greeting")}
+                </motion.p>
 
-            <motion.a
-              href="https://www.linkedin.com/in/quentin-petiteville/"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: -5, color: "#3b82f6" }}
-              whileTap={{ scale: 0.9 }}
-              className="transition-colors duration-300"
-              aria-label="LinkedIn"
-            >
-              <LinkedinIcon className="h-7 w-7" />
-            </motion.a>
-          </motion.div>
+                <motion.h1
+                  variants={itemVariants.fromBottom}
+                  className="mt-4 text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl"
+                >
+                  {t("name")}
+                </motion.h1>
 
-          <motion.div
-            variants={itemVariants.fromBottom}
-            className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
-          >
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 rounded-full bg-teal-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-teal-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60"
-            >
-              <ArrowRightIcon className="h-5 w-5" />
-              {t("cta.primary")}
-            </Link>
-            <a
-              href={t("cta.secondaryHref")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-white/30 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60"
-            >
-              {t("cta.secondary")}
-            </a>
+                <motion.h2
+                  variants={itemVariants.fromBottom}
+                  className="mt-2 text-xl font-light text-slate-200 sm:text-2xl lg:text-3xl"
+                >
+                  {t("title")}
+                </motion.h2>
+
+                <motion.p
+                  variants={itemVariants.fromBottom}
+                  className="mt-6 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg"
+                >
+                  {t("description")}
+                </motion.p>
+
+                <motion.p
+                  variants={itemVariants.fromBottom}
+                  className="mt-4 max-w-2xl text-sm text-slate-300 sm:text-base"
+                >
+                  {t("hero.subtitle")}
+                </motion.p>
+
+                {heroFocus.length > 0 && (
+                  <motion.ul
+                    variants={containerVariants}
+                    className="mt-6 grid gap-3 sm:grid-cols-2"
+                  >
+                    {heroFocus.map((point, idx) => (
+                      <motion.li
+                        key={`${point}-${idx}`}
+                        variants={itemVariants.fromBottom}
+                        className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-sm text-slate-200 shadow-sm backdrop-blur sm:text-base"
+                      >
+                        <span className="mt-1 inline-block h-2.5 w-2.5 flex-none rounded-full bg-teal-400" />
+                        <span>{point}</span>
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                )}
+
+                <motion.div
+                  variants={itemVariants.fromBottom}
+                  className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4"
+                >
+                  <Link
+                    href="/projects"
+                    className="inline-flex items-center gap-2 rounded-full bg-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-500/30 transition hover:bg-teal-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60"
+                  >
+                    <ArrowRightIcon className="h-5 w-5" />
+                    {t("cta.primary")}
+                  </Link>
+                  <a
+                    href={t("cta.secondaryHref")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-white/30 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60"
+                  >
+                    {t("cta.secondary")}
+                  </a>
+                </motion.div>
+
+                <motion.div
+                  variants={itemVariants.fromBottom}
+                  className="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-300 sm:text-base"
+                >
+                  <span className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400 sm:text-sm">
+                    {t("hero.socialLabel")}
+                  </span>
+                  <div className="flex items-center gap-4">
+                    <motion.a
+                      href="https://github.com/cwsquentin"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.15, rotate: 4 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-white transition hover:border-white/30 hover:text-teal-300"
+                      aria-label="GitHub"
+                    >
+                      <GithubIcon className="h-5 w-5" />
+                    </motion.a>
+                    <motion.a
+                      href="https://www.linkedin.com/in/quentin-petiteville/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.15, rotate: -4 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-white transition hover:border-white/30 hover:text-teal-300"
+                      aria-label="LinkedIn"
+                    >
+                      <LinkedinIcon className="h-5 w-5" />
+                    </motion.a>
+                  </div>
+                </motion.div>
+              </div>
+
+              <motion.aside
+                variants={itemVariants.fromBottom}
+                className="w-full max-w-sm rounded-2xl border border-white/10 bg-slate-950/75 p-6 text-left shadow-xl backdrop-blur"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-teal-300/80">
+                  {t("hero.sidebar.eyebrow")}
+                </p>
+                <h3 className="mt-3 text-2xl font-semibold text-white">
+                  {t("hero.sidebar.title")}
+                </h3>
+                <p className="mt-2 text-sm text-slate-300">
+                  {t("hero.sidebar.description")}
+                </p>
+
+                {heroStats.length > 0 && (
+                  <dl className="mt-6 space-y-4">
+                    {heroStats.map((stat, idx) => (
+                      <div key={`${stat.label}-${idx}`}>
+                        <dt className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-200/70">
+                          {stat.label}
+                        </dt>
+                        <dd className="mt-1 text-sm font-medium text-slate-100">
+                          {stat.value}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                )}
+
+                <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200 shadow-inner">
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-teal-200/80">
+                    {t("hero.sidebar.availabilityLabel")}
+                  </p>
+                  <p className="mt-2 text-base font-semibold text-white">
+                    {t("availability")}
+                  </p>
+                  <p className="mt-3 text-xs text-slate-300">
+                    {t("hero.sidebar.note")}
+                  </p>
+                  <p className="mt-2 text-xs text-slate-400">
+                    {t("hero.sidebar.timezone")}
+                  </p>
+                </div>
+
+                <Link
+                  href="/contact"
+                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full border border-teal-500/40 bg-teal-500/10 px-5 py-2.5 text-sm font-semibold text-teal-200 transition hover:border-teal-400 hover:bg-teal-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60"
+                >
+                  <ArrowRightIcon className="h-4 w-4" />
+                  {t("hero.sidebar.contact")}
+                </Link>
+              </motion.aside>
+            </div>
           </motion.div>
-        </motion.div>
+        </div>
       </section>
 
       <section className="px-4 py-16 sm:px-6 lg:py-20">

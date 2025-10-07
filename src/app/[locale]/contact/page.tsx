@@ -16,5 +16,23 @@ export async function generateMetadata({
 }
 
 export default function ContactPage() {
-  return <ContactAnimations />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    email: "mailto:contact@quentinpetiteville.me",
+    sameAs: [
+      "https://github.com/cwsquentin",
+      "https://www.linkedin.com/in/quentin-petiteville/"
+    ]
+  };
+
+  return (
+    <>
+      <ContactAnimations />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+    </>
+  );
 }
