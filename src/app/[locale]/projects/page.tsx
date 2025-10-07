@@ -23,12 +23,12 @@ export default async function ProjectsPage({ params }: Params) {
   const t = await getTranslations({ locale, namespace: "projects" });
 
   return (
-    <section id="projects" className="min-h-screen px-6 py-20">
+    <section id="projects" className="min-h-screen px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto w-full max-w-6xl">
         <div className="space-y-4">
-          <h2 className="text-4xl font-bold text-slate-100">{t("title")}</h2>
+          <h2 className="text-3xl font-bold text-slate-100 sm:text-4xl">{t("title")}</h2>
           <div className="h-1 w-16 bg-indigo-500" />
-          <p className="text-lg text-slate-400">{t("intro")}</p>
+          <p className="text-base text-slate-400 sm:text-lg">{t("intro")}</p>
         </div>
 
         <div className="mt-10 space-y-8">

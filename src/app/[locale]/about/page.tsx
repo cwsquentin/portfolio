@@ -7,6 +7,7 @@ import DownloadIcon from "~icons/streamline/download-file";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { itemVariants } from "@/animation";
+import TimelineRoadmap, { type TimelineEntry } from "@/app/components/timeline-roadmap";
 
 export async function generateMetadata({
   params,
@@ -21,22 +22,17 @@ export async function generateMetadata({
   };
 }
 
-type TimelineItem = {
-  year: string;
-  title: string;
-  institution: string;
-  description: string;
-  side: "left" | "right";
-};
+type TimelineItem = TimelineEntry;
 
 export default function AboutPage() {
   const t = useTranslations("about");
   const experience = t.raw("experience") as TimelineItem[];
   const education = t.raw("education") as TimelineItem[];
+  const resumeHref = t("resume.href");
 
   return (
-    <section className="py-40">
-      <div className="mx-auto max-w-6xl px-5">
+    <section className="py-16 sm:py-24 lg:py-40">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <motion.div
           variants={itemVariants.fromBottom}
           initial="hidden"
@@ -44,18 +40,18 @@ export default function AboutPage() {
           transition={{ duration: 0.7 }}
           className="mx-auto max-w-3xl"
         >
-          <p className="text-base font-medium">
+          <p className="text-sm font-medium text-slate-200 sm:text-base">
             {t("hero.intro")}
           </p>
 
-          <h1 className="text-6xl font-extrabold leading-tight tracking-tight text-teal-400">
+          <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-teal-400 sm:text-5xl lg:text-6xl">
             {t("hero.name")}
           </h1>
-          <p className="text-lg text-grey-300">
+          <p className="text-base text-grey-300 sm:text-lg">
             {t("hero.subtitle")}
           </p>
 
-          <div className="mt-4 flex items-center gap-1">
+          <div className="mt-4 flex flex-wrap items-center gap-2 sm:gap-3">
             <a
               href="https://github.com/cwsquentin"
               target="_blank"
@@ -80,14 +76,14 @@ export default function AboutPage() {
             </a>
           </div>
 
-          <div className="mt-6 space-y-4 text-base leading-relaxed">
+          <div className="mt-6 space-y-4 text-sm leading-relaxed text-slate-200 sm:text-base">
             <p>{t("hero.p1")}</p>
             <p>{t("hero.p2")}</p>
             <p>{t("hero.p3")}</p>
           </div>
 
-          <div className="mt-7">
-            <p className="mb-3 font-medium text-teal-400/90">
+          <div className="mt-8">
+            <p className="mb-3 text-sm font-medium text-teal-400/90 sm:text-base">
               {t("hero.ctaLead")}
             </p>
             <Link
@@ -99,24 +95,7 @@ export default function AboutPage() {
           </div>
         </motion.div>
 
-        <div className="relative mt-20">
-          <motion.div
-            initial={{ height: 0 }}
-            whileInView={{ height: "100%" }}
-            transition={{ duration: 2, ease: "easeInOut" }}
-            viewport={{ once: true }}
-            className="absolute left-1/2 -translate-x-1/2 transform bg-teal-600/30"
-            style={{ width: 2 }}
-          />
-          <div className="space-y-12">
-            {experience.map((item, idx) => (
-              <ItemRow key={`exp-${idx}`} item={item} idx={idx} />
-            ))}
-            {education.map((item, idx) => (
-              <ItemRow key={`edu-${idx}`} item={item} idx={idx} />
-            ))}
-          </div>
-        </div>
+        <TimelineRoadmap items={[...experience, ...education]} />
 
         <motion.div
           variants={itemVariants.fromBottom}
@@ -127,7 +106,7 @@ export default function AboutPage() {
           className="mt-16 text-center"
         >
           <a
-            href={t("resume.href")}
+            href={resumeHref}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-teal-500 px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-teal-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60"
@@ -138,55 +117,5 @@ export default function AboutPage() {
         </motion.div>
       </div>
     </section>
-  );
-}
-
-function ItemRow({ item, idx }: { item: TimelineItem; idx: number }) {
-  const isLeft = item.side === "left";
-  return (
-    <motion.div
-      variants={isLeft ? itemVariants.fromLeft : itemVariants.fromRight}
-      initial="hidden"
-      whileInView="visible"
-      transition={{ duration: 0.6, delay: idx * 0.15 }}
-      viewport={{ once: true }}
-      className={`flex items-center ${isLeft ? "flex-row-reverse" : ""}`}
-    >
-      <div className={`w-1/2 ${isLeft ? "pl-8 text-right" : "pr-8"}`}>
-        <motion.div
-          whileHover={{ scale: 1.02, y: -5 }}
-          transition={{ duration: 0.2 }}
-          className="rounded-lg border border-white/10 bg-black/30 p-6 shadow-lg hover:shadow-xl"
-        >
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.25 + idx * 0.15 }}
-            viewport={{ once: true }}
-            className="mb-2 text-sm font-semibold text-teal-400"
-          >
-            {item.year}
-          </motion.div>
-          <h3 className="mb-2 text-xl font-bold">{item.title}</h3>
-          <div className="mb-3 font-medium text-teal-400">{item.institution}</div>
-          <p className="text-sm leading-relaxed">{item.description}</p>
-        </motion.div>
-      </div>
-
-      <motion.div
-        initial={{ scale: 0 }}
-        whileInView={{ scale: 1 }}
-        transition={{ duration: 0.4, delay: idx * 0.15 }}
-        viewport={{ once: true }}
-        className="relative z-10"
-      >
-        <motion.div
-            whileHover={{ scale: 1.2 }}
-            className="h-4 w-4 cursor-pointer rounded-full border-4 bg-teal-500"
-        />
-      </motion.div>
-
-      <div className="w-1/2" />
-    </motion.div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import ArrowRightIcon from "~icons/lucide/arrow-right";
+import ArrowRightIcon from "~icons/mdi/arrow-right";
 import GithubIcon from "~icons/mdi/github";
 import LinkedinIcon from "~icons/mdi/linkedin";
 import { Link } from "@/i18n/navigation";
@@ -21,25 +21,25 @@ export default function Footer() {
   const pathname = usePathname();
 
   return (
-    <footer className="mt-auto border-t border-white/10 bg-black">
-      <div className="mx-auto max-w-6xl px-6 pt-20 pb-2.5">
-        <div className="flex items-start justify-between gap-10">
+    <footer className="mt-auto overflow-hidden rounded-t-3xl border-t border-white/10 bg-black">
+      <div className="mx-auto max-w-6xl px-4 pt-16 pb-3 sm:px-6 sm:pt-20">
+        <div className="flex flex-col items-start justify-between gap-10 sm:flex-row">
           <div className="space-y-3">
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 text-4xl font-bold text-teal-400 font-heading"
+              className="group inline-flex items-center gap-2 text-3xl font-bold text-teal-400 font-heading sm:text-4xl"
             >
               <span>{t("footer.cta")}</span>
               <ArrowRightIcon className="size-6 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
 
-            <p className="max-w-xs text-md text-slate-400">
+            <p className="max-w-xs text-base text-slate-400">
               {t("footer.tagline")}
             </p>
           </div>
 
-          <div className="flex items-start gap-7.5">
-            <nav className="flex flex-col">
+          <div className="flex w-full flex-col items-start gap-6 sm:w-auto sm:flex-row sm:items-start sm:gap-7">
+            <nav className="flex flex-wrap gap-1 sm:flex-col">
               {NAV.map((item) => {
                 const basePath = pathname.replace(/^\/[a-z]{2}/, '') || '/';
                 const isActive = basePath === item.href || (item.href !== "/" && basePath.startsWith(item.href));
@@ -47,7 +47,7 @@ export default function Footer() {
                   <Link
                     key={item.key}
                     href={item.href}
-                    className={`p-1 text-md font-medium rounded-md border border-transparent hover:bg-teal-400/10 hover:text-teal-400 transition-colors ${
+                    className={`rounded-md border border-transparent p-1 text-sm font-medium transition-colors hover:bg-teal-400/10 hover:text-teal-400 sm:text-base ${
                       isActive ? "text-teal-400" : "text-slate-200"
                     }`}
                   >
@@ -57,7 +57,7 @@ export default function Footer() {
               })}
             </nav>
 
-            <div className="flex flex-col gap-2 pt-1">
+            <div className="flex gap-3 pt-1 sm:flex-col">
               <a
                 href="https://github.com/cwsquentin"
                 target="_blank"

@@ -34,25 +34,27 @@ export function ProjectCard({
       className="w-full overflow-hidden rounded-2xl border border-slate-700 bg-slate-800/60 shadow-md transition-all duration-300 hover:border-indigo-500/50"
     >
       <div className="md:flex">
-        <div className="relative overflow-hidden md:w-1/2">
+  <div className="relative h-56 overflow-hidden sm:h-64 md:h-auto md:min-h-[18rem] md:w-1/2">
           <Image
             src={image}
             alt={title}
-            className="h-64 w-full object-cover"
+            className="object-cover"
             fill
             placeholder="blur"
           />
         </div>
 
-        <div className="p-6 md:w-1/2">
+        <div className="p-5 md:w-1/2 md:p-6">
           <div className="space-y-4">
             <motion.h3
-              className="text-2xl font-bold text-slate-100"
+              className="text-xl font-bold text-slate-100 sm:text-2xl"
               whileHover={{ x: 4 }}
             >
               {title}
             </motion.h3>
-            <p className="mt-2 leading-relaxed text-slate-300">{description}</p>
+            <p className="mt-2 text-sm leading-relaxed text-slate-300 sm:text-base">
+              {description}
+            </p>
 
             <div className="flex flex-wrap gap-2">
               {technologies.map((tech, i) => (
@@ -70,7 +72,7 @@ export function ProjectCard({
               ))}
             </div>
 
-            <div className="flex gap-4 pt-2">
+            <div className="flex flex-wrap gap-3 pt-2">
               {confidential ? (
                 <>
                   <button

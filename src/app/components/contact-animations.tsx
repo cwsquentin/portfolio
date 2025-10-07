@@ -105,34 +105,34 @@ export default function ContactAnimations() {
   });
 
   return (
-    <div className="min-h-220 flex items-center justify-center py-20">
-      <motion.div 
+    <div className="flex min-h-[25rem] items-center justify-center px-4 py-16 sm:px-6 sm:py-50">
+      <motion.div
         variants={itemVariants.fromBottom}
         initial="hidden"
         animate="visible"
-        className="w-full px-6 text-center"
+        className="w-full max-w-5xl text-center"
       >
         <div className="mb-16">
-          <h2 className="text-2xl font-medium mb-8">
+          <h2 className="mb-6 text-xl font-medium sm:text-2xl">
             {t("title")}
           </h2>
 
           <div className="relative overflow-hidden whitespace-nowrap">
             <motion.div
               style={{ transform: `translateX(${emailOffset}px)` }}
-              className="inline-flex text-4xl md:text-6xl font-bold will-change-transform"
+              className="inline-flex text-2xl font-bold will-change-transform sm:text-4xl md:text-6xl"
             >
               {Array.from({ length: REPEAT_COUNT }).map((_, i) => (
                 <span key={i} className="inline-flex items-center">
                   <Link
                     href="mailto:contact@quentinpetiteville.me"
-                    className="hover:text-teal-400 transition-colors cursor-pointer whitespace-nowrap"
+                    className="cursor-pointer whitespace-nowrap transition-colors hover:text-teal-400"
                     onMouseEnter={() => setEmailHovered(true)}
                     onMouseLeave={() => setEmailHovered(false)}
                   >
                     contact@quentinpetiteville.me
                   </Link>
-                  <span className="mx-8 opacity-70">•</span>
+                  <span className="mx-4 text-lg opacity-70 sm:mx-6 md:mx-8">•</span>
                 </span>
               ))}
             </motion.div>
@@ -140,20 +140,20 @@ export default function ContactAnimations() {
         </div>
 
         <div className="mt-20">
-          <h2 className="text-2xl font-medium mb-8">
+          <h2 className="mb-6 text-xl font-medium sm:text-2xl">
             {t("socialsTitle")}
           </h2>
 
           <div className="relative overflow-hidden whitespace-nowrap">
             <motion.div
               style={{ transform: `translateX(${socialOffset}px)` }}
-              className="inline-flex text-3xl md:text-5xl font-bold will-change-transform"
+              className="inline-flex text-xl font-bold will-change-transform sm:text-3xl md:text-5xl"
             >
               {Array.from({ length: REPEAT_COUNT }).map((_, i) => (
                 <span key={i} className="inline-flex items-center">
                   <Link
                     href="https://github.com/cwsquentin"
-                    className="hover:text-teal-400 transition-colors whitespace-nowrap"
+                    className="whitespace-nowrap transition-colors hover:text-teal-400"
                     target="_blank"
                     rel="noopener noreferrer"
                     onMouseEnter={() => setSocialsHovered(true)}
@@ -161,10 +161,10 @@ export default function ContactAnimations() {
                   >
                     GitHub
                   </Link>
-                  <span className="mx-6 opacity-70">•</span>
+                  <span className="mx-4 text-lg opacity-70 sm:mx-5 md:mx-6">•</span>
                   <Link
                     href="https://www.linkedin.com/in/quentin-petiteville/"
-                    className="hover:text-teal-400 transition-colors whitespace-nowrap"
+                    className="whitespace-nowrap transition-colors hover:text-teal-400"
                     target="_blank"
                     rel="noopener noreferrer"
                     onMouseEnter={() => setSocialsHovered(true)}
@@ -172,7 +172,7 @@ export default function ContactAnimations() {
                   >
                     LinkedIn
                   </Link>
-                  <span className="mx-6 opacity-70">•</span>
+                  <span className="mx-4 text-lg opacity-70 sm:mx-5 md:mx-6">•</span>
                 </span>
               ))}
             </motion.div>

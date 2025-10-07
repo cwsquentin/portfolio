@@ -17,6 +17,11 @@ const NAV: { key: NavKey; href: `/${NavKey}`; Icon: ComponentType<SVGProps<SVGSV
   { key: "contact", href: "/contact", Icon: ContactIcon }
 ];
 
+const MOBILE_NAV: { key: "home" | NavKey; href: string; Icon?: ComponentType<SVGProps<SVGSVGElement>> }[] = [
+  { key: "home", href: "/", Icon: HomeIcon },
+  ...NAV
+];
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -49,8 +54,8 @@ export default function Header() {
 
   return (
     <header className="fixed inset-x-0 top-4 z-50 w-full text-white">
-      <div className="flex justify-between lg:justify-center items-center px-4">
-        <div className="flex items-center gap-3 rounded-full border border-white/10 bg-black/70 px-3 py-2 shadow-lg backdrop-blur-md">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-3 sm:px-4 lg:justify-center">
+        <div className="flex flex-wrap items-center gap-2 rounded-full border border-white/10 bg-black/70 px-3 py-2 shadow-lg backdrop-blur-md sm:gap-3">
           <Link
             href="/"
             aria-label={t("navigation.home")}
@@ -66,8 +71,8 @@ export default function Header() {
             <HomeIcon className="size-4" />
           </Link>
 
-          <span className="hidden lg:block mx-1 h-6 w-px bg-white/10" aria-hidden />
-          <nav className="hidden lg:flex items-center gap-1">
+          <span className="mx-1 hidden h-6 w-px bg-white/10 lg:block" aria-hidden />
+          <nav className="hidden items-center gap-1 lg:flex">
             {NAV.map(({ key, href, Icon }) => {
               const active = pathname === href || pathname === `/${locale}${href}`;
               return (
@@ -89,7 +94,7 @@ export default function Header() {
             })}
           </nav>
 
-          <span className="mx-1 h-6 w-px bg-white/10" aria-hidden />
+          <span className="mx-1 hidden h-6 w-px bg-white/10 sm:block" aria-hidden />
           <div className="flex items-center gap-1">
             {routing.locales.map((lng) => {
               const active = locale === lng;
@@ -114,84 +119,55 @@ export default function Header() {
           </div>
         </div>
 
-        <button
-          className="lg:hidden bg-black/70 text-xs font-bold uppercase px-4 py-3 rounded-full shadow-lg text-slate-300 hover:text-white hover:bg-white/5 transition"
-          onClick={() => setMobileMenuOpen(true)}
-          aria-label={t("menubtn")}
-        >
-          {t("menubtn")}
-        </button>
-      </div>
-
-      <div
-        className={clsx(
-          "fixed inset-0 z-40 bg-black/50 transition-opacity duration-300",
-          mobileMenuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        )}
-        aria-hidden="true"
-        onClick={() => setMobileMenuOpen(false)}
-      />
-
-      <div
-        className={clsx(
-          "fixed top-0 right-0 bottom-0 w-64 z-50 transition-transform duration-300 ease-in-out transform",
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full",
-          "bg-black/70 text-white shadow-2xl"
-        )}
-      >
-        <div
-          className="h-full p-3 overflow-y-auto relative flex flex-col justify-start"
-          ref={menuRef}
-        >
+        <div className="relative lg:hidden" ref={menuRef}>
           <button
-            className="absolute top-4 right-4 text-4xl cursor-pointer text-white focus:outline-none hover:opacity-80 transition"
-            aria-label={t("button.close")}
-            onClick={() => setMobileMenuOpen(false)}
+            className={clsx(
+              "flex items-center gap-2 rounded-full bg-black/70 px-4 py-2 text-xs font-bold uppercase text-slate-300 transition shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60",
+              mobileMenuOpen && "bg-white/10 text-white"
+            )}
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+            aria-label={t("menubtn")}
+            aria-expanded={mobileMenuOpen}
+            aria-haspopup="menu"
           >
-            &times;
+            {t("menubtn")}
           </button>
 
-          <div className="mt-16 flex flex-col items-center space-y-6">
-            <div className="text-lg font-semibold text-center w-full">
-              {NAV.map(({ key, href }) => {
-                const isActive = pathname === href || pathname === `/${locale}${href}`;
+          <div
+            className={clsx(
+              "absolute right-0 top-12 w-52 origin-top-right overflow-hidden rounded-3xl border border-white/15 bg-slate-950/90 p-3 text-white shadow-2xl backdrop-blur transition duration-200",
+              mobileMenuOpen
+                ? "pointer-events-auto scale-100 opacity-100"
+                : "pointer-events-none scale-95 opacity-0"
+            )}
+            role="menu"
+          >
+            <nav className="flex flex-col gap-1" aria-label={t("menubtn")}>
+              {MOBILE_NAV.map(({ key, href, Icon }) => {
+                const isActive =
+                  key === "home"
+                    ? isHomeActive
+                    : pathname === href || pathname === `/${locale}${href}`;
+
                 return (
                   <Link
                     key={key}
                     href={href}
+                    locale={locale}
                     className={clsx(
-                      "block w-full transition duration-200 hover:bg-white hover:text-black px-4 py-3",
-                      isActive && "bg-white text-black"
+                      "flex items-center gap-3 rounded-2xl px-3 py-2 text-sm font-medium transition",
+                      isActive
+                        ? "bg-white text-slate-900"
+                        : "hover:bg-white/5 hover:text-white text-slate-200"
                     )}
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {t(`navigation.${key}`)}
+                    {Icon ? <Icon className="h-4 w-4" /> : null}
+                    <span>{t(`navigation.${key}`)}</span>
                   </Link>
                 );
               })}
-            </div>
-
-            <div className="w-full uppercase text-2xs font-semibold py-3 space-y-5">
-              <div className="flex justify-center space-x-6">
-                {routing.locales.map((lng) => (
-                  <Link
-                    key={lng}
-                    href={pathname}
-                    locale={lng}
-                    scroll={false}
-                    className={clsx(
-                      "hover:underline text-xs font-bold underline-offset-4 transition",
-                      locale === lng && "underline"
-                    )}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {t(`navigation.${lng}`)}
-                  </Link>
-                ))}
-              </div>
-            </div>
+            </nav>
           </div>
         </div>
       </div>
