@@ -54,7 +54,7 @@ export default function Header() {
 
   return (
     <header className="fixed inset-x-0 top-4 z-50 w-full text-white">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-3 sm:px-4 lg:justify-center">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-3 sm:px-4 md:justify-center">
         <div className="flex flex-wrap items-center gap-2 rounded-full border border-white/10 bg-black/70 px-3 py-2 shadow-lg backdrop-blur-md sm:gap-3">
           <Link
             href="/"
@@ -71,8 +71,8 @@ export default function Header() {
             <HomeIcon className="size-4" />
           </Link>
 
-          <span className="mx-1 hidden h-6 w-px bg-white/10 lg:block" aria-hidden />
-          <nav className="hidden items-center gap-1 lg:flex">
+          <span className="mx-1 hidden h-6 w-px bg-white/10 md:block" aria-hidden />
+          <nav className="hidden items-center gap-1 md:flex">
             {NAV.map(({ key, href, Icon }) => {
               const active = pathname === href || pathname === `/${locale}${href}`;
               return (
@@ -119,7 +119,7 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="relative lg:hidden" ref={menuRef}>
+        <div className="relative md:hidden" ref={menuRef}>
           <button
             className={clsx(
               "flex items-center gap-2 rounded-full bg-black/70 px-4 py-2 text-xs font-bold uppercase text-slate-300 transition shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60",

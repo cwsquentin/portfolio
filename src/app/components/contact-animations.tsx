@@ -105,7 +105,7 @@ export default function ContactAnimations() {
   });
 
   return (
-    <div className="flex min-h-[25rem] items-center justify-center px-4 py-16 sm:px-6 sm:py-50">
+    <div className="flex min-h-[25rem] items-center justify-center px-4 py-50 sm:px-6 sm:py-70">
       <motion.div
         variants={itemVariants.fromBottom}
         initial="hidden"
