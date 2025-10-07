@@ -10,6 +10,14 @@
     "en": "EN",
     "fr": "FR"
   },
+  "menubtn": "Menu",
+  "button": {
+    "close": "Fermer"
+  },
+  "languages": {
+    "en": "Anglais",
+    "fr": "Français"
+  },
   "footer": {
     "cta": "Contactez-moi !",
     "tagline": "Vous avez un projet en tête ? Construisons quelque chose d’extraordinaire ensemble !",

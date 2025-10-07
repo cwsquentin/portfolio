@@ -17,7 +17,6 @@
     "@iconify/react": "^6.0.2",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.22",
-    "lucide-react": "^0.544.0",
     "motion": "^12.23.22",
     "next": "^15.5.4",
     "next-intl": "^4.3.9",
@@ -26,6 +25,8 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

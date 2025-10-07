@@ -1,6 +1,7 @@
 import { SnakeBackground } from "@/app/components/snake-background";
 import * as motion from "motion/react-client";
-import { Icon } from "@iconify/react";
+import GithubIcon from "~icons/lucide/github";
+import LinkedinIcon from "~icons/lucide/linkedin";
 import { useTranslations } from "next-intl";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
@@ -90,7 +91,7 @@ export default function Home() {
               className="transition-colors duration-300"
               aria-label="GitHub"
             >
-              <Icon icon="lucide:github" width={28} height={28} />
+              <GithubIcon className="h-7 w-7" />
             </motion.a>
 
             <motion.a
@@ -102,7 +103,7 @@ export default function Home() {
               className="transition-colors duration-300"
               aria-label="LinkedIn"
             >
-              <Icon icon="lucide:linkedin" width={28} height={28} />
+              <LinkedinIcon className="h-7 w-7" />
             </motion.a>
           </motion.div>
         </motion.div>

@@ -1,7 +1,9 @@
 import { useTranslations } from "next-intl";
 import * as motion from "motion/react-client";
 import { Link } from "@/i18n/navigation";
-import { Icon } from "@iconify/react";
+import GithubIcon from "~icons/mdi/github";
+import LinkedinIcon from "~icons/mdi/linkedin";
+import DownloadIcon from "~icons/streamline/download-file";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { itemVariants } from "@/animation";
@@ -62,7 +64,7 @@ export default function AboutPage() {
               aria-label="GitHub"
               title="GitHub"
             >
-              <Icon icon="mdi:github" className="h-4 w-4" />
+              <GithubIcon className="h-4 w-4" />
               <span>GitHub</span>
             </a>
             <a
@@ -73,7 +75,7 @@ export default function AboutPage() {
               aria-label="LinkedIn"
               title="LinkedIn"
             >
-              <Icon icon="mdi:linkedin" className="h-4 w-4" />
+              <LinkedinIcon className="h-4 w-4" />
               <span>LinkedIn</span>
             </a>
           </div>
@@ -130,7 +132,7 @@ export default function AboutPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-teal-500 px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-teal-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60"
           >
-            <Icon icon="streamline:download-file" className="h-4 w-4" />
+            <DownloadIcon className="h-4 w-4" />
             {t("resume.button")}
           </a>
         </motion.div>

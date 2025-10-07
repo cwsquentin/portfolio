@@ -1,6 +1,8 @@
 "use client";
 
-import { Icon } from "@iconify/react";
+import ArrowRightIcon from "~icons/lucide/arrow-right";
+import GithubIcon from "~icons/mdi/github";
+import LinkedinIcon from "~icons/mdi/linkedin";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
@@ -28,7 +30,7 @@ export default function Footer() {
               className="group inline-flex items-center gap-2 text-4xl font-bold text-teal-400 font-heading"
             >
               <span>{t("footer.cta")}</span>
-              <Icon icon="lucide:arrow-right" className="size-6 transition-transform duration-200 group-hover:translate-x-1" />
+              <ArrowRightIcon className="size-6 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
 
             <p className="max-w-xs text-md text-slate-400">
@@ -64,7 +66,7 @@ export default function Footer() {
                 aria-label={t("social.github")}
                 title={t("social.github")}
               >
-                <Icon icon="mdi:github" width={35} height={35} />
+                <GithubIcon className="h-[35px] w-[35px]" />
               </a>
               <a
                 href="https://www.linkedin.com/in/quentin-petiteville/"
@@ -74,7 +76,7 @@ export default function Footer() {
                 aria-label={t("social.linkedin")}
                 title={t("social.linkedin")}
               >
-                <Icon icon="mdi:linkedin" width={35} height={35} />
+                <LinkedinIcon className="h-[35px] w-[35px]" />
               </a>
             </div>
           </div>

@@ -1,17 +1,20 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { Icon } from "@iconify/react";
+import { useState, useEffect, useRef, type ComponentType, type SVGProps } from "react";
+import HomeIcon from "~icons/mdi/home";
+import AboutIcon from "~icons/mdi/account-circle";
+import ProjectsIcon from "~icons/mdi/grid";
+import ContactIcon from "~icons/mdi/email";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { routing } from "@/i18n/routing";
 import clsx from "clsx";
 
 type NavKey = "about" | "projects" | "contact";
-const NAV: { key: NavKey; href: `/${NavKey}`; icon: string }[] = [
-  { key: "about", href: "/about", icon: "mdi:account-circle" },
-  { key: "projects", href: "/projects", icon: "mdi:grid" },
-  { key: "contact", href: "/contact", icon: "mdi:email" },
+const NAV: { key: NavKey; href: `/${NavKey}`; Icon: ComponentType<SVGProps<SVGSVGElement>> }[] = [
+  { key: "about", href: "/about", Icon: AboutIcon },
+  { key: "projects", href: "/projects", Icon: ProjectsIcon },
+  { key: "contact", href: "/contact", Icon: ContactIcon }
 ];
 
 export default function Header() {
@@ -60,12 +63,12 @@ export default function Header() {
             )}
             title={t("navigation.home")}
           >
-            <Icon icon="mdi:home" className="size-4" />
+            <HomeIcon className="size-4" />
           </Link>
 
           <span className="hidden lg:block mx-1 h-6 w-px bg-white/10" aria-hidden />
           <nav className="hidden lg:flex items-center gap-1">
-            {NAV.map(({ key, href, icon }) => {
+            {NAV.map(({ key, href, Icon }) => {
               const active = pathname === href || pathname === `/${locale}${href}`;
               return (
                 <Link
@@ -79,7 +82,7 @@ export default function Header() {
                       : "text-slate-300 hover:text-white hover:bg-white/5"
                   )}
                 >
-                  <Icon icon={icon} className="size-4 opacity-90" />
+                  <Icon className="size-4 opacity-90" />
                   <span className="font-heading">{t(`navigation.${key}`)}</span>
                 </Link>
               );
