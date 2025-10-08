@@ -4,12 +4,11 @@
   },
   "hero": {
     "intro": "My name is",
-    "prefix": "",
     "name": "Quentin Petiteville",
     "subtitle": "Software Engineering Student",
-    "p1": "I focus on building accessible, pixel-perfect experiences for the web using modern tooling and thoughtful UX.",
-    "p2": "I enjoy solving real problems, turning ideas into robust, maintainable solutions, and continuously improving performance and quality.",
-    "p3": "I’m currently pursuing my degree in Software Engineering and love blending solid engineering with design that feels intuitive.",
+    "p1": "I am a 21-year-old student in my fifth year of engineering studies based in Lille, France.",
+    "p2": "I enjoy solving real-world problems and turning ideas into robust, reliable, and easily maintainable solutions, while continuously improving performance and quality.",
+    "p3": "Looking for new opportunities and projects, I’m seeking a six-month end-of-studies internship starting on March 4, 2026.",
     "ctaLead": "Got a project in mind ?",
     "ctaBtn": "Contact Me !"
   },
