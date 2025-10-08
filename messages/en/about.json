@@ -10,11 +10,100 @@
     "p2": "I enjoy solving real-world problems and turning ideas into robust, reliable, and easily maintainable solutions, while continuously improving performance and quality.",
     "p3": "Looking for new opportunities and projects, I’m seeking a six-month end-of-studies internship starting on March 4, 2026.",
     "ctaLead": "Got a project in mind ?",
-    "ctaBtn": "Contact Me !"
+    "ctaBtn": "Contact Me !",
+    "focusTitle": "What I focus on",
+    "focus": [
+      "Frontend craftsmanship with React, Next.js, and modern tooling",
+      "Machine learning experimentation with Python and TensorFlow",
+      "Data storytelling that turns analysis into usable insights"
+    ],
+    "quickStats": [
+      {
+        "label": "Based in",
+        "value": "Lille, France"
+      },
+      {
+        "label": "Studies",
+        "value": "M2 Software Engineering — Big Data & Management"
+      },
+      {
+        "label": "Availability",
+        "value": "Six-month internship starting March 4, 2026"
+      }
+    ],
+    "connectLabel": "Let's connect"
   },
   "resume": {
     "button": "Download My Resume",
     "href": "/downloads/CV_FR_EN.pdf"
+  },
+  "sections": {
+    "introduction": "Introduction",
+    "experiences": "Experiences",
+    "skills": "Skills"
+  },
+  "timeline": {
+    "title": "Experiences"
+  },
+  "skills": {
+    "title": "Skills",
+    "lead": "Technologies and strengths I rely on as a software engineering student, developed through my studies and projects.",
+    "categories": [
+      {
+        "title": "Hard & soft skills",
+        "items": [
+          "Autonomy",
+          "Problem solving",
+          "Emotional intelligence",
+          "Cross-cultural collaboration",
+          "Agile teamwork"
+        ]
+      },
+      {
+        "title": "Programming languages",
+        "items": [
+          "Java",
+          "Python",
+          "C / C++ / C#",
+          "Swift",
+          "Kotlin"
+        ]
+      },
+      {
+        "title": "Web development",
+        "items": [
+          "JavaScript",
+          "TypeScript",
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "Vue.js",
+          "Node.js"
+        ]
+      },
+      {
+        "title": "AI & data",
+        "items": [
+          "TensorFlow",
+          "Keras",
+          "PyTorch",
+          "Scikit-learn",
+          "Pandas",
+          "Data analysis",
+          "Machine learning"
+        ]
+      },
+      {
+        "title": "Tools & platforms",
+        "items": [
+          "SQL / PostgreSQL",
+          "Git",
+          "Docker",
+          "GitHub Actions",
+          "CI / CD pipelines"
+        ]
+      }
+    ]
   },
   "experience": [
     {

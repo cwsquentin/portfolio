@@ -10,11 +10,95 @@
     "p2": "J’aime résoudre des problèmes réels et transformer des idées en solutions robustes, fiables et facilement maintenables, tout en améliorant en continu la performance et la qualité.",
     "p3": "À la recherche de nouvelles opportunités et de projets, je cherche un stage de fin d’études de six mois à partir du 4 mars 2026.",
     "ctaLead": "Un projet en tête ?",
-    "ctaBtn": "Contactez-moi !"
+    "ctaBtn": "Contactez-moi !",
+    "focusTitle": "Mes axes de travail",
+    "focus": [
+      "Artisanat frontend avec React, Next.js et les outils modernes",
+      "Expérimentations en machine learning avec Python et TensorFlow",
+      "Analyse de données transformée en insights actionnables"
+    ],
+    "quickStats": [
+      {
+        "label": "Basé à",
+        "value": "Lille, France"
+      },
+      {
+        "label": "Études",
+        "value": "M2 Ingénierie logicielle — Big Data & Management"
+      },
+      {
+        "label": "Disponibilité",
+        "value": "Stage de fin d'études de six mois dès le 4 mars 2026"
+      }
+    ],
+    "connectLabel": "Restons en contact"
   },
   "resume": {
     "button": "Télécharger mon CV",
     "href": "/downloads/CV_FR_EN.pdf"
+  },
+  "timeline": {
+    "title": "Expériences"
+  },
+  "skills": {
+    "title": "Compétences",
+    "lead": "Technologies et atouts sur lesquels je m’appuie en tant qu’étudiant en ingénierie informatique, développés au fil de mes études et de mes projets.",
+    "categories": [
+      {
+        "title": "Hard & soft skills",
+        "items": [
+          "Autonomie",
+          "Résolution de problèmes",
+          "Intelligence émotionnelle",
+          "Collaboration interculturelle",
+          "Travail en équipe agile"
+        ]
+      },
+      {
+        "title": "Langages de programmation",
+        "items": [
+          "Java",
+          "Python",
+          "C / C++ / C#",
+          "Swift",
+          "Kotlin"
+        ]
+      },
+      {
+        "title": "Développement web",
+        "items": [
+          "JavaScript",
+          "TypeScript",
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "Vue.js",
+          "Node.js"
+        ]
+      },
+      {
+        "title": "IA & data",
+        "items": [
+          "TensorFlow",
+          "Keras",
+          "PyTorch",
+          "Scikit-learn",
+          "Pandas",
+          "Analyse de données",
+          "Machine learning"
+        ]
+      },
+      {
+        "title": "Outils & plateformes",
+        "items": [
+          "SQL / PostgreSQL",
+          "Git",
+          "Docker",
+          "GitHub Actions",
+          "Pipelines CI / CD"
+        ]
+      }
+    ]
   },
   "experience": [
     {
@@ -47,5 +131,10 @@
       "description": "Spécialisation en développement logiciel, analyse de données et IA. Expérience pratique en laboratoires avancés et sur des projets concrets dans un environnement IT international.",
       "side": "left"
     }
-  ]
+  ],
+  "sections": {
+    "introduction": "Introduction",
+    "experiences": "Expériences",
+    "skills": "Compétences"
+  }
 }

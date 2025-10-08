@@ -3,3 +3,7 @@
 @theme {
   --color-grey-300: #B2B2B2;
 }
+
+html {
+  scroll-behavior: smooth;
+}

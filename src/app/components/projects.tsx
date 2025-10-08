@@ -63,7 +63,6 @@ export function ProjectCard({
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.05 * i }}
                   whileHover={{ scale: 1.08 }}
                   className="cursor-default rounded bg-slate-700 px-2 py-1 text-xs text-slate-200"
                 >
