@@ -50,16 +50,6 @@
     "lead": "Technologies and strengths I rely on as a software engineering student, developed through my studies and projects.",
     "categories": [
       {
-        "title": "Hard & soft skills",
-        "items": [
-          "Autonomy",
-          "Problem solving",
-          "Emotional intelligence",
-          "Cross-cultural collaboration",
-          "Agile teamwork"
-        ]
-      },
-      {
         "title": "Programming languages",
         "items": [
           "Java",
@@ -94,13 +84,23 @@
         ]
       },
       {
-        "title": "Tools & platforms",
+        "title": "Others",
         "items": [
           "SQL / PostgreSQL",
           "Git",
           "Docker",
           "GitHub Actions",
           "CI / CD pipelines"
+        ]
+      },
+      {
+        "title": "Soft skills",
+        "items": [
+          "Autonomy",
+          "Problem solving",
+          "Emotional intelligence",
+          "Cross-cultural collaboration",
+          "Agile teamwork"
         ]
       }
     ]

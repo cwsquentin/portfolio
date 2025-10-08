@@ -82,13 +82,6 @@ export default function Home() {
 
             <div className="relative z-10 flex flex-col gap-10 p-8 sm:p-12 lg:flex-row lg:items-center lg:gap-14">
               <div className="flex-1 text-left">
-                <motion.p
-                  variants={itemVariants.fromBottom}
-                  className="text-xs font-semibold uppercase tracking-[0.35em] text-teal-300/80 sm:text-sm"
-                >
-                  {t("greeting")}
-                </motion.p>
-
                 <motion.h1
                   variants={itemVariants.fromBottom}
                   className="mt-4 text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl"

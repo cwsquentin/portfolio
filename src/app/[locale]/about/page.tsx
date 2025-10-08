@@ -178,7 +178,7 @@ export default function AboutPage() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="pb-16 pt-4 sm:pb-20"
+          className="scroll-mt-37.5 pb-16 pt-4 sm:pb-20"
         >
           <motion.div
             variants={itemVariants.fromBottom}
@@ -215,7 +215,7 @@ export default function AboutPage() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
-          className="pb-6"
+          className="scroll-mt-37.5 pb-6"
         >
           <motion.div
             variants={itemVariants.fromBottom}

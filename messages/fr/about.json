@@ -45,16 +45,6 @@
     "lead": "Technologies et atouts sur lesquels je m’appuie en tant qu’étudiant en ingénierie informatique, développés au fil de mes études et de mes projets.",
     "categories": [
       {
-        "title": "Hard & soft skills",
-        "items": [
-          "Autonomie",
-          "Résolution de problèmes",
-          "Intelligence émotionnelle",
-          "Collaboration interculturelle",
-          "Travail en équipe agile"
-        ]
-      },
-      {
         "title": "Langages de programmation",
         "items": [
           "Java",
@@ -89,13 +79,23 @@
         ]
       },
       {
-        "title": "Outils & plateformes",
+        "title": "Autres",
         "items": [
           "SQL / PostgreSQL",
           "Git",
           "Docker",
           "GitHub Actions",
           "Pipelines CI / CD"
+        ]
+      },
+      {
+        "title": "Soft skills",
+        "items": [
+          "Autonomie",
+          "Résolution de problèmes",
+          "Intelligence émotionnelle",
+          "Collaboration interculturelle",
+          "Travail en équipe agile"
         ]
       }
     ]
