@@ -153,9 +153,6 @@ export default function Home() {
                   variants={itemVariants.fromBottom}
                   className="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-300 sm:text-base"
                 >
-                  <span className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400 sm:text-sm">
-                    {t("hero.socialLabel")}
-                  </span>
                   <div className="flex items-center gap-4">
                     <motion.a
                       href="https://github.com/cwsquentin"
@@ -163,10 +160,10 @@ export default function Home() {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.15, rotate: 4 }}
                       whileTap={{ scale: 0.95 }}
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-white transition hover:border-white/30 hover:text-teal-300"
+                      className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-white transition hover:border-white/30 hover:text-teal-300"
                       aria-label="GitHub"
                     >
-                      <GithubIcon className="h-5 w-5" />
+                      <GithubIcon className="size-6" />
                     </motion.a>
                     <motion.a
                       href="https://www.linkedin.com/in/quentin-petiteville/"
@@ -174,10 +171,10 @@ export default function Home() {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.15, rotate: -4 }}
                       whileTap={{ scale: 0.95 }}
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-white transition hover:border-white/30 hover:text-teal-300"
+                      className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-white transition hover:border-white/30 hover:text-teal-300"
                       aria-label="LinkedIn"
                     >
-                      <LinkedinIcon className="h-5 w-5" />
+                      <LinkedinIcon className="size-6" />
                     </motion.a>
                   </div>
                 </motion.div>
