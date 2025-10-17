@@ -1,12 +1,12 @@
-import TimelineRoadmap, {
-  type TimelineEntry
-} from "@/app/components/timeline-roadmap";
+import TimelineRoadmap, { type TimelineEntry } from "@/app/components/timeline-roadmap";
+import SideScrollNav from "@/app/components/side-scroll-nav";
 import { containerVariants, itemVariants } from "@/animation";
 import { Link } from "@/i18n/navigation";
 import * as motion from "motion/react-client";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import clsx from "clsx";
 import GithubIcon from "~icons/mdi/github";
 import LinkedinIcon from "~icons/mdi/linkedin";
 import DownloadIcon from "~icons/streamline/download-file";
@@ -34,27 +34,36 @@ export default function AboutPage() {
   const education = (t.raw("education") as TimelineItem[]) ?? [];
   const skillCategories =
     (t.raw("skills.categories") as SkillCategory[]) ?? [];
-
   const sectionLinks = [
     { id: "introduction", label: t("sections.introduction") },
     { id: "experiences", label: t("sections.experiences") },
     { id: "skills", label: t("sections.skills") }
   ];
 
-  const firstRowCategories = skillCategories.slice(0, 3);
-  const remainingCategories = skillCategories.slice(3);
+  const xlColumnCount = 3;
+  const xlTailCount = skillCategories.length % xlColumnCount;
+  const xlTailStartIndex =
+    xlTailCount === 0 ? skillCategories.length : skillCategories.length - xlTailCount;
+  const hasOddCountForMd = skillCategories.length % 2 === 1;
 
-  const renderCategoryCard = (category: SkillCategory, index: number) => (
+  const renderCategoryCard = (
+    category: SkillCategory,
+    index: number,
+    extraClassName?: string
+  ) => (
     <motion.div
       key={`${category.title}-${index}`}
       variants={itemVariants.fromBottom}
-      className="rounded-2xl border border-white/10 bg-slate-950/70 p-6 shadow-[0_18px_40px_-32px_rgba(15,118,110,0.55)]"
+      className={clsx(
+        "rounded-2xl border border-white/10 bg-slate-950/70 p-6 shadow-[0_18px_40px_-32px_rgba(15,118,110,0.55)]",
+        extraClassName
+      )}
     >
       <h3 className="text-lg font-semibold text-white">{category.title}</h3>
       <ul className="mt-4 space-y-2 text-sm text-slate-300">
         {category.items.map((item, itemIdx) => (
           <li key={`${item}-${itemIdx}`} className="flex items-start gap-2">
-            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-teal-400" />
+            <span className="mt-1.5 size-1.5 rounded-full bg-teal-400" />
             <span>{item}</span>
           </li>
         ))}
@@ -69,42 +78,9 @@ export default function AboutPage() {
 
   return (
     <div className="relative pb-24">
-      <motion.nav
-        variants={itemVariants.fromBottom}
-        initial="hidden"
-        animate="visible"
-        className="fixed left-6 top-1/2 hidden -translate-y-1/2 flex-col gap-5 text-sm text-slate-400 lg:flex"
-      >
-        {sectionLinks.map((link) => (
-          <a
-            key={link.id}
-            href={`#${link.id}`}
-            className="group inline-flex items-center gap-3 py-1 font-medium text-slate-400 transition hover:text-teal-300"
-          >
-            <span className="h-px w-6 bg-slate-600/50 transition-all group-hover:w-8 group-hover:bg-teal-400" />
-            <span className="transition-transform group-hover:translate-x-1">
-              {link.label}
-            </span>
-          </a>
-        ))}
-      </motion.nav>
+      <SideScrollNav links={sectionLinks} />
 
-      <div className="mx-auto w-full max-w-6xl px-4 pt-20 sm:px-6 lg:px-8 lg:pl-32">
-        <nav className="mb-10 flex gap-3 overflow-x-auto text-sm text-slate-300 lg:hidden">
-          {sectionLinks.map((link) => (
-            <a
-              key={`mobile-${link.id}`}
-              href={`#${link.id}`}
-              className="group inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:border-teal-400/60 hover:text-teal-300"
-            >
-              <span className="h-px w-4 bg-slate-600/50 transition-all group-hover:w-6 group-hover:bg-teal-400" />
-              <span className="transition-transform group-hover:translate-x-1">
-                {link.label}
-              </span>
-            </a>
-          ))}
-        </nav>
-
+      <div className="mx-auto w-full max-w-6xl px-4 pt-20 sm:px-6 lg:px-8 xl:pl-32">
         <motion.section
           id="introduction"
           variants={containerVariants}
@@ -176,7 +152,7 @@ export default function AboutPage() {
           id="experiences"
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
+          animate="visible"
           viewport={{ once: true, amount: 0.3 }}
           className="scroll-mt-37.5 pb-16 pt-4 sm:pb-20"
         >
@@ -203,7 +179,7 @@ export default function AboutPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-teal-500 px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-teal-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60"
             >
-              <DownloadIcon className="h-4 w-4" />
+              <DownloadIcon className="size-4" />
               {t("resume.button")}
             </a>
           </motion.div>
@@ -230,22 +206,36 @@ export default function AboutPage() {
           </motion.div>
 
           <div className="mt-10 space-y-6">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {firstRowCategories.map((category, idx) =>
-                renderCategoryCard(category, idx)
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {skillCategories.map((category, idx) => {
+                const isMdCenteredTail =
+                  hasOddCountForMd && idx === skillCategories.length - 1;
+                const hideAtXl =
+                  xlTailCount === 2 && idx >= xlTailStartIndex ? "xl:hidden" : undefined;
+
+                const extraClassName = clsx(
+                  isMdCenteredTail &&
+                    "md:col-span-2 md:justify-self-center xl:col-span-1 xl:justify-self-auto",
+                  hideAtXl
+                );
+
+                return renderCategoryCard(category, idx, extraClassName);
+              })}
+
+              {xlTailCount === 2 && (
+                <div className="hidden xl:col-span-3 xl:flex xl:justify-center xl:gap-6">
+                  {skillCategories
+                    .slice(xlTailStartIndex)
+                    .map((category, idx) =>
+                      renderCategoryCard(
+                        category,
+                        xlTailStartIndex + idx + skillCategories.length,
+                        "xl:w-full xl:max-w-sm"
+                      )
+                    )}
+                </div>
               )}
             </div>
-
-            {remainingCategories.length > 0 && (
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-[repeat(2,minmax(0,320px))] lg:justify-center">
-                {remainingCategories.map((category, idx) =>
-                  renderCategoryCard(
-                    category,
-                    idx + firstRowCategories.length
-                  )
-                )}
-              </div>
-            )}
           </div>
         </motion.section>
       </div>
