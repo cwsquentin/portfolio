@@ -11,12 +11,6 @@
     "p3": "Looking for new opportunities and projects, I’m seeking a six-month end-of-studies internship starting on March 4, 2026.",
     "ctaLead": "Got a project in mind ?",
     "ctaBtn": "Contact Me !",
-    "focusTitle": "What I focus on",
-    "focus": [
-      "Frontend craftsmanship with React, Next.js, and modern tooling",
-      "Machine learning experimentation with Python and TensorFlow",
-      "Data storytelling that turns analysis into usable insights"
-    ],
     "quickStats": [
       {
         "label": "Based in",
@@ -55,8 +49,7 @@
           "Java",
           "Python",
           "C / C++ / C#",
-          "Swift",
-          "Kotlin"
+          "Swift"
         ]
       },
       {
@@ -99,7 +92,7 @@
           "Autonomy",
           "Problem solving",
           "Emotional intelligence",
-          "Cross-cultural collaboration",
+          "Multi-cultural collaboration",
           "Agile teamwork"
         ]
       }

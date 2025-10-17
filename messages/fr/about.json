@@ -11,12 +11,6 @@
     "p3": "À la recherche de nouvelles opportunités et de projets, je cherche un stage de fin d’études de six mois à partir du 4 mars 2026.",
     "ctaLead": "Un projet en tête ?",
     "ctaBtn": "Contactez-moi !",
-    "focusTitle": "Mes axes de travail",
-    "focus": [
-      "Artisanat frontend avec React, Next.js et les outils modernes",
-      "Expérimentations en machine learning avec Python et TensorFlow",
-      "Analyse de données transformée en insights actionnables"
-    ],
     "quickStats": [
       {
         "label": "Basé à",
@@ -50,8 +44,7 @@
           "Java",
           "Python",
           "C / C++ / C#",
-          "Swift",
-          "Kotlin"
+          "Swift"
         ]
       },
       {

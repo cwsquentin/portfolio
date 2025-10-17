@@ -1,15 +1,15 @@
+import { Button } from "@/app/components/button";
 import TimelineRoadmap, { type TimelineEntry } from "@/app/components/timeline-roadmap";
 import SideScrollNav from "@/app/components/side-scroll-nav";
 import { containerVariants, itemVariants } from "@/animation";
 import { Link } from "@/i18n/navigation";
 import * as motion from "motion/react-client";
+import { Icon } from "@iconify/react";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import clsx from "clsx";
-import GithubIcon from "~icons/mdi/github";
-import LinkedinIcon from "~icons/mdi/linkedin";
-import DownloadIcon from "~icons/streamline/download-file";
+
 
 type TimelineItem = TimelineEntry;
 type SkillCategory = { title: string; items: string[] };
@@ -63,7 +63,7 @@ export default function AboutPage() {
       <ul className="mt-4 space-y-2 text-sm text-slate-300">
         {category.items.map((item, itemIdx) => (
           <li key={`${item}-${itemIdx}`} className="flex items-start gap-2">
-            <span className="mt-1.5 size-1.5 rounded-full bg-teal-400" />
+            <span className="mt-1 size-1.5 rounded-full bg-teal-400" />
             <span>{item}</span>
           </li>
         ))}
@@ -104,7 +104,7 @@ export default function AboutPage() {
             </p>
 
             <div className="mt-4 flex flex-wrap items-center gap-2 sm:gap-3">
-              <a
+              <Link
                 href="https://github.com/cwsquentin"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -112,10 +112,10 @@ export default function AboutPage() {
                 aria-label="GitHub"
                 title="GitHub"
               >
-                <GithubIcon className="h-4 w-4" />
+                  <Icon icon="mdi:github" className="size-4" />
                 <span>GitHub</span>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="https://www.linkedin.com/in/quentin-petiteville/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -123,9 +123,9 @@ export default function AboutPage() {
                 aria-label="LinkedIn"
                 title="LinkedIn"
               >
-                <LinkedinIcon className="h-4 w-4" />
+                  <Icon icon="mdi:linkedin" className="size-4" />
                 <span>LinkedIn</span>
-              </a>
+              </Link>
             </div>
 
             <div className="mt-6 space-y-4 text-sm leading-relaxed text-slate-200 sm:text-base">
@@ -138,12 +138,16 @@ export default function AboutPage() {
               <p className="mb-3 text-sm font-medium text-teal-400/90 sm:text-base">
                 {t("hero.ctaLead")}
               </p>
-              <Link
+              <Button
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-teal-500 px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-teal-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60"
+                background="tealStrong"
+                border="whiteBase"
+                radius="xl"
+                size="mdTall"
+                className="shadow"
               >
                 {t("hero.ctaBtn")}
-              </Link>
+              </Button>
             </div>
           </motion.div>
         </motion.section>
@@ -173,15 +177,20 @@ export default function AboutPage() {
             variants={itemVariants.fromBottom}
             className="mt-12 text-center"
           >
-            <a
+            <Button
               href={resumeHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-teal-500 px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-teal-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60"
+              background="tealStrong"
+              border="whiteBase"
+              radius="xl"
+              size="mdTall"
+              className="shadow"
+              external
             >
-              <DownloadIcon className="size-4" />
+              <Icon icon="streamline:download-file" className="size-4" />
               {t("resume.button")}
-            </a>
+            </Button>
           </motion.div>
         </motion.section>
 
