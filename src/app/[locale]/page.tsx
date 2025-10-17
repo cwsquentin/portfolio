@@ -89,16 +89,9 @@ export default function Home() {
 
                 <motion.p
                   variants={itemVariants.fromBottom}
-                  className="mt-6 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg"
+                  className="mt-6 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg whitespace-pre-line"
                 >
                   {t("description")}
-                </motion.p>
-
-                <motion.p
-                  variants={itemVariants.fromBottom}
-                  className="mt-4 max-w-2xl text-sm text-slate-300 sm:text-base"
-                >
-                  {t("hero.subtitle")}
                 </motion.p>
 
                 {heroFocus.length > 0 && (
@@ -211,12 +204,6 @@ export default function Home() {
                   </p>
                   <p className="mt-2 text-base font-semibold text-white">
                     {t("availability")}
-                  </p>
-                  <p className="mt-3 text-xs text-slate-300">
-                    {t("hero.sidebar.note")}
-                  </p>
-                  <p className="mt-2 text-xs text-slate-400">
-                    {t("hero.sidebar.timezone")}
                   </p>
                 </div>
 
@@ -349,7 +336,7 @@ export default function Home() {
             {featuredProjects.map((project, index) => {
               const title = projectsT(`items.${project.id}.title`);
               const description = projectsT(`items.${project.id}.description`);
-              const tech = project.technologies.slice(0, 4);
+              const tech = project.technologies.slice(0, 5);
               const isConfidential = Boolean(project.confidential);
               const primaryHref = !isConfidential
                 ? project.demo ?? project.github ?? "/projects"
@@ -363,12 +350,11 @@ export default function Home() {
                 <motion.article
                   key={project.id}
                   variants={itemVariants.fromBottom}
-                  className="flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-6 transition hover:border-teal-500/40"
+                  className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-6 transition hover:border-teal-500/40"
                 >
-                  <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-widest text-teal-300/80">
-                    <span>{t("projectsPreview.badge")}</span>
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                  </div>
+                  <span className="absolute right-6 top-6 text-xs font-semibold uppercase tracking-widest text-teal-300/80">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                   <h3 className="mt-4 text-2xl font-semibold text-slate-100">{title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-slate-300">
                     {description}
@@ -452,7 +438,6 @@ export default function Home() {
               {t("experience.eyebrow")}
             </p>
             <h2 className="mt-3 text-3xl font-bold sm:text-4xl">{t("experience.title")}</h2>
-            <p className="mt-4 text-base text-slate-300 sm:text-lg">{t("experience.description")}</p>
           </motion.div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">

@@ -16,19 +16,12 @@ export const projectsData: ProjectItem[] = [
     id: "musicStory",
     image: MusicStory,
     technologies: ["Next.js", "TailwindCSS", "TypeScript", "next-intl", "Framer Motion"],
-    confidential: true,
+    demo: "https://www.music-story.com",
   },
   {
     id: "paris92",
     image: Paris92,
-    technologies: ["Next.js", "TailwindCSS", "TypeScript", "next-intl", "Framer Motion"],
+    technologies: ["Python", "Next.js", "TailwindCSS", "TypeScript", "PostgreSQL"],
     confidential: true,
-  },
-  {
-    id: "taskFlow",
-    image: Paris92,
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Tailwind CSS"],
-    github: "https://github.com",
-    demo: "https://taskflow-demo.com",
   },
 ];

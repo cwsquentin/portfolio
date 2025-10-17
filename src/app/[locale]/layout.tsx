@@ -40,9 +40,11 @@ export default async function RootLayout({
       <body className="bg-slate-950 text-slate-100 antialiased">
         <NextIntlClientProvider locale={locale}>
           <Motion>
-            <Header />
-              <main className="overflow-hidden">{children}</main>
-            <Footer />
+            <div className="flex min-h-screen flex-col">
+              <Header />
+              <main className="flex-1 overflow-hidden">{children}</main>
+              <Footer />
+            </div>
           </Motion>
         </NextIntlClientProvider>
       </body>

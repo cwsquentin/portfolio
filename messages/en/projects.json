@@ -17,10 +17,6 @@
     "paris92": {
       "title": "Homepage redesign — Paris 92",
       "description": "Next.js rebuild with modern UI and localization. Details and deliverables are confidential."
-    },
-    "taskFlow": {
-      "title": "TaskFlow",
-      "description": "A collaborative project management tool with real-time updates, drag-and-drop tasks and team features."
     }
   }
 }

@@ -11,16 +11,12 @@
   "confidential": "Confidentiel",
   "items": {
     "musicStory": {
-      "title": "Refonte homepage – Music Story",
-      "description": "Refonte de la page d’accueil WordPress vers Next.js (App Router) avec TailwindCSS, header réactif au scroll et i18n (next-intl). Livrables confidentiels."
+      "title": "Refonte site web – Music Story",
+      "description": "Refonte du site Music Story : migration du contenu WordPress vers Next.js/Tailwind CSS, avec amélioration de la performance et de la maintenabilité."
     },
     "paris92": {
-      "title": "Refonte homepage – Paris 92",
-      "description": "Refonte Next.js avec interface moderne et internationalisation. Détails et livrables confidentiels."
-    },
-    "taskFlow": {
-      "title": "TaskFlow",
-      "description": "Un outil de gestion de projet collaboratif avec mises à jour en temps réel, drag-and-drop et travail en équipe."
+      "title": "Plateforme web – Paris 92",
+      "description": "Développement d’une plateforme web pour la collecte et l’analyse de données des performances sportives du club de handball Paris 92, destinée à son staff. Détails et livrables confidentiels."
     }
   }
 }
