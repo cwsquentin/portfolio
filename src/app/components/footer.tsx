@@ -1,8 +1,6 @@
 "use client";
 
-import ArrowRightIcon from "~icons/mdi/arrow-right";
-import GithubIcon from "~icons/mdi/github";
-import LinkedinIcon from "~icons/mdi/linkedin";
+import { Icon } from "@iconify/react";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
@@ -30,7 +28,10 @@ export default function Footer() {
               className="group inline-flex items-center gap-2 text-3xl font-bold text-teal-400 font-heading sm:text-4xl"
             >
               <span>{t("footer.cta")}</span>
-              <ArrowRightIcon className="size-6 transition-transform duration-200 group-hover:translate-x-1" />
+              <Icon
+                icon="mdi:arrow-right"
+                className="size-6 transition-transform duration-200 group-hover:translate-x-1"
+              />
             </Link>
 
             <p className="max-w-xs text-base text-slate-400">
@@ -58,7 +59,7 @@ export default function Footer() {
             </nav>
 
             <div className="flex gap-3 pt-1 sm:flex-col">
-              <a
+              <Link
                 href="https://github.com/cwsquentin"
                 target="_blank"
                 rel="noreferrer"
@@ -66,9 +67,9 @@ export default function Footer() {
                 aria-label={t("social.github")}
                 title={t("social.github")}
               >
-                <GithubIcon className="h-[35px] w-[35px]" />
-              </a>
-              <a
+                <Icon icon="mdi:github" className="size-8.75" />
+              </Link>
+              <Link
                 href="https://www.linkedin.com/in/quentin-petiteville/"
                 target="_blank"
                 rel="noreferrer"
@@ -76,8 +77,8 @@ export default function Footer() {
                 aria-label={t("social.linkedin")}
                 title={t("social.linkedin")}
               >
-                <LinkedinIcon className="h-[35px] w-[35px]" />
-              </a>
+                <Icon icon="mdi:linkedin" className="size-8.75" />
+              </Link>
             </div>
           </div>
         </div>

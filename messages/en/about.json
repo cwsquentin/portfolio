@@ -4,18 +4,99 @@
   },
   "hero": {
     "intro": "My name is",
-    "prefix": "",
     "name": "Quentin Petiteville",
     "subtitle": "Software Engineering Student",
-    "p1": "I focus on building accessible, pixel-perfect experiences for the web using modern tooling and thoughtful UX.",
-    "p2": "I enjoy solving real problems, turning ideas into robust, maintainable solutions, and continuously improving performance and quality.",
-    "p3": "I’m currently pursuing my degree in Software Engineering and love blending solid engineering with design that feels intuitive.",
+    "p1": "I am a 21-year-old student in my fifth year of engineering studies based in Lille, France.",
+    "p2": "I enjoy solving real-world problems and turning ideas into robust, reliable, and easily maintainable solutions, while continuously improving performance and quality.",
+    "p3": "Looking for new opportunities and projects, I’m seeking a six-month end-of-studies internship starting on March 4, 2026.",
     "ctaLead": "Got a project in mind ?",
-    "ctaBtn": "Contact Me !"
+    "ctaBtn": "Contact Me !",
+    "quickStats": [
+      {
+        "label": "Based in",
+        "value": "Lille, France"
+      },
+      {
+        "label": "Studies",
+        "value": "M2 Software Engineering — Big Data & Management"
+      },
+      {
+        "label": "Availability",
+        "value": "Six-month internship starting March 4, 2026"
+      }
+    ],
+    "connectLabel": "Let's connect"
   },
   "resume": {
     "button": "Download My Resume",
     "href": "/downloads/CV_FR_EN.pdf"
+  },
+  "sections": {
+    "introduction": "Introduction",
+    "experiences": "Experiences",
+    "skills": "Skills"
+  },
+  "timeline": {
+    "title": "Experiences"
+  },
+  "skills": {
+    "title": "Skills",
+    "lead": "Technologies and strengths I rely on as a software engineering student, developed through my studies and projects.",
+    "categories": [
+      {
+        "title": "Programming languages",
+        "items": [
+          "Java",
+          "Python",
+          "C / C++ / C#",
+          "Swift"
+        ]
+      },
+      {
+        "title": "Web development",
+        "items": [
+          "JavaScript",
+          "TypeScript",
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "Vue.js",
+          "Node.js"
+        ]
+      },
+      {
+        "title": "AI & data",
+        "items": [
+          "TensorFlow",
+          "Keras",
+          "PyTorch",
+          "Scikit-learn",
+          "Pandas",
+          "Data analysis",
+          "Machine learning"
+        ]
+      },
+      {
+        "title": "Others",
+        "items": [
+          "SQL / PostgreSQL",
+          "Git",
+          "Docker",
+          "GitHub Actions",
+          "CI / CD pipelines"
+        ]
+      },
+      {
+        "title": "Soft skills",
+        "items": [
+          "Autonomy",
+          "Problem solving",
+          "Emotional intelligence",
+          "Multi-cultural collaboration",
+          "Agile teamwork"
+        ]
+      }
+    ]
   },
   "experience": [
     {

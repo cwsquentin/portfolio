@@ -3,5 +3,20 @@
         "title": "Contact"
     },
     "title": "Contactez-moi ici !",
-    "socialsTitle": "Vous pouvez me trouver sur"
+    "socialsTitle": "Vous pouvez me trouver sur",
+    "cta": {
+        "title": "Travaillons ensemble",
+        "subtitle": "Ouvert aux collaborations, opportunités et questions.\nDiscutons de vos projets, de postes ou simplement de nouvelles technologies !"
+    },
+    "actions": {
+        "email": "Écrivez-moi un e‑mail !",
+        "resume": "Télécharger mon CV"
+    },
+    "resumeHref": "/downloads/CV_FR_EN.pdf",
+    "mailtoSubject": "Contact portfolio",
+    "mailtoBody": "Bonjour Quentin, j’ai découvert votre portfolio et souhaite échanger à propos de...",
+    "meta": {
+        "response": "Réponse sous 1–2 jours ouvrés",
+        "remote": "Ouvert au remote"
+    }
 }

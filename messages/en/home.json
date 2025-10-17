@@ -2,11 +2,29 @@
   "page": {
     "title": "Home"
   },
-  "greeting": "Hello, I am",
   "name": "Quentin Petiteville",
   "title": "Software Engineering Student",
-  "description": "I build accessible, pixel-perfect digital experiences for the web. Currently pursuing my degree in Software Engineering while crafting thoughtful solutions that blend robust engineering with intuitive design.",
+  "description": "I'm a passionate developer who builds accessible, clean digital experiences by blending software engineering and project leadership. \nMy journey has been filled with diverse projects and valuable lessons that I now apply in my work during my final year of software engineering studies.",
   "availability": "Available for a 6-month internship starting 4th of March 2026 !",
+  "hero": {
+    "focus": [
+      "Modern Software Engineering and Product-driven development",
+      "Seamless design and delivery, from concept to shipped product",
+      "Bilingual collaboration across French and English teams"
+    ],
+    "stats": [
+      { "label": "Based in", "value": "Lille, France" },
+      { "label": "Focus", "value": "Software engineering" },
+      { "label": "Currently", "value": "Second-year Master’s student in Software Engineering" }
+    ],
+    "sidebar": {
+      "eyebrow": "Profile",
+      "title": "What I bring to your team",
+      "description": "A product-minded engineer focused on clear and reliable delivery",
+      "availabilityLabel": "Next availability",
+      "contact": "Let's discuss your project"
+    }
+  },
   "cta": {
     "primary": "View my projects",
     "secondary": "Download My Resume",
@@ -14,16 +32,16 @@
   },
   "highlights": {
     "eyebrow": "Crafting value",
-    "title": "Product-minded engineering that ships",
-    "description": "I bridge thoughtful UX, modern tooling, and reliable delivery to create experiences that teams can trust.",
+    "title": "Product-minded engineering that delivers",
+    "description": "I turn thoughtful UX into fast, inclusive, and reliable products teams can trust.",
     "items": {
       "craft": {
-        "title": "Pixel-perfect interfaces",
-        "description": "Design systems, responsive layouts, and accessible interactions that make complex products feel effortless."
+        "title": "Clean interfaces",
+        "description": "Design systems, responsive layouts, and inclusive interactions that make complex products feel simple."
       },
       "performance": {
         "title": "Performance obsessed",
-        "description": "Measure, iterate, and optimize for speed — from Core Web Vitals to build tooling and deployment workflows."
+        "description": "Measure, iterate, and optimize for speed and stability — from concept to real-world usage."
       },
       "collaboration": {
         "title": "Team-first collaborator",
@@ -31,65 +49,94 @@
       },
       "delivery": {
         "title": "End-to-end delivery",
-        "description": "From idea to production: plan scopes, automate quality checks, and iterate with feedback to achieve measurable impact."
+        "description": "From idea to production: plan, automate quality checks, and iterate with feedback to achieve measurable impact."
       }
     }
   },
   "skills": {
-    "eyebrow": "Skill snapshot",
+    "eyebrow": "Skills",
     "title": "Core capabilities",
-    "description": "A toolkit shaped by real-world shipping experience across startups, internships, and personal projects.",
+    "description": "A set of skills developed through my experience and the completion of my projects.",
     "categories": [
       {
-        "title": "Frontend craft",
-        "items": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Next Intl"]
+        "title": "Languages & frameworks",
+        "items": [
+          "Java",
+          "Python",
+          "C / C++ / C#",
+          "Swift",
+          "JavaScript",
+          "TypeScript",
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "Vue.js",
+          "Node.js"
+        ]
       },
       {
-        "title": "Backend & data",
-        "items": ["Node.js", "Express", "REST APIs", "MongoDB", "PostgreSQL", "Prisma"]
+        "title": "AI & data",
+        "items": [
+          "TensorFlow",
+          "Keras",
+          "PyTorch",
+          "Scikit-learn",
+          "Pandas",
+          "Data analysis",
+          "Machine learning"
+        ]
       },
       {
-        "title": "Workflow & quality",
-        "items": ["Git & GitHub", "CI/CD", "Playwright", "Jest", "Storybook", "Design Systems"]
+        "title": "Tools & collaboration",
+        "items": [
+          "SQL / PostgreSQL",
+          "Git",
+          "Docker",
+          "GitHub Actions",
+          "CI / CD pipelines",
+          "Autonomy",
+          "Problem solving",
+          "Emotional intelligence",
+          "Multi-cultural collaboration",
+          "Agile teamwork"
+        ]
       }
     ]
   },
   "projectsPreview": {
-    "eyebrow": "Selected work",
-    "title": "Featured projects",
-    "description": "A quick tour of recent initiatives highlighting craftsmanship, localization, and production-ready delivery.",
+    "eyebrow": "Projects",
+    "title": "My works",
+    "description": "An overview of my latest projects :",
     "viewAll": "See every project",
     "viewProject": "View project",
-    "badge": "Case study",
     "github": "GitHub",
     "demo": "Live demo"
   },
   "experience": {
-    "eyebrow": "Experience",
+    "eyebrow": "Experiences",
     "title": "Recent missions",
-    "description": "Hands-on roles where I led UI rebuilds, improved performance, and collaborated with cross-functional teams.",
     "cta": "Explore my journey",
     "items": [
       {
         "period": "Apr 2025 — Sep 2025",
-        "role": "Frontend Developer Intern",
+        "role": "Web Developer Intern",
         "company": "Music Story, Lille",
-        "summary": "Rebuilt the marketing website with Next.js App Router, Tailwind, and localization — improving maintainability and Lighthouse scores."
+        "summary": "Rebuilt the the Music Story website : migration of WordPress content to Next.js/Tailwind CSS, with improved performance and maintainability."
       },
       {
         "period": "May 2022 — Aug 2022",
         "role": "Web Developer Intern",
         "company": "Celaneo, Paris",
-        "summary": "Designed data-heavy screens, automated reporting workflows, and enhanced product reliability with modern tooling."
+        "summary": "Managed client-driven projects while designing and developing websites, crafting algorithms, and cleaning databases to meet every requirement."
       }
     ]
   },
   "ctaBanner": {
     "eyebrow": "Let’s collaborate",
-    "title": "Ready to build your next experience?",
-    "description": "I’m currently looking for internship opportunities where I can elevate the frontend, move fast with quality, and learn from a great team.",
-    "primary": "Start a conversation",
-    "secondary": "View résumé",
+    "title": "Ready to build your next project?",
+    "description": "I am looking for an internship starting March 4, 2026, in order to actively contribute to high-impact projects and learn from an ambitious team.",
+    "primary": "Start a conversation !",
+    "secondary": "See my resume",
   "secondaryHref": "/downloads/CV_FR_EN.pdf"
   }
 }

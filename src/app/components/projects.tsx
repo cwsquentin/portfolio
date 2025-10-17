@@ -1,7 +1,6 @@
+import { Button } from "@/app/components/button";
 import * as motion from "motion/react-client";
-import LockIcon from "~icons/uis/lock";
-import ExternalLinkIcon from "~icons/ph/arrow-square-out";
-import GithubIcon from "~icons/mdi/github";
+import { Icon } from "@iconify/react";
 import Image, { type StaticImageData } from "next/image";
 import { useTranslations } from "next-intl";
 
@@ -57,13 +56,12 @@ export function ProjectCard({
             </p>
 
             <div className="flex flex-wrap gap-2">
-              {technologies.map((tech, i) => (
+              {technologies.map((tech, index) => (
                 <motion.span
-                  key={tech}
+                  key={`${title}-${tech}-${index}`}
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.05 * i }}
                   whileHover={{ scale: 1.08 }}
                   className="cursor-default rounded bg-slate-700 px-2 py-1 text-xs text-slate-200"
                 >
@@ -75,52 +73,74 @@ export function ProjectCard({
             <div className="flex flex-wrap gap-3 pt-2">
               {confidential ? (
                 <>
-                  <button
+                  <Button
+                    as="button"
                     type="button"
-                    aria-disabled
-                    className="inline-flex items-center rounded-md px-3 py-2 text-sm font-medium cursor-not-allowed border border-slate-600 text-slate-100 opacity-70"
+                    background="none"
+                    border="slateMuted"
+                    radius="md"
+                    size="compact"
+                    weight="medium"
+                    className="text-slate-100"
+                    disabled
                     title={t("codePrivate")}
                   >
-                    <LockIcon className="mr-2 h-4 w-4" />
+                      <Icon icon="uis:lock" className="mr-2 size-4" />
                     {t("codePrivate")}
-                  </button>
-                  <button
+                  </Button>
+                  <Button
+                    as="button"
                     type="button"
-                    aria-disabled
-                    className="inline-flex items-center rounded-md px-3 py-2 text-sm font-medium cursor-not-allowed bg-slate-700/60 text-slate-300 opacity-70"
+                    background="slate"
+                    border="none"
+                    radius="md"
+                    size="compact"
+                    weight="medium"
+                    disabled
                     title={t("demoUnavailable")}
                   >
-                    <ExternalLinkIcon className="mr-2 h-4 w-4" />
+                    <Icon icon="ph:arrow-square-out" className="mr-2 size-4" />
                     {t("demoUnavailable")}
-                  </button>
+                  </Button>
                 </>
               ) : (
                 <>
                   {github && (
-                    <motion.a
+                    <Button
+                      as={motion.a}
                       href={github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center rounded-md px-3 py-2 text-sm font-medium border border-slate-600 text-slate-100 transition hover:border-indigo-500 hover:bg-slate-700/60"
+                      background="none"
+                      border="slate"
+                      radius="md"
+                      size="compact"
+                      weight="medium"
+                      className="text-slate-100 hover:bg-slate-700/60"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <GithubIcon className="mr-2 h-4 w-4" />
+                      <Icon icon="mdi:github" className="mr-2 size-4" />
                       {t("code")}
-                    </motion.a>
+                    </Button>
                   )}
                   {demo && (
-                    <motion.a
+                    <Button
+                      as={motion.a}
                       href={demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center rounded-md px-3 py-2 text-sm font-medium bg-indigo-600 text-white transition hover:bg-indigo-500"
+                      background="indigo"
+                      border="none"
+                      radius="md"
+                      size="compact"
+                      weight="medium"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <ExternalLinkIcon className="mr-2 h-4 w-4" />
+                      <Icon icon="ph:arrow-square-out" className="mr-2 size-4" />
                       {t("demo")}
-                    </motion.a>
+                    </Button>
                   )}
                 </>
               )}

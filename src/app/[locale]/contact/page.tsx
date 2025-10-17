@@ -16,5 +16,7 @@ export async function generateMetadata({
 }
 
 export default function ContactPage() {
-  return <ContactAnimations />;
+  return (
+      <ContactAnimations />
+  );
 }
