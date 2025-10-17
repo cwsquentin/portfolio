@@ -68,7 +68,7 @@ function TimelineNode({ item, index }: TimelineNodeProps) {
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
-        className="pointer-events-none absolute left-5 top-5 flex h-7 w-7 items-center justify-center rounded-full border border-teal-500/50 bg-slate-950/90 shadow-inner md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2"
+        className="pointer-events-none absolute left-5 top-5 flex size-7 items-center justify-center rounded-full border border-teal-500/50 bg-slate-950/90 shadow-inner md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2"
         aria-hidden="true"
       >
         <motion.span
@@ -76,7 +76,7 @@ function TimelineNode({ item, index }: TimelineNodeProps) {
           whileInView={{ scale: 1 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.35, delay: 0.1 + index * 0.05 }}
-          className="block h-2.5 w-2.5 rounded-full bg-teal-400"
+          className="block size-2.5 rounded-full bg-teal-400"
         />
       </motion.span>
 
@@ -102,8 +102,6 @@ function TimelineNode({ item, index }: TimelineNodeProps) {
           <p className="text-sm leading-relaxed text-slate-200 sm:text-base">{item.description}</p>
         </motion.div>
       </div>
-
-      <div className="hidden md:block md:w-1/2" />
     </motion.div>
   );
 }

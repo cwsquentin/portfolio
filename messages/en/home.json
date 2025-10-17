@@ -16,16 +16,14 @@
     ],
     "stats": [
       { "label": "Based in", "value": "Lille, France" },
-      { "label": "Focus", "value": "Frontend engineering" },
+      { "label": "Focus", "value": "Software engineering" },
       { "label": "Currently", "value": "M2 Software Engineering student" }
     ],
     "sidebar": {
-      "eyebrow": "Profile snapshot",
+      "eyebrow": "Profile",
       "title": "What I bring to your team",
       "description": "A product-minded engineer who enjoys bridging design systems, performance and delivery.",
       "availabilityLabel": "Next availability",
-      "note": "Open to remote or on-site collaborations with ambitious teams.",
-      "timezone": "Operating in Central European Time (UTC+1).",
       "contact": "Let's discuss your project"
     }
   },
@@ -63,16 +61,47 @@
     "description": "A toolkit shaped by real-world shipping experience across startups, internships, and personal projects.",
     "categories": [
       {
-        "title": "Frontend craft",
-        "items": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Next Intl"]
+        "title": "Languages & frameworks",
+        "items": [
+          "Java",
+          "Python",
+          "C / C++ / C#",
+          "Swift",
+          "JavaScript",
+          "TypeScript",
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "Vue.js",
+          "Node.js"
+        ]
       },
       {
-        "title": "Backend & data",
-        "items": ["Node.js", "Express", "REST APIs", "MongoDB", "PostgreSQL", "Prisma"]
+        "title": "AI & data",
+        "items": [
+          "TensorFlow",
+          "Keras",
+          "PyTorch",
+          "Scikit-learn",
+          "Pandas",
+          "Data analysis",
+          "Machine learning"
+        ]
       },
       {
-        "title": "Workflow & quality",
-        "items": ["Git & GitHub", "CI/CD", "Playwright", "Jest", "Storybook", "Design Systems"]
+        "title": "Tools & collaboration",
+        "items": [
+          "SQL / PostgreSQL",
+          "Git",
+          "Docker",
+          "GitHub Actions",
+          "CI / CD pipelines",
+          "Autonomy",
+          "Problem solving",
+          "Emotional intelligence",
+          "Multi-cultural collaboration",
+          "Agile teamwork"
+        ]
       }
     ]
   },

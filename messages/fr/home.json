@@ -3,8 +3,8 @@
     "title": "Accueil"
   },
   "name": "Quentin Petiteville",
-  "title": "Étudiant en ingénierie logicielle",
-  "description": "Je conçois des expériences web accessibles et pixel-perfect. Je poursuis actuellement mon diplôme en ingénierie logicielle tout en créant des solutions réfléchies qui allient robustesse technique et design intuitif.",
+  "title": "Étudiant en ingénierie informatique",
+  "description": "Je conçois des expériences web accessibles et pixel-perfect. Je poursuis actuellement mon diplôme en ingénierie informatique tout en créant des solutions réfléchies qui allient robustesse technique et design intuitif.",
   "availability": "Disponible pour un stage de 6 mois à partir du 4 mars 2026 !",
   "hero": {
     "subtitle": "Allier rigueur technique et sens du produit pour aider les équipes à livrer des expériences fiables.",
@@ -16,16 +16,14 @@
     ],
     "stats": [
       { "label": "Basé à", "value": "Lille, France" },
-      { "label": "Expertise", "value": "Ingénierie front-end" },
-      { "label": "Actuellement", "value": "Étudiant en M2 d'ingénierie logicielle" }
+      { "label": "Expertise", "value": "Ingénierie informatique" },
+      { "label": "Actuellement", "value": "Étudiant en M2 d'ingénierie informatique" }
     ],
     "sidebar": {
-      "eyebrow": "Instantané",
+      "eyebrow": "Profil",
       "title": "Ce que j'apporte à votre équipe",
       "description": "Un profil orienté produit qui aime relier design systems, performance et livraison.",
       "availabilityLabel": "Prochaine disponibilité",
-      "note": "Ouvert aux collaborations remote ou sur site dans la région lilloise.",
-      "timezone": "Fuseau horaire Europe centrale (UTC+1).",
       "contact": "Discutons de votre projet"
     }
   },
@@ -63,16 +61,47 @@
     "description": "Un ensemble d’outils forgé par des stages, des projets personnels et des missions orientées livraison.",
     "categories": [
       {
-        "title": "Front-end",
-        "items": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Next Intl"]
+        "title": "Langages & frameworks",
+        "items": [
+          "Java",
+          "Python",
+          "C / C++ / C#",
+          "Swift",
+          "JavaScript",
+          "TypeScript",
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "Vue.js",
+          "Node.js"
+        ]
       },
       {
-        "title": "Back-end & data",
-        "items": ["Node.js", "Express", "APIs REST", "MongoDB", "PostgreSQL", "Prisma"]
+        "title": "IA & données",
+        "items": [
+          "TensorFlow",
+          "Keras",
+          "PyTorch",
+          "Scikit-learn",
+          "Pandas",
+          "Analyse de données",
+          "Apprentissage automatique"
+        ]
       },
       {
-        "title": "Workflow & qualité",
-        "items": ["Git & GitHub", "CI/CD", "Playwright", "Jest", "Storybook", "Design Systems"]
+        "title": "Outils & collaboration",
+        "items": [
+          "SQL / PostgreSQL",
+          "Git",
+          "Docker",
+          "GitHub Actions",
+          "Pipelines CI / CD",
+          "Autonomie",
+          "Résolution de problèmes",
+          "Intelligence émotionnelle",
+          "Collaboration multiculturelle",
+          "Travail d'équipe agile"
+        ]
       }
     ]
   },

@@ -1,24 +1,21 @@
 "use client";
 
-import { useState, useEffect, useRef, type ComponentType, type SVGProps } from "react";
-import HomeIcon from "~icons/mdi/home";
-import AboutIcon from "~icons/mdi/account-circle";
-import ProjectsIcon from "~icons/mdi/grid";
-import ContactIcon from "~icons/mdi/email";
+import { useState, useEffect, useRef } from "react";
+import { Icon } from "@iconify/react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { routing } from "@/i18n/routing";
 import clsx from "clsx";
 
 type NavKey = "about" | "projects" | "contact";
-const NAV: { key: NavKey; href: `/${NavKey}`; Icon: ComponentType<SVGProps<SVGSVGElement>> }[] = [
-  { key: "about", href: "/about", Icon: AboutIcon },
-  { key: "projects", href: "/projects", Icon: ProjectsIcon },
-  { key: "contact", href: "/contact", Icon: ContactIcon }
+const NAV: { key: NavKey; href: `/${NavKey}`; icon: string }[] = [
+  { key: "about", href: "/about", icon: "mdi:account-circle" },
+  { key: "projects", href: "/projects", icon: "mdi:grid" },
+  { key: "contact", href: "/contact", icon: "mdi:email" }
 ];
 
-const MOBILE_NAV: { key: "home" | NavKey; href: string; Icon?: ComponentType<SVGProps<SVGSVGElement>> }[] = [
-  { key: "home", href: "/", Icon: HomeIcon },
+const MOBILE_NAV: { key: "home" | NavKey; href: string; icon?: string }[] = [
+  { key: "home", href: "/", icon: "mdi:home" },
   ...NAV
 ];
 
@@ -61,19 +58,19 @@ export default function Header() {
             aria-label={t("navigation.home")}
             aria-current={isHomeActive ? "page" : undefined}
             className={clsx(
-              "flex h-9 w-9 items-center justify-center rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60",
+              "flex size-9 items-center justify-center rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60",
               isHomeActive
                 ? "bg-white/10 text-white ring-1 ring-white/15"
                 : "text-slate-300 hover:text-white hover:bg-white/5"
             )}
             title={t("navigation.home")}
           >
-            <HomeIcon className="size-4" />
+            <Icon icon="mdi:home" className="size-4" />
           </Link>
 
           <span className="mx-1 hidden h-6 w-px bg-white/10 md:block" aria-hidden />
           <nav className="hidden items-center gap-1 md:flex">
-            {NAV.map(({ key, href, Icon }) => {
+            {NAV.map(({ key, href, icon }) => {
               const active = pathname === href || pathname === `/${locale}${href}`;
               return (
                 <Link
@@ -87,7 +84,7 @@ export default function Header() {
                       : "text-slate-300 hover:text-white hover:bg-white/5"
                   )}
                 >
-                  <Icon className="size-4 opacity-90" />
+                  <Icon icon={icon} className="size-4 opacity-90" />
                   <span className="font-heading">{t(`navigation.${key}`)}</span>
                 </Link>
               );
@@ -143,7 +140,7 @@ export default function Header() {
             role="menu"
           >
             <nav className="flex flex-col gap-1" aria-label={t("menubtn")}>
-              {MOBILE_NAV.map(({ key, href, Icon }) => {
+              {MOBILE_NAV.map(({ key, href, icon }) => {
                 const isActive =
                   key === "home"
                     ? isHomeActive
@@ -162,7 +159,7 @@ export default function Header() {
                     )}
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {Icon ? <Icon className="h-4 w-4" /> : null}
+                    {icon ? <Icon icon={icon} className="size-4" /> : null}
                     <span>{t(`navigation.${key}`)}</span>
                   </Link>
                 );
