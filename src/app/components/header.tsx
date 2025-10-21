@@ -69,7 +69,10 @@ export default function Header() {
           </Link>
 
           <span className="mx-1 hidden h-6 w-px bg-white/10 md:block" aria-hidden />
-          <nav className="hidden items-center gap-1 md:flex">
+          <nav
+            className="hidden items-center gap-1 md:flex"
+            aria-label={t("navigation.primaryLabel")}
+          >
             {NAV.map(({ key, href, icon }) => {
               const active = pathname === href || pathname === `/${locale}${href}`;
               return (
@@ -139,7 +142,10 @@ export default function Header() {
             )}
             role="menu"
           >
-            <nav className="flex flex-col gap-1" aria-label={t("menubtn")}>
+            <nav
+              className="flex flex-col gap-1"
+              aria-label={t("navigation.primaryLabel")}
+            >
               {MOBILE_NAV.map(({ key, href, icon }) => {
                 const isActive =
                   key === "home"

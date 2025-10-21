@@ -5,6 +5,7 @@ import type { MouseEvent } from "react";
 import * as motion from "motion/react-client";
 import clsx from "clsx";
 import { itemVariants } from "@/animation";
+import { useTranslations } from "next-intl";
 
 type SectionLink = {
   id: string;
@@ -16,6 +17,7 @@ type SideScrollNavProps = {
 };
 
 export default function SideScrollNav({ links }: SideScrollNavProps) {
+  const t = useTranslations("common");
   const [activeId, setActiveId] = useState<string | null>(
     links[0]?.id ?? null
   );
@@ -76,7 +78,7 @@ export default function SideScrollNav({ links }: SideScrollNavProps) {
       initial="hidden"
       animate="visible"
       className="fixed left-6 top-1/2 hidden -translate-y-1/2 flex-col gap-5 text-sm text-slate-400 xl:flex"
-      aria-label="Section navigation"
+      aria-label={t("navigation.sections")}
     >
       {links.map((link) => {
         const isActive = activeId === link.id;

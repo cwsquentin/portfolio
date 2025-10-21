@@ -40,7 +40,10 @@ export default function Footer() {
           </div>
 
           <div className="flex w-full flex-col items-start gap-6 sm:w-auto sm:flex-row sm:items-start sm:gap-7">
-            <nav className="flex flex-wrap gap-1 sm:flex-col">
+            <nav
+              className="flex flex-wrap gap-1 sm:flex-col"
+              aria-label={t("footer.navigationLabel")}
+            >
               {NAV.map((item) => {
                 const basePath = pathname.replace(/^\/[a-z]{2}/, '') || '/';
                 const isActive = basePath === item.href || (item.href !== "/" && basePath.startsWith(item.href));

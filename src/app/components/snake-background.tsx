@@ -195,5 +195,13 @@ export function SnakeBackground({
     }
   }, [gridSizeProp, initialFoods, maxFoods, spawnIntervalMs, tickMs])
 
-  return <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }} />
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 pointer-events-none"
+      style={{ zIndex: 0 }}
+      aria-hidden="true"
+      role="presentation"
+    />
+  )
 }
