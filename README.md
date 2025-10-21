@@ -3,7 +3,6 @@
 Welcome to my personal portfolio website!  
 This project showcases my work, projects, and skills as a developer.
 
----
 
 ## 🛠️ Technologies Used
 
@@ -15,7 +14,6 @@ This project showcases my work, projects, and skills as a developer.
   <img src="https://cdn.simpleicons.org/tailwindcss" alt="Tailwind CSS" width="40" height="40"/>
 </p>
 
----
 
 ## ⚙️ How to Setup
 
