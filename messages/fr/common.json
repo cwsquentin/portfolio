@@ -8,7 +8,9 @@
     "projects": "Projets",
     "contact": "Contact",
     "en": "EN",
-    "fr": "FR"
+    "fr": "FR",
+    "primaryLabel": "Navigation principale",
+    "sections": "Sections de la page"
   },
   "menubtn": "Menu",
   "button": {
@@ -17,7 +19,8 @@
   "footer": {
     "cta": "Contactez-moi !",
     "tagline": "Vous avez un projet en tête ? Construisons quelque chose d’extraordinaire ensemble !",
-    "rights": "© Tous droits réservés 2025"
+    "rights": "© Tous droits réservés 2025",
+    "navigationLabel": "Navigation du pied de page"
   },
   "social": {
     "github": "GitHub",
