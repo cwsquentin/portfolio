@@ -42,6 +42,7 @@ export default async function ProjectsPage({ params }: Params) {
               github={p.github}
               demo={p.demo}
               confidential={p.confidential}
+              href={`/projects/${p.slug}`}
             />
           ))}
         </div>

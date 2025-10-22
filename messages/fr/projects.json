@@ -1,6 +1,6 @@
 {
   "page": {
-      "title": "Projets"
+    "title": "Projets"
   },
   "title": "Projets",
   "intro": "Une sélection de projets illustrant mes compétences et mon envie de créer des expériences utiles.",
@@ -9,14 +9,160 @@
   "codePrivate": "Code confidentiel",
   "demoUnavailable": "Démo indisponible",
   "confidential": "Confidentiel",
+  "detail": {
+    "openProject": "Ouvrir la fiche détaillée du projet {project}",
+    "back": "Retour aux projets",
+    "technologies": "Technologies",
+    "metaTitle": "Faits marquants",
+    "summaryTitle": "Résumé du projet",
+    "highlightsTitle": "Points clés",
+    "deliverablesTitle": "Livrables clés",
+    "resultsTitle": "Impact",
+    "confidentialBadge": "Projet confidentiel"
+  },
   "items": {
     "musicStory": {
-      "title": "Refonte site web – Music Story",
+      "title": "Refonte site web - Music Story",
       "description": "Refonte du site Music Story : migration du contenu WordPress vers Next.js/Tailwind CSS, avec amélioration de la performance et de la maintenabilité."
     },
     "paris92": {
-      "title": "Plateforme web – Paris 92",
-      "description": "Développement d’une plateforme web pour la collecte et l’analyse de données des performances sportives du club de handball Paris 92, destinée à son staff. Détails et livrables confidentiels."
+      "title": "Plateforme web - Paris 92",
+      "description": "Développement d'une plateforme web pour la collecte et l'analyse de données des performances sportives du club de handball Paris 92, destinée à son staff. Détails et livrables confidentiels."
+    }
+  },
+  "details": {
+    "musicStory": {
+      "hero": {
+        "eyebrow": "Refonte web",
+        "title": "Music Story - refonte du site",
+        "subtitle": "Migration du site WordPress vers une plateforme Next.js pérenne.",
+        "period": "Avril - Septembre 2025",
+        "summary": [
+          "Pilotage de la migration du site marketing public vers Next.js (App Router) avec Tailwind CSS et gestion multilingue.",
+          "Création de composants réutilisables, amélioration des performances et définition d'un workflow durable avec l'équipe interne."
+        ],
+        "ctaLabel": "Voir le site en ligne"
+      },
+      "meta": [
+        { "label": "Type", "value": "Refonte de site marketing B2B" },
+        { "label": "Rôle", "value": "Développeur Next.js full-stack (stagiaire)" },
+        { "label": "Équipe", "value": "2 développeurs, 1 designer, 1 product owner" },
+        { "label": "Calendrier", "value": "6 mois" }
+      ],
+      "highlights": [
+        {
+          "title": "Migration orientée performance",
+          "description": "Audit des pages WordPress, refonte des layouts avec des composants serveur et amélioration mesurée des Core Web Vitals."
+        },
+        {
+          "title": "Flux de contenu multilingue",
+          "description": "Séparation du contenu et de la présentation via des fichiers de traduction, pour publier plus vite les pages localisées."
+        },
+        {
+          "title": "Animations accessibles",
+          "description": "Intégration de Framer Motion pour des interactions subtiles tout en conservant un parcours clavier fluide."
+        }
+      ],
+      "deliverables": [
+        "Plan d'audit et de migration couvrant plus de 20 pages publiques",
+        "Design system réactif implémenté avec Tailwind CSS",
+        "Contrôles Lighthouse automatisés intégrés dans la CI"
+      ],
+      "results": [
+        { "label": "Largest Contentful Paint", "value": "-34%" },
+        { "label": "Time to first byte", "value": "-42%" },
+        { "label": "Onboarding contenu", "value": "Processus 2x plus rapide" }
+      ],
+      "sections": [
+        {
+          "title": "Ce qui devait changer",
+          "paragraphs": [
+            "L'ancienne stack WordPress générait des performances irrégulières et reposait sur des plugins difficiles à maintenir.",
+            "Nous avons fixé des objectifs autour de la rapidité de chargement, de la maintenabilité, de la localisation et de la cohérence visuelle."
+          ]
+        },
+        {
+          "title": "Approche",
+          "paragraphs": [
+            "Refonte du site avec des composants serveur, orchestration des traductions via next-intl et création de primitives UI partagées, revues avec l'équipe design."
+          ],
+          "bullets": [
+            "Conception de blocs de mise en page composables (hero, grilles de fonctionnalités, sections CTA).",
+            "Documentation du workflow de déploiement et des tableaux de bord de suivi pour garantir la parité de contenu.",
+            "Remise de guides de maintenance appuyés par des extraits Storybook."
+          ]
+        },
+        {
+          "title": "Résultat",
+          "paragraphs": [
+            "Le nouveau site a été livré dans les temps avec de meilleurs scores Lighthouse, un contenu localisé et une base de code maintenable pour les futures pages."
+          ]
+        }
+      ]
+    },
+    "paris92": {
+      "hero": {
+        "eyebrow": "Plateforme data",
+        "title": "Paris 92 - tableau de bord performance",
+        "subtitle": "Centralisation des statistiques et analyses pour le staff du club de handball Paris 92.",
+        "period": "Janvier - Mai 2025",
+        "summary": [
+          "Conception et réalisation d'un tableau de bord sécurisé rassemblant données de match, vidéos et métriques physiques pour le staff.",
+          "Co-construction avec la préparatrice physique afin de proposer des visualisations adaptées aux besoins quotidiens."
+        ],
+        "ctaLabel": ""
+      },
+      "meta": [
+        { "label": "Type", "value": "Application web analytique" },
+        { "label": "Rôle", "value": "Développeur full-stack" },
+        { "label": "Équipe", "value": "Projet solo avec retours hebdomadaires du staff" },
+        { "label": "Calendrier", "value": "4 mois" }
+      ],
+      "highlights": [
+        {
+          "title": "Ingestion de données unifiée",
+          "description": "Automatisation des imports depuis les feuilles de calcul et outils de scouting pour supprimer les copier-coller manuels."
+        },
+        {
+          "title": "Tableaux de bord actionnables",
+          "description": "Visualisations et filtres permettant aux coaches de comparer les joueuses, suivre les charges de travail et préparer des fiches match en quelques minutes."
+        },
+        {
+          "title": "Sécurité renforcée",
+          "description": "Mise en place de droits d'accès par rôle et de journaux d'audit pour respecter la confidentialité des données médicales et sportives."
+        }
+      ],
+      "deliverables": [
+        "Interface de tableau de bord responsive bâtie avec Next.js et Tailwind CSS",
+        "Schéma PostgreSQL pour les statistiques, les joueuses et les séances",
+        "Documentation pour permettre au staff d'ajouter de nouveaux jeux de données en autonomie"
+      ],
+      "results": [
+        { "label": "Temps de reporting", "value": "-60% d'effort manuel" },
+        { "label": "Actualisation des données", "value": "Mise à jour après chaque match" },
+        { "label": "Adoption", "value": "Utilisation hebdomadaire par le staff" }
+      ],
+      "sections": [
+        {
+          "title": "Comprendre les besoins",
+          "paragraphs": [
+            "Les ateliers avec les analystes ont révélé un flux fragmenté entre fichiers Excel, outils vidéo et notes papier.",
+            "Nous avons priorisé les scénarios réduisant le temps passé sur les débriefs et la préparation des rencontres."
+          ]
+        },
+        {
+          "title": "Construire la plateforme",
+          "paragraphs": [
+            "Mise en place d'une API modulaire, de migrations de base de données et de composants visuels réutilisables adaptés au vocabulaire du staff."
+          ],
+          "bullets": [
+            "Création de jobs batch pour intégrer les statistiques juste après les matchs.",
+            "Conception de widgets de KPI pour les tendances offensives et défensives.",
+            "Préparation de supports de reprise pour faire évoluer les indicateurs chaque saison."
+          ]
+        }
+      ],
+      "confidentialNote": "Interface et code confidentiels ; seuls des indicateurs globaux sont partagés ici."
     }
   }
 }

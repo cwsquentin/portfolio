@@ -1,7 +1,7 @@
 {
   "page": {
-      "title": "Projects"
-    },
+    "title": "Projects"
+  },
   "title": "Projects",
   "intro": "A selection of projects that showcase my skills and passion for creating meaningful digital experiences.",
   "code": "Code",
@@ -9,14 +9,160 @@
   "codePrivate": "Private code",
   "demoUnavailable": "Preview unavailable",
   "confidential": "Confidential",
+  "detail": {
+    "openProject": "Open the detailed page for {project}",
+    "back": "Back to projects",
+    "technologies": "Technologies",
+    "metaTitle": "Project quick facts",
+    "summaryTitle": "Project overview",
+    "highlightsTitle": "Highlights",
+    "deliverablesTitle": "Key deliverables",
+    "resultsTitle": "Impact",
+    "confidentialBadge": "Confidential project"
+  },
   "items": {
     "musicStory": {
-      "title": "Homepage redesign — Music Story",
+      "title": "Homepage redesign - Music Story",
       "description": "Migration of the WordPress homepage to Next.js (App Router) with TailwindCSS, a scroll-reactive header and localization (next-intl). Deliverables are confidential."
     },
     "paris92": {
-      "title": "Homepage redesign — Paris 92",
+      "title": "Homepage redesign - Paris 92",
       "description": "Next.js rebuild with modern UI and localization. Details and deliverables are confidential."
+    }
+  },
+  "details": {
+    "musicStory": {
+      "hero": {
+        "eyebrow": "Website redesign",
+        "title": "Music Story - Website redesign",
+        "subtitle": "Migrating a legacy WordPress site to a maintainable Next.js platform.",
+        "period": "April - September 2025",
+        "summary": [
+          "Led the end-to-end migration of the public marketing website to the Next.js App Router with Tailwind CSS and localization.",
+          "Introduced reusable components, improved page performance, and set up a robust workflow for future iterations with the internal team."
+        ],
+        "ctaLabel": "Visit the live site"
+      },
+      "meta": [
+        { "label": "Type", "value": "B2B marketing website redesign" },
+        { "label": "Role", "value": "Full-stack Next.js developer (intern)" },
+        { "label": "Team", "value": "2 developers, 1 designer, 1 product owner" },
+        { "label": "Timeline", "value": "6 months" }
+      ],
+      "highlights": [
+        {
+          "title": "Performance-driven migration",
+          "description": "Audited WordPress pages, re-architected layouts with server components, and delivered repeatable Core Web Vitals improvements."
+        },
+        {
+          "title": "Content and localization workflow",
+          "description": "Structured data and translation files to separate content from presentation, enabling editors to ship localized pages faster."
+        },
+        {
+          "title": "Motion with accessibility in mind",
+          "description": "Applied Framer Motion for subtle interactions while preserving accessible focus management and keyboard navigation."
+        }
+      ],
+      "deliverables": [
+        "Audit and migration plan covering 20+ public pages",
+        "Responsive design system implemented with Tailwind CSS",
+        "Automated Lighthouse checks integrated into CI"
+      ],
+      "results": [
+        { "label": "Largest Contentful Paint", "value": "-34%" },
+        { "label": "Time to first byte", "value": "-42%" },
+        { "label": "Editorial handover", "value": "2x faster onboarding" }
+      ],
+      "sections": [
+        {
+          "title": "What needed to change",
+          "paragraphs": [
+            "The legacy WordPress stack produced inconsistent performance and depended on plugins that were difficult to maintain.",
+            "We defined objectives around loading speed, maintainability, localization, and keeping visual identity consistent."
+          ]
+        },
+        {
+          "title": "Approach",
+          "paragraphs": [
+            "I rebuilt the site with server components, orchestrated translations with next-intl, and introduced shared UI primitives reviewed alongside the design team."
+          ],
+          "bullets": [
+            "Created composable layout blocks (hero, feature grids, CTA stripes).",
+            "Documented deployment workflow and monitoring dashboards to guarantee content parity.",
+            "Delivered maintenance guidelines backed by Storybook snippets."
+          ]
+        },
+        {
+          "title": "Outcome",
+          "paragraphs": [
+            "The new site launched on schedule with improved Lighthouse scores, localized content, and a maintainable codebase ready for future landing pages."
+          ]
+        }
+      ]
+    },
+    "paris92": {
+      "hero": {
+        "eyebrow": "Data platform",
+        "title": "Paris 92 - Performance dashboard",
+        "subtitle": "Centralizing match statistics and analytics for the Paris 92 handball staff.",
+        "period": "January - May 2025",
+        "summary": [
+          "Designed and shipped a secure internal dashboard to gather match data, video analysis and physical metrics for the staff.",
+          "Collaborated with the performance coach to define visualizations that answer day-to-day questions during the season."
+        ],
+        "ctaLabel": ""
+      },
+      "meta": [
+        { "label": "Type", "value": "Analytics web application" },
+        { "label": "Role", "value": "Full-stack developer" },
+        { "label": "Team", "value": "Solo delivery with weekly staff feedback" },
+        { "label": "Timeline", "value": "4 months" }
+      ],
+      "highlights": [
+        {
+          "title": "Unified data ingestion",
+          "description": "Automated imports from spreadsheets and scouting tools to eliminate manual copy-and-paste workflows."
+        },
+        {
+          "title": "Actionable dashboards",
+          "description": "Crafted charts and filters that let coaches compare players, monitor workloads, and prepare match sheets in minutes."
+        },
+        {
+          "title": "Secure access",
+          "description": "Implemented role-based access and audit logs to respect the confidentiality of medical and performance data."
+        }
+      ],
+      "deliverables": [
+        "Responsive dashboard UI built with Next.js and Tailwind CSS",
+        "PostgreSQL schema for statistics, players, and training sessions",
+        "Documentation for staff to upload new datasets autonomously"
+      ],
+      "results": [
+        { "label": "Reporting time", "value": "-60% manual effort" },
+        { "label": "Data freshness", "value": "Updated after each match" },
+        { "label": "Staff adoption", "value": "Used weekly by coaching staff" }
+      ],
+      "sections": [
+        {
+          "title": "Understanding staff needs",
+          "paragraphs": [
+            "Work sessions with analysts revealed a fragmented workflow across spreadsheets, video tools, and handwritten notes.",
+            "We prioritized scenarios that would save coaches time on debriefs and match preparation."
+          ]
+        },
+        {
+          "title": "Building the platform",
+          "paragraphs": [
+            "I set up a modular API, database migrations, and reusable visual components tailored to the staff vocabulary."
+          ],
+          "bullets": [
+            "Created batch jobs to ingest statistics right after matches.",
+            "Designed KPI widgets for offensive and defensive trends.",
+            "Prepared handover material so staff can adapt indicators every season."
+          ]
+        }
+      ],
+      "confidentialNote": "Screens and code are confidential; shared metrics remain at a high level."
     }
   }
 }
