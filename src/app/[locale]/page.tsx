@@ -62,7 +62,7 @@ export default function Home() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/60 shadow-[0_30px_80px_-40px_rgba(15,118,110,0.65)] backdrop-blur-xl"
+            className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/60 shadow-teal-xl backdrop-blur-xl"
           >
             <SnakeBackground gridSize={28} tickMs={260} />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-950/85 via-slate-900/30 to-teal-500/15" />

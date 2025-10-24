@@ -119,7 +119,7 @@ export default async function ProjectDetailPage({
   const showGithubCta = Boolean(project.github);
 
   const cardBaseClass =
-    "rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-[0_24px_60px_-40px_rgba(96,165,250,0.6)]";
+    "rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-sky-lg";
 
   const isStaticImage = typeof project.image !== "string";
 
@@ -286,7 +286,7 @@ export default async function ProjectDetailPage({
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-        <div className="-mt-16 overflow-hidden rounded-3xl border border-white/10 bg-slate-900/80 shadow-[0_32px_80px_-48px_rgba(99,102,241,0.7)]">
+        <div className="-mt-16 overflow-hidden rounded-3xl border border-white/10 bg-slate-900/80 shadow-indigo-xl">
           <div className="relative aspect-[16/9] w-full">
             <Image
               src={project.image}
@@ -311,7 +311,7 @@ export default async function ProjectDetailPage({
               {highlightItems.map((item, index) => (
                 <div
                   key={`${project.id}-highlight-${index}`}
-                  className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_18px_40px_-32px_rgba(79,70,229,0.4)]"
+                  className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-indigo-md"
                 >
                   <h3 className="text-lg font-semibold text-white">
                     {item.title}
@@ -363,7 +363,7 @@ export default async function ProjectDetailPage({
             {sectionItems.map((section, index) => (
               <article
                 key={`${project.id}-section-${index}`}
-                className="rounded-3xl border border-white/10 bg-slate-950/80 p-8 shadow-[0_18px_48px_-40px_rgba(79,70,229,0.45)]"
+                className="rounded-3xl border border-white/10 bg-slate-950/80 p-8 shadow-indigo-sm"
               >
                 <h3 className="text-2xl font-semibold text-white">
                   {section.title}

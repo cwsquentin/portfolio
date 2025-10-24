@@ -55,7 +55,7 @@ export default function AboutPage() {
       key={`${category.title}-${index}`}
       variants={itemVariants.fromBottom}
       className={clsx(
-        "rounded-2xl border border-white/10 bg-slate-950/70 p-6 shadow-[0_18px_40px_-32px_rgba(15,118,110,0.55)]",
+        "rounded-2xl border border-white/10 bg-slate-950/70 p-6 shadow-teal-sm",
         extraClassName
       )}
     >

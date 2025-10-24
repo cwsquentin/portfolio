@@ -2,6 +2,15 @@
 
 @theme {
   --color-grey-300: #B2B2B2;
+  --shadow-teal-xl: 0 30px 80px -40px rgba(15,118,110,0.65);
+  --shadow-teal-md: 0 25px 60px -45px rgba(15,118,110,0.6);
+  --shadow-teal-sm: 0 18px 40px -32px rgba(15,118,110,0.55);
+
+  --shadow-sky-lg: 0 24px 60px -40px rgba(96,165,250,0.6);
+
+  --shadow-indigo-xl: 0 32px 80px -48px rgba(99,102,241,0.7);
+  --shadow-indigo-md: 0 18px 40px -32px rgba(79,70,229,0.4);
+  --shadow-indigo-sm: 0 18px 48px -40px rgba(79,70,229,0.45);
 }
 
 html {
