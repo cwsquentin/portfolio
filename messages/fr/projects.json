@@ -15,14 +15,11 @@
     "technologies": "Technologies",
     "metaTitle": "Faits marquants",
     "summaryTitle": "Résumé du projet",
-    "highlightsTitle": "Points clés",
-    "deliverablesTitle": "Livrables clés",
-    "resultsTitle": "Impact",
     "confidentialBadge": "Projet confidentiel"
   },
   "items": {
     "medchemStructureGenius": {
-      "title": "Cockpit de découverte - MedChemStructure Genius",
+      "title": "MedChem Structure Genius",
       "description": "Plateforme interne en cours pour les chimistes médicinaux, mêlant analytics structurales, workflows de revue et quiz d'entraînement. Projet toujours actif : curieux ? Posez-moi vos questions !"
     },
     "musicStory": {
@@ -52,56 +49,6 @@
         { "label": "Rôle", "value": "Développeur Next.js full-stack (stagiaire)" },
         { "label": "Équipe", "value": "2 développeurs, 1 designer, 1 product owner" },
         { "label": "Calendrier", "value": "6 mois" }
-      ],
-      "highlights": [
-        {
-          "title": "Migration orientée performance",
-          "description": "Audit des pages WordPress, refonte des layouts avec des composants serveur et amélioration mesurée des Core Web Vitals."
-        },
-        {
-          "title": "Flux de contenu multilingue",
-          "description": "Séparation du contenu et de la présentation via des fichiers de traduction, pour publier plus vite les pages localisées."
-        },
-        {
-          "title": "Animations accessibles",
-          "description": "Intégration de Framer Motion pour des interactions subtiles tout en conservant un parcours clavier fluide."
-        }
-      ],
-      "deliverables": [
-        "Plan d'audit et de migration couvrant plus de 20 pages publiques",
-        "Design system réactif implémenté avec Tailwind CSS",
-        "Contrôles Lighthouse automatisés intégrés dans la CI"
-      ],
-      "results": [
-        { "label": "Largest Contentful Paint", "value": "-34%" },
-        { "label": "Time to first byte", "value": "-42%" },
-        { "label": "Onboarding contenu", "value": "Processus 2x plus rapide" }
-      ],
-      "sections": [
-        {
-          "title": "Ce qui devait changer",
-          "paragraphs": [
-            "L'ancienne stack WordPress générait des performances irrégulières et reposait sur des plugins difficiles à maintenir.",
-            "Nous avons fixé des objectifs autour de la rapidité de chargement, de la maintenabilité, de la localisation et de la cohérence visuelle."
-          ]
-        },
-        {
-          "title": "Approche",
-          "paragraphs": [
-            "Refonte du site avec des composants serveur, orchestration des traductions via next-intl et création de primitives UI partagées, revues avec l'équipe design."
-          ],
-          "bullets": [
-            "Conception de blocs de mise en page composables (hero, grilles de fonctionnalités, sections CTA).",
-            "Documentation du workflow de déploiement et des tableaux de bord de suivi pour garantir la parité de contenu.",
-            "Remise de guides de maintenance appuyés par des extraits Storybook."
-          ]
-        },
-        {
-          "title": "Résultat",
-          "paragraphs": [
-            "Le nouveau site a été livré dans les temps avec de meilleurs scores Lighthouse, un contenu localisé et une base de code maintenable pour les futures pages."
-          ]
-        }
       ]
     },
     "paris92": {
@@ -121,57 +68,12 @@
         { "label": "Rôle", "value": "Développeur full-stack" },
         { "label": "Équipe", "value": "Projet solo avec retours hebdomadaires du staff" },
         { "label": "Calendrier", "value": "4 mois" }
-      ],
-      "highlights": [
-        {
-          "title": "Ingestion de données unifiée",
-          "description": "Automatisation des imports depuis les feuilles de calcul et outils de scouting pour supprimer les copier-coller manuels."
-        },
-        {
-          "title": "Tableaux de bord actionnables",
-          "description": "Visualisations et filtres permettant aux coaches de comparer les joueuses, suivre les charges de travail et préparer des fiches match en quelques minutes."
-        },
-        {
-          "title": "Sécurité renforcée",
-          "description": "Mise en place de droits d'accès par rôle et de journaux d'audit pour respecter la confidentialité des données médicales et sportives."
-        }
-      ],
-      "deliverables": [
-        "Interface de tableau de bord responsive bâtie avec Next.js et Tailwind CSS",
-        "Schéma PostgreSQL pour les statistiques, les joueuses et les séances",
-        "Documentation pour permettre au staff d'ajouter de nouveaux jeux de données en autonomie"
-      ],
-      "results": [
-        { "label": "Temps de reporting", "value": "-60% d'effort manuel" },
-        { "label": "Actualisation des données", "value": "Mise à jour après chaque match" },
-        { "label": "Adoption", "value": "Utilisation hebdomadaire par le staff" }
-      ],
-      "sections": [
-        {
-          "title": "Comprendre les besoins",
-          "paragraphs": [
-            "Les ateliers avec les analystes ont révélé un flux fragmenté entre fichiers Excel, outils vidéo et notes papier.",
-            "Nous avons priorisé les scénarios réduisant le temps passé sur les débriefs et la préparation des rencontres."
-          ]
-        },
-        {
-          "title": "Construire la plateforme",
-          "paragraphs": [
-            "Mise en place d'une API modulaire, de migrations de base de données et de composants visuels réutilisables adaptés au vocabulaire du staff."
-          ],
-          "bullets": [
-            "Création de jobs batch pour intégrer les statistiques juste après les matchs.",
-            "Conception de widgets de KPI pour les tendances offensives et défensives.",
-            "Préparation de supports de reprise pour faire évoluer les indicateurs chaque saison."
-          ]
-        }
-      ],
-      "confidentialNote": "Interface et code confidentiels ; seuls des indicateurs globaux sont partagés ici."
+      ]
     },
     "medchemStructureGenius": {
       "hero": {
         "eyebrow": "Recherche pharmaceutique",
-        "title": "MedChemStructure Genius - cockpit de revue",
+        "title": "MedChem Structure Genius",
         "subtitle": "Réunir données SAR, revues guidées et entraînements interactifs dans un cockpit unique.",
         "period": "Octobre 2025 - aujourd'hui",
         "summary": [
@@ -187,53 +89,7 @@
         { "label": "Équipe", "value": "1 product manager, 1 designer, 2 développeurs" },
         { "label": "Calendrier", "value": "Octobre 2025 - aujourd'hui" },
         { "label": "Statut", "value": "Mission en cours" }
-      ],
-      "highlights": [
-        {
-          "title": "Drills structurels interactifs",
-          "description": "Intégration de sessions de quiz et de rappels espacés pour consolider les connaissances structurales directement depuis les données pipeline."
-        },
-        {
-          "title": "Boucles de revue multi-équipes",
-          "description": "Workflows guidés qui capturent décisions, annotations et validations afin de fluidifier les échanges entre squads."
-        },
-        {
-          "title": "Traçabilité des données",
-          "description": "Affichage de la lignée d'expériences, des résultats d'essais et des références aux cahiers électroniques dans le cockpit."
-        }
-      ],
-      "deliverables": [
-        "Design system TailwindCSS avec thématisation adaptée au laboratoire et animations maîtrisées",
-        "Schéma PostgreSQL unifiant composés, essais, fils de revue et sessions de quiz",
-        "Application mobile Expo pour drills structuraux rapides et rappels push pendant les manipulations"
-      ],
-      "results": [
-        { "label": "Objectif actuel", "value": "Déploiement pilote et enrichissement de la base de connaissances" },
-        { "label": "Équipes pilotes", "value": "Squads discovery sur deux programmes thérapeutiques" },
-        { "label": "Quiz hebdomadaires", "value": "20+ sessions enregistrées chaque semaine" }
-      ],
-      "sections": [
-        {
-          "title": "Comprendre les irritants",
-          "paragraphs": [
-            "Les chimistes jonglaient entre feuilles Excel, exports ELN et présentations statiques pour préparer chaque revue.",
-            "Nous avons cartographié leurs points de décision et identifié où l'automatisation pouvait remplacer la consolidation manuelle."
-          ]
-        },
-        {
-          "title": "Concevoir la solution",
-          "paragraphs": [
-            "Architecture Next.js modulaire avec composants serveur pour les vues riches en données et API orchestrant les jobs de scoring structurel.",
-            "Prototypage conjoint de dashboards, flux de quiz et notifications, réutilisés sur le cockpit web et l'application Expo."
-          ],
-          "bullets": [
-            "Diffusion des métriques moléculaires via l'ISR pour conserver des dossiers rapides à ouvrir.",
-            "Notifications contextuelles synchronisées entre web et mobile via un service de push partagé.",
-            "Contrôles d'accès fins permettant d'inviter des experts externes en toute sécurité."
-          ]
-        }
-      ],
-      "confidentialNote": "Captures anonymisées et données moléculaires remplacées par des placeholders pour respecter la confidentialité."
+      ]
     }
   }
 }

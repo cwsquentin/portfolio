@@ -20,9 +20,9 @@ export type ProjectItem = {
 export const projectsData: ProjectItem[] = [
   {
     id: "medchemStructureGenius",
-    slug: "MedChemStructureGenius",
+    slug: "medchemstructuregenius",
     image: MedChemStructureGeniusCard,
-    technologies: ["Next.js", "TypeScript", "TailwindCSS", "PostgreSQL", "Expo"],
+    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Expo"],
     confidential: true,
     demo: "https://www.medchemstructuregenius.eu/",
     gallery: [
@@ -33,7 +33,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "musicStory",
-    slug: "MusicStory",
+    slug: "musicstory",
     image: MusicStory,
     technologies: ["Next.js", "TailwindCSS", "TypeScript", "next-intl", "Framer Motion"],
     confidential: true,
@@ -41,7 +41,7 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: "paris92",
-    slug: "Paris92",
+    slug: "paris92",
     image: Paris92,
     technologies: ["Python", "Next.js", "TailwindCSS", "TypeScript", "PostgreSQL"],
     confidential: true,
