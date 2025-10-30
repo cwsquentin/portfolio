@@ -115,83 +115,81 @@ export function ProjectCard({
             </div>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              {confidential ? (
-                <>
-                  <Button
-                    as="button"
-                    type="button"
-                    background="none"
-                    border="slateMuted"
-                    radius="md"
-                    size="compact"
-                    weight="medium"
-                    className="text-slate-100"
-                    disabled
-                    title={t("codePrivate")}
-                    onClick={stopPropagation}
-                  >
-                    <Icon icon="uis:lock" className="mr-2 size-4" />
-                    {t("codePrivate")}
-                  </Button>
-                  <Button
-                    as="button"
-                    type="button"
-                    background="slate"
-                    border="none"
-                    radius="md"
-                    size="compact"
-                    weight="medium"
-                    disabled
-                    title={t("demoUnavailable")}
-                    onClick={stopPropagation}
-                  >
-                    <Icon icon="ph:arrow-square-out" className="mr-2 size-4" />
-                    {t("demoUnavailable")}
-                  </Button>
-                </>
-              ) : (
-                <>
-                  {github && (
-                    <Button
-                      as={motion.a}
-                      href={github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      background="none"
-                      border="slate"
-                      radius="md"
-                      size="compact"
-                      weight="medium"
-                      className="text-slate-100 hover:bg-slate-700/60"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={stopPropagation}
-                    >
-                      <Icon icon="mdi:github" className="mr-2 size-4" />
-                      {t("code")}
-                    </Button>
-                  )}
-                  {demo && (
-                    <Button
-                      as={motion.a}
-                      href={demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      background="indigo"
-                      border="none"
-                      radius="md"
-                      size="compact"
-                      weight="medium"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={stopPropagation}
-                    >
-                      <Icon icon="ph:arrow-square-out" className="mr-2 size-4" />
-                      {t("demo")}
-                    </Button>
-                  )}
-                </>
-              )}
+              {github ? (
+                <Button
+                  as={motion.a}
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  background="none"
+                  border="slate"
+                  radius="md"
+                  size="compact"
+                  weight="medium"
+                  className="text-slate-100 hover:bg-slate-700/60"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={stopPropagation}
+                >
+                  <Icon icon="mdi:github" className="mr-2 size-4" />
+                  {t("code")}
+                </Button>
+              ) : null}
+
+              {!github && confidential ? (
+                <Button
+                  as="button"
+                  type="button"
+                  background="none"
+                  border="slateMuted"
+                  radius="md"
+                  size="compact"
+                  weight="medium"
+                  className="text-slate-100"
+                  disabled
+                  title={t("codePrivate")}
+                  onClick={stopPropagation}
+                >
+                  <Icon icon="uis:lock" className="mr-2 size-4" />
+                  {t("codePrivate")}
+                </Button>
+              ) : null}
+
+              {demo ? (
+                <Button
+                  as={motion.a}
+                  href={demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  background="indigo"
+                  border="none"
+                  radius="md"
+                  size="compact"
+                  weight="medium"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={stopPropagation}
+                >
+                  <Icon icon="ph:arrow-square-out" className="mr-2 size-4" />
+                  {t("demo")}
+                </Button>
+              ) : confidential ? (
+                <Button
+                  as="button"
+                  type="button"
+                  background="slate"
+                  border="none"
+                  radius="md"
+                  size="compact"
+                  weight="medium"
+                  disabled
+                  title={t("demoUnavailable")}
+                  onClick={stopPropagation}
+                >
+                  <Icon icon="ph:arrow-square-out" className="mr-2 size-4" />
+                  {t("demoUnavailable")}
+                </Button>
+              ) : null}
             </div>
           </div>
         </div>

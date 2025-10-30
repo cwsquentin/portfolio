@@ -21,6 +21,10 @@
     "confidentialBadge": "Confidential project"
   },
   "items": {
+    "medchemStructureGenius": {
+      "title": "Discovery cockpit - MedChemStructure Genius",
+      "description": "Ongoing internal platform for medicinal chemists that fuses structure analytics, review workflows, and training quizzes. Still in progress - ask me anything about it!"
+    },
     "musicStory": {
       "title": "Homepage redesign - Music Story",
       "description": "Migration of the WordPress homepage to Next.js (App Router) with TailwindCSS, a scroll-reactive header and localization (next-intl). Deliverables are confidential."
@@ -163,6 +167,73 @@
         }
       ],
       "confidentialNote": "Screens and code are confidential; shared metrics remain at a high level."
+    },
+    "medchemStructureGenius": {
+      "hero": {
+        "eyebrow": "Drug discovery",
+        "title": "MedChemStructure Genius - Discovery cockpit",
+        "subtitle": "Connecting structure-activity data, guided reviews, and training drills in a single cockpit.",
+        "period": "October 2025 - Present",
+        "summary": [
+          "Leading the ongoing build of a secure workspace that centralizes SAR dossiers, experiment timelines, and retrosynthesis notes for medicinal chemists.",
+          "Shaped quiz-style structure challenges, review trails, and notifications so chemistry, data, and clinical leads stay aligned during triage.",
+          "Project is still live - always happy to answer questions or walk through the roadmap."
+        ],
+        "ctaLabel": "Explore the public demo"
+      },
+      "meta": [
+        { "label": "Type", "value": "Internal web platform" },
+        { "label": "Role", "value": "Full-stack lead developer" },
+        { "label": "Team", "value": "1 product manager, 1 designer, 2 developers" },
+        { "label": "Timeline", "value": "October 2025 - Present" },
+        { "label": "Status", "value": "Ongoing collaboration" }
+      ],
+      "highlights": [
+        {
+          "title": "Interactive structure drills",
+          "description": "Integrated quiz sessions and spaced-repetition checkpoints that help chemists validate structure knowledge directly from pipeline data."
+        },
+        {
+          "title": "Cross-team review loops",
+          "description": "Designed guided review flows that capture decisions, annotations, and approvals, reducing coordination friction across squads."
+        },
+        {
+          "title": "Data lineage overlays",
+          "description": "Surfaced experiment lineage, assay outcomes, and notebook references within the cockpit so teams can audit every recommendation."
+        }
+      ],
+      "deliverables": [
+        "Design system powered by TailwindCSS with labs-friendly theming and motion patterns",
+        "PostgreSQL schema combining compounds, assays, review threads, and quiz sessions",
+        "Expo mobile companion for quick structure drills and push reminders during lab shifts"
+      ],
+      "results": [
+        { "label": "Current focus", "value": "Pilot rollout and knowledge base curation" },
+        { "label": "Pilot teams", "value": "Discovery squads in two therapeutic programs" },
+        { "label": "Quiz sessions logged", "value": "20+ weekly drills across the cohort" }
+      ],
+      "sections": [
+        {
+          "title": "Understanding the challenge",
+          "paragraphs": [
+            "Chemists previously juggled spreadsheets, ELN exports, and static slide decks whenever a candidate was reviewed.",
+            "We mapped their decision checkpoints and highlighted where automation could replace manual collation and status tracking."
+          ]
+        },
+        {
+          "title": "What we built",
+          "paragraphs": [
+            "I orchestrated a modular Next.js architecture with server components for data-heavy sections and APIs that run structure scoring jobs.",
+            "Together with the designer we prototyped dashboard layouts, quiz flows, and notifications reused across the web cockpit and Expo app."
+          ],
+          "bullets": [
+            "Streaming molecular metrics with incremental static regeneration to keep dossiers fast to open.",
+            "Contextual notifications that stay in sync between web and mobile through a shared push service.",
+            "Fine-grained access controls so project leads can invite external reviewers securely."
+          ]
+        }
+      ],
+      "confidentialNote": "Screens anonymized and molecular data replaced with placeholders for confidentiality."
     }
   }
 }

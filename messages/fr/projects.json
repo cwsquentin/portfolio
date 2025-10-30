@@ -21,6 +21,10 @@
     "confidentialBadge": "Projet confidentiel"
   },
   "items": {
+    "medchemStructureGenius": {
+      "title": "Cockpit de découverte - MedChemStructure Genius",
+      "description": "Plateforme interne en cours pour les chimistes médicinaux, mêlant analytics structurales, workflows de revue et quiz d'entraînement. Projet toujours actif : curieux ? Posez-moi vos questions !"
+    },
     "musicStory": {
       "title": "Refonte site web - Music Story",
       "description": "Refonte du site Music Story : migration du contenu WordPress vers Next.js/Tailwind CSS, avec amélioration de la performance et de la maintenabilité."
@@ -163,6 +167,73 @@
         }
       ],
       "confidentialNote": "Interface et code confidentiels ; seuls des indicateurs globaux sont partagés ici."
+    },
+    "medchemStructureGenius": {
+      "hero": {
+        "eyebrow": "Recherche pharmaceutique",
+        "title": "MedChemStructure Genius - cockpit de revue",
+        "subtitle": "Réunir données SAR, revues guidées et entraînements interactifs dans un cockpit unique.",
+        "period": "Octobre 2025 - aujourd'hui",
+        "summary": [
+          "Pilotage continu d'un espace sécurisé centralisant dossiers SAR, frises d'expériences et notes de rétro-synthèse pour les chimistes médicinaux.",
+          "Conception de quiz structuraux, fils de revue et notifications pour aligner chimie, data et clinique lors du tri des composés.",
+          "Mission toujours en cours - je réponds avec plaisir aux questions et partage le roadmap."
+        ],
+        "ctaLabel": "Explorer la démo publique"
+      },
+      "meta": [
+        { "label": "Type", "value": "Plateforme web interne" },
+        { "label": "Rôle", "value": "Lead développeur full-stack" },
+        { "label": "Équipe", "value": "1 product manager, 1 designer, 2 développeurs" },
+        { "label": "Calendrier", "value": "Octobre 2025 - aujourd'hui" },
+        { "label": "Statut", "value": "Mission en cours" }
+      ],
+      "highlights": [
+        {
+          "title": "Drills structurels interactifs",
+          "description": "Intégration de sessions de quiz et de rappels espacés pour consolider les connaissances structurales directement depuis les données pipeline."
+        },
+        {
+          "title": "Boucles de revue multi-équipes",
+          "description": "Workflows guidés qui capturent décisions, annotations et validations afin de fluidifier les échanges entre squads."
+        },
+        {
+          "title": "Traçabilité des données",
+          "description": "Affichage de la lignée d'expériences, des résultats d'essais et des références aux cahiers électroniques dans le cockpit."
+        }
+      ],
+      "deliverables": [
+        "Design system TailwindCSS avec thématisation adaptée au laboratoire et animations maîtrisées",
+        "Schéma PostgreSQL unifiant composés, essais, fils de revue et sessions de quiz",
+        "Application mobile Expo pour drills structuraux rapides et rappels push pendant les manipulations"
+      ],
+      "results": [
+        { "label": "Objectif actuel", "value": "Déploiement pilote et enrichissement de la base de connaissances" },
+        { "label": "Équipes pilotes", "value": "Squads discovery sur deux programmes thérapeutiques" },
+        { "label": "Quiz hebdomadaires", "value": "20+ sessions enregistrées chaque semaine" }
+      ],
+      "sections": [
+        {
+          "title": "Comprendre les irritants",
+          "paragraphs": [
+            "Les chimistes jonglaient entre feuilles Excel, exports ELN et présentations statiques pour préparer chaque revue.",
+            "Nous avons cartographié leurs points de décision et identifié où l'automatisation pouvait remplacer la consolidation manuelle."
+          ]
+        },
+        {
+          "title": "Concevoir la solution",
+          "paragraphs": [
+            "Architecture Next.js modulaire avec composants serveur pour les vues riches en données et API orchestrant les jobs de scoring structurel.",
+            "Prototypage conjoint de dashboards, flux de quiz et notifications, réutilisés sur le cockpit web et l'application Expo."
+          ],
+          "bullets": [
+            "Diffusion des métriques moléculaires via l'ISR pour conserver des dossiers rapides à ouvrir.",
+            "Notifications contextuelles synchronisées entre web et mobile via un service de push partagé.",
+            "Contrôles d'accès fins permettant d'inviter des experts externes en toute sécurité."
+          ]
+        }
+      ],
+      "confidentialNote": "Captures anonymisées et données moléculaires remplacées par des placeholders pour respecter la confidentialité."
     }
   }
 }
