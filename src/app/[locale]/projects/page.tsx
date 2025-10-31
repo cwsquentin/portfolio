@@ -31,7 +31,7 @@ export default async function ProjectsPage({ params }: Params) {
           <p className="text-base text-slate-400 sm:text-lg">{t("intro")}</p>
         </div>
 
-        <div className="mt-10 space-y-8">
+        <div className="mt-10 space-y-8 whitespace-pre-line">
           {projectsData.map((p) => (
             <ProjectCard
               key={p.id}

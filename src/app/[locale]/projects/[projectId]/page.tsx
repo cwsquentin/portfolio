@@ -23,7 +23,7 @@ type ProjectDetailMessages = {
     title: string;
     subtitle?: string;
     period?: string;
-    summary?: string[];
+    summary?: string | string[];
     ctaLabel?: string;
   };
   meta?: DetailListItem[];
@@ -73,9 +73,22 @@ export async function generateMetadata({
 
   const heroTitle =
     detail?.hero?.title ?? t(`items.${project.id}.title`);
-  const descriptionSource = Array.isArray(detail?.hero?.summary)
-    ? detail?.hero?.summary?.[0]
-    : t(`items.${project.id}.description`);
+  const heroSummaryRaw = detail?.hero?.summary;
+  let descriptionSource = t(`items.${project.id}.description`);
+
+  if (typeof heroSummaryRaw === "string") {
+    const trimmed = heroSummaryRaw.trim();
+    if (trimmed) {
+      descriptionSource = trimmed;
+    }
+  } else if (Array.isArray(heroSummaryRaw)) {
+    const firstNonEmpty = heroSummaryRaw.find(
+      (entry) => typeof entry === "string" && entry.trim().length > 0,
+    );
+    if (firstNonEmpty) {
+      descriptionSource = firstNonEmpty.trim();
+    }
+  }
 
   return {
     title: heroTitle || t("page.title"),
@@ -105,7 +118,14 @@ export default async function ProjectDetailPage({
   }
 
   const hero = detail.hero;
-  const summaryItems = Array.isArray(hero.summary) ? hero.summary : [];
+  const heroSummaryRaw = hero.summary;
+  const summaryParagraph =
+    typeof heroSummaryRaw === "string" ? heroSummaryRaw.trim() : "";
+  const summaryItems = Array.isArray(heroSummaryRaw)
+    ? heroSummaryRaw
+        .map((item) => (typeof item === "string" ? item.trim() : ""))
+        .filter((item) => item.length > 0)
+    : [];
   const metaItems = Array.isArray(detail.meta) ? detail.meta : [];
   const heroCtaLabel = hero.ctaLabel?.trim();
   const showDemoCta = Boolean(heroCtaLabel && project.demo);
@@ -171,7 +191,16 @@ export default async function ProjectDetailPage({
                 ) : null}
               </div>
 
-              {summaryItems.length ? (
+              {summaryParagraph ? (
+                <div>
+                  <h2 className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-300">
+                    {t("detail.summaryTitle")}
+                  </h2>
+                  <p className="mt-4 whitespace-pre-line text-base text-slate-200">
+                    {summaryParagraph}
+                  </p>
+                </div>
+              ) : summaryItems.length ? (
                 <div>
                   <h2 className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-300">
                     {t("detail.summaryTitle")}
@@ -227,10 +256,7 @@ export default async function ProjectDetailPage({
             <aside className="space-y-6">
               {metaItems.length ? (
                 <div className={cardBaseClass}>
-                  <h3 className="text-xs font-semibold uppercase tracking-[0.32em] text-indigo-200/80">
-                    {t("detail.metaTitle")}
-                  </h3>
-                  <dl className="mt-5 space-y-5 text-sm text-slate-200">
+                  <dl className="space-y-5 text-sm text-slate-200">
                     {metaItems.map((item, index) => (
                       <div key={`${project.id}-meta-${index}`} className="border-b border-white/10 pb-4 last:border-none last:pb-0">
                         <dt className="text-sm font-semibold text-slate-300">

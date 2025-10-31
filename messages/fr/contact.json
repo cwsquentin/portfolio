@@ -14,9 +14,5 @@
     },
     "resumeHref": "/downloads/CV_FR_EN.pdf",
     "mailtoSubject": "Contact portfolio",
-    "mailtoBody": "Bonjour Quentin, j’ai découvert votre portfolio et souhaite échanger à propos de...",
-    "meta": {
-        "response": "Réponse sous 1–2 jours ouvrés",
-        "remote": "Ouvert au remote"
-    }
+    "mailtoBody": "Bonjour Quentin, j’ai découvert votre portfolio et souhaite échanger à propos de..."
 }

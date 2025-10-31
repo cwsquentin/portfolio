@@ -13,14 +13,13 @@
     "openProject": "Ouvrir la fiche détaillée du projet {project}",
     "back": "Retour aux projets",
     "technologies": "Technologies",
-    "metaTitle": "Faits marquants",
-    "summaryTitle": "Résumé du projet",
-    "confidentialBadge": "Projet confidentiel"
+    "summaryTitle": "Description du projet",
+    "confidentialBadge": "Code confidentiel"
   },
   "items": {
     "medchemStructureGenius": {
       "title": "MedChem Structure Genius",
-      "description": "Plateforme interne en cours pour les chimistes médicinaux, mêlant analytics structurales, workflows de revue et quiz d'entraînement. Projet toujours actif : curieux ? Posez-moi vos questions !"
+      "description": "MedChem Structure Genius est une application d’e-learning destinée aux étudiants de la Faculté de Pharmacie de l'Université de Lille pour les aider à étudier les molécules et leurs relations.\n Projet en cours — n’hésitez pas à me poser vos questions !"
     },
     "musicStory": {
       "title": "Refonte site web - Music Story",
@@ -72,23 +71,16 @@
     },
     "medchemStructureGenius": {
       "hero": {
-        "eyebrow": "Recherche pharmaceutique",
         "title": "MedChem Structure Genius",
-        "subtitle": "Réunir données SAR, revues guidées et entraînements interactifs dans un cockpit unique.",
         "period": "Octobre 2025 - aujourd'hui",
-        "summary": [
-          "Pilotage continu d'un espace sécurisé centralisant dossiers SAR, frises d'expériences et notes de rétro-synthèse pour les chimistes médicinaux.",
-          "Conception de quiz structuraux, fils de revue et notifications pour aligner chimie, data et clinique lors du tri des composés.",
-          "Mission toujours en cours - je réponds avec plaisir aux questions et partage le roadmap."
-        ],
-        "ctaLabel": "Explorer la démo publique"
+        "summary": "MedChem Structure Genius est une application d’e-learning destinée aux étudiants de la Faculté de Pharmacie de l'Université de Lille pour les aider à étudier les molécules et leurs relations.\nEn collaboration avec une équipe de cinq étudiants de l'ISEN, je mène ce projet en cadrant le besoin avec le client, en animant les réunions hebdomadaires et en assurant le suivi tout en contribuant directement au développement.\nNous améliorons la fiabilité et l’ergonomie de l’application : correction des bugs d’affichage sur Android et sur le web, résolution des erreurs de génération de quiz, amélioration des interfaces de révision et de suivi des scores, optimisation du code, rectification des textes, création d’un schéma explicatif du mécanisme de génération des quiz et de requêtes types sur Supabase pour faciliter l’exploration des données.\nLe projet est encore en cours de réalisation, n'hésitez pas à me poser vos questions !",
+        "ctaLabel": "Voir le projet"
       },
       "meta": [
-        { "label": "Type", "value": "Plateforme web interne" },
-        { "label": "Rôle", "value": "Lead développeur full-stack" },
-        { "label": "Équipe", "value": "1 product manager, 1 designer, 2 développeurs" },
+        { "label": "Type", "value": "Développement d’une application web et mobile d’e-learning sur la structure du médicament" },
+        { "label": "Rôle", "value": "Chef de projet & développeur" },
         { "label": "Calendrier", "value": "Octobre 2025 - aujourd'hui" },
-        { "label": "Statut", "value": "Mission en cours" }
+        { "label": "Statut", "value": "Projet encore en cours de réalisation, n'hésitez pas à me poser vos questions !" }
       ]
     }
   }

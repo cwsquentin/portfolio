@@ -22,7 +22,7 @@ export const projectsData: ProjectItem[] = [
     id: "medchemStructureGenius",
     slug: "medchemstructuregenius",
     image: MedChemStructureGeniusCard,
-    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Expo"],
+    technologies: ["Next.js", "TypeScript", "PostgreSQL", "React Native (Expo)", "Supabase"],
     confidential: true,
     demo: "https://www.medchemstructuregenius.eu/",
     gallery: [

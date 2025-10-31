@@ -15,12 +15,12 @@
     "technologies": "Technologies",
     "metaTitle": "Project quick facts",
     "summaryTitle": "Project overview",
-    "confidentialBadge": "Confidential project"
+    "confidentialBadge": "Confidential code"
   },
   "items": {
     "medchemStructureGenius": {
       "title": "MedChem Structure Genius",
-      "description": "Ongoing internal platform for medicinal chemists that fuses structure analytics, review workflows, and training quizzes. Still in progress - ask me anything about it!"
+      "description": "MedChem Structure Genius is an e-learning application designed for students at the University of Lille Faculty of Pharmacy to help them study molecules and their relationships.\nProject in progress - feel free to ask me about it!"
     },
     "musicStory": {
       "title": "Homepage redesign - Music Story",
@@ -72,23 +72,16 @@
     },
     "medchemStructureGenius": {
       "hero": {
-        "eyebrow": "Drug discovery",
         "title": "MedChem Structure Genius",
-        "subtitle": "Connecting structure-activity data, guided reviews, and training drills in a single cockpit.",
         "period": "October 2025 - Present",
-        "summary": [
-          "Leading the ongoing build of a secure workspace that centralizes SAR dossiers, experiment timelines, and retrosynthesis notes for medicinal chemists.",
-          "Shaped quiz-style structure challenges, review trails, and notifications so chemistry, data, and clinical leads stay aligned during triage.",
-          "Project is still live - always happy to answer questions or walk through the roadmap."
-        ],
-        "ctaLabel": "Explore the public demo"
+        "summary": "MedChem Structure Genius is an e-learning application designed for students at the Faculty of Pharmacy at the University of Lille to help them study molecules and their relationships. \nIn collaboration with a team of five students from ISEN, I am leading this project by defining the client's needs, facilitating weekly meetings, and ensuring follow-up while contributing directly to development. \nWe are improving the reliability and usability of the application: fixing display bugs on Android and the web, resolving quiz generation errors, improving the review and score tracking interfaces, optimizing the code, correcting texts, and creating an explanatory diagram of the quiz generation mechanism and typical queries on Supabase to facilitate data exploration. \nThe project is still in progress, so feel free to ask me any questions you may have!",
+        "ctaLabel": "View the project"
       },
       "meta": [
-        { "label": "Type", "value": "Internal web platform" },
-        { "label": "Role", "value": "Full-stack lead developer" },
-        { "label": "Team", "value": "1 product manager, 1 designer, 2 developers" },
+        { "label": "Type", "value": "Development of a web and mobile e-learning application on drug structure" },
+        { "label": "Role", "value": "Project lead & developer" },
         { "label": "Timeline", "value": "October 2025 - Present" },
-        { "label": "Status", "value": "Ongoing collaboration" }
+        { "label": "Status", "value": "Project still in progress - feel free to ask me any questions about it!" }
       ]
     }
   }

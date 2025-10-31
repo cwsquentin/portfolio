@@ -179,18 +179,6 @@ export default function ContactAnimations() {
                 LinkedIn
               </Link>
             </div>
-
-            <div className="flex flex-wrap gap-3 text-xs text-slate-400">
-              {highlightItems.map((item, idx) => (
-                <span
-                  key={`${item.icon}-${idx}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1"
-                >
-                  <Icon icon={item.icon} className="size-3.5 text-teal-300" />
-                  {item.label}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
 
