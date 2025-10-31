@@ -52,6 +52,7 @@ export default function Home() {
           />
         </div>
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-72 bg-gradient-to-b from-teal-500/25 via-transparent to-transparent blur-3xl" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 h-48 bg-gradient-to-b from-transparent via-slate-950/80 to-slate-950" />
 
         <motion.div
           variants={containerVariants}
@@ -61,7 +62,7 @@ export default function Home() {
         >
           <motion.h1
             variants={heroReveal}
-            className="text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl"
+            className="text-4xl font-semibold leading-tight tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl"
           >
             {t("hero.headline")}
           </motion.h1>
@@ -151,7 +152,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:py-20">
+      <section className="relative z-40 px-4 pt-20 pb-16 sm:px-6 sm:pt-24 lg:pb-20 bg-slate-950">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col items-start justify-between gap-6 text-left md:flex-row md:items-end">
             <div className="max-w-2xl">

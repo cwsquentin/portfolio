@@ -89,7 +89,7 @@ export default function ContactAnimations() {
   const t = useTranslations("contact");
   const [emailHovered, setEmailHovered] = useState(false);
   const [socialsHovered, setSocialsHovered] = useState(false);
-  const email = "contact@quentinpetiteville.me";
+  const email = "quentin.petiteville@student.junia.com";
   const mailtoSubject = encodeURIComponent(t("mailtoSubject"));
   const mailtoBody = encodeURIComponent(t("mailtoBody"));
   const emailOffset = useMarqueeOffset({
