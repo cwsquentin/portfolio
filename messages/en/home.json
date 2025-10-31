@@ -4,54 +4,11 @@
   },
   "name": "Quentin Petiteville",
   "title": "Software Engineering Student",
-  "description": "I'm a passionate developer who builds accessible, clean digital experiences by blending software engineering and project leadership. \nMy journey has been filled with diverse projects and valuable lessons that I now apply in my work during my final year of software engineering studies.",
-  "availability": "Available for a 6-month internship starting 4th of March 2026 !",
   "hero": {
-    "focus": [
-      "Modern Software Engineering and Product-driven development",
-      "Seamless design and delivery, from concept to shipped product",
-      "Bilingual collaboration across French and English teams"
-    ],
-    "stats": [
-      { "label": "Based in", "value": "Lille, France" },
-      { "label": "Focus", "value": "Software engineering" },
-      { "label": "Currently", "value": "Second-year Master’s student in Software Engineering" }
-    ],
-    "sidebar": {
-      "eyebrow": "Profile",
-      "title": "What I bring to your team",
-      "description": "A product-minded engineer focused on clear and reliable delivery",
-      "availabilityLabel": "Next availability",
-      "contact": "Let's discuss your project"
-    }
-  },
-  "cta": {
-    "primary": "View my projects",
-    "secondary": "Download My Resume",
-  "secondaryHref": "/downloads/CV_FR_EN.pdf"
-  },
-  "highlights": {
-    "eyebrow": "Crafting value",
-    "title": "Product-minded engineering that delivers",
-    "description": "I turn thoughtful UX into fast, inclusive, and reliable products teams can trust.",
-    "items": {
-      "craft": {
-        "title": "Clean interfaces",
-        "description": "Design systems, responsive layouts, and inclusive interactions that make complex products feel simple."
-      },
-      "performance": {
-        "title": "Performance obsessed",
-        "description": "Measure, iterate, and optimize for speed and stability — from concept to real-world usage."
-      },
-      "collaboration": {
-        "title": "Team-first collaborator",
-        "description": "Pair with designers, product owners, and stakeholders to clarify requirements and ship reliable releases on time."
-      },
-      "delivery": {
-        "title": "End-to-end delivery",
-        "description": "From idea to production: plan, automate quality checks, and iterate with feedback to achieve measurable impact."
-      }
-    }
+    "headline": "Bridging thoughtful products with reliable code",
+    "subheadline": "I'm Quentin, a product-minded software engineering student crafting clean, human-centered digital experiences during my final year.",
+    "availability": "Next availability: 6-month internship starting March 4, 2026",
+    "cta": "About - Quentin Petiteville"
   },
   "skills": {
     "eyebrow": "Skills",
@@ -106,7 +63,7 @@
   "projectsPreview": {
     "eyebrow": "Projects",
     "title": "My works",
-    "description": "An overview of my latest projects :",
+    "description": "An overview of my latest projects:",
     "viewAll": "See every project",
     "viewProject": "View project",
     "github": "GitHub",
@@ -118,25 +75,25 @@
     "cta": "Explore my journey",
     "items": [
       {
-        "period": "Apr 2025 — Sep 2025",
+        "period": "Apr 2025 - Sep 2025",
         "role": "Web Developer Intern",
         "company": "Music Story, Lille",
-        "summary": "Rebuilt the the Music Story website : migration of WordPress content to Next.js/Tailwind CSS, with improved performance and maintainability."
+        "summary": "Rebuilt the Music Story website by migrating WordPress content to Next.js/Tailwind CSS, improving performance and maintainability."
       },
       {
-        "period": "May 2022 — Aug 2022",
+        "period": "May 2022 - Aug 2022",
         "role": "Web Developer Intern",
         "company": "Celaneo, Paris",
-        "summary": "Managed client-driven projects while designing and developing websites, crafting algorithms, and cleaning databases to meet every requirement."
+        "summary": "Led client-driven projects while designing and developing websites, crafting algorithms, and cleaning databases to meet every requirement."
       }
     ]
   },
   "ctaBanner": {
-    "eyebrow": "Let’s collaborate",
+    "eyebrow": "Let's collaborate",
     "title": "Ready to build your next project?",
-    "description": "I am looking for an internship starting March 4, 2026, in order to actively contribute to high-impact projects and learn from an ambitious team.",
-    "primary": "Start a conversation !",
+    "description": "I am looking for an internship starting March 4, 2026, to actively contribute to high-impact projects and learn from an ambitious team.",
+    "primary": "Start a conversation!",
     "secondary": "See my resume",
-  "secondaryHref": "/downloads/CV_FR_EN.pdf"
+    "secondaryHref": "/downloads/CV_FR_EN.pdf"
   }
 }
