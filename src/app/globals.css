@@ -12,7 +12,3 @@
   --shadow-indigo-md: 0 18px 40px -32px rgba(79,70,229,0.4);
   --shadow-indigo-sm: 0 18px 48px -40px rgba(79,70,229,0.45);
 }
-
-html {
-  scroll-behavior: smooth;
-}

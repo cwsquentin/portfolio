@@ -3,7 +3,7 @@ import type { StaticImageData } from "next/image";
 export type ProjectItem = {
   id: "musicStory" | "paris92" | "taskFlow" | "medchemStructureGenius";
   slug: string;
-  image: string | StaticImageData;       // keep the union, strings work fine
+  image: string | StaticImageData;
   technologies: string[];
   github?: string;
   demo?: string;
@@ -28,10 +28,16 @@ export const projectsData: ProjectItem[] = [
   {
     id: "musicStory",
     slug: "musicstory",
-    image: "/projects/musicstory.webp",
+    image: "/projects/musicstory/home.webp",
     technologies: ["Next.js", "TailwindCSS", "TypeScript", "next-intl", "Framer Motion"],
     confidential: true,
     demo: "https://www.music-story.com",
+    gallery: [
+      "/projects/musicstory/home.webp",
+      "/projects/musicstory/metadata.webp",
+      "/projects/musicstory/map.webp",
+      "/projects/musicstory/customers.webp",
+    ],
   },
   {
     id: "paris92",
