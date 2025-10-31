@@ -1,13 +1,15 @@
 import { Button } from "@/app/components/button";
 import { SnakeBackground } from "@/app/components/snake-background";
-import * as motion from "motion/react-client";
-import { Icon } from "@iconify/react";
-import { useTranslations } from "next-intl";
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 import { containerVariants, itemVariants } from "@/animation";
 import { projectsData } from "@/data/projects";
 import type { Variants } from "framer-motion";
+import { Icon } from "@iconify/react";
+import Image from "next/image";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
+import * as motion from "motion/react-client";
+import Duck from "@/app/favicon.ico";
 
 export async function generateMetadata({
   params,
@@ -104,16 +106,30 @@ export default function Home() {
               href="/about"
               background="glass"
               border="whiteSoft"
-              size="mdTall"
-              className="group justify-center px-6"
+              size="compact"
+              className="group items-center gap-2 rounded-full px-3 py-1.5 text-sm sm:px-4"
             >
-              <span className="flex items-center gap-3">
-                <span className="h-5 w-5 opacity-0" aria-hidden="true" />
-                <span>{t("hero.cta")}</span>
-                <span className="relative flex h-5 w-5 items-center justify-center overflow-hidden">
+              <span className="flex items-center gap-2">
+                <span className="relative flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-slate-950/70">
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-0 rounded-full border border-slate-100/25"
+                  />
+                  <Image
+                    src={Duck}
+                    alt="Quentin Petiteville"
+                    width={24}
+                    height={24}
+                    className="h-6 w-6 rounded-full object-cover"
+                  />
+                </span>
+                <span className="flex items-center text-slate-100 transition-transform duration-300 group-hover:-translate-x-1">
+                  {t("hero.cta")}
+                </span>
+                <span className="flex w-0 items-center justify-center overflow-hidden opacity-0 transition-all duration-300 group-hover:w-4 group-hover:opacity-100">
                   <Icon
                     icon="mdi:arrow-right"
-                    className="absolute translate-x-2 text-slate-100 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+                    className="translate-x-2 text-slate-100 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
                   />
                 </span>
               </span>

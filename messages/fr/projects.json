@@ -22,11 +22,11 @@
       "description": "MedChem Structure Genius est une application d’e-learning destinée aux étudiants de la Faculté de Pharmacie de l'Université de Lille pour les aider à étudier les molécules et leurs relations.\n Projet en cours — n’hésitez pas à me poser vos questions !"
     },
     "musicStory": {
-      "title": "Refonte site web - Music Story",
+      "title": "Music Story",
       "description": "Refonte du site Music Story : migration du contenu WordPress vers Next.js/Tailwind CSS, avec amélioration de la performance et de la maintenabilité."
     },
     "paris92": {
-      "title": "Plateforme web - Paris 92",
+      "title": "Paris 92",
       "description": "Développement d'une plateforme web pour la collecte et l'analyse de données des performances sportives du club de handball Paris 92, destinée à son staff. \n Détails et livrables confidentiels."
     }
   },

@@ -77,10 +77,17 @@ export default function AboutPage() {
   const skillsLead = t("skills.lead");
 
   return (
-    <div className="relative pb-24">
+    <div className="relative overflow-hidden pb-24">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 flex justify-center"
+      >
+        <div className="h-[45rem] w-full max-w-6xl -translate-y-32 bg-[radial-gradient(circle_at_center,rgba(45,218,191,0.18),transparent_70%)] opacity-75 blur-3xl" />
+      </div>
+
       <SideScrollNav links={sectionLinks} />
 
-      <div className="mx-auto w-full max-w-6xl px-4 pt-20 sm:px-6 lg:px-8 xl:pl-32">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-20 sm:px-6 lg:px-8 xl:pl-32">
         <motion.section
           id="introduction"
           variants={containerVariants}
