@@ -1,8 +1,7 @@
 import { Button } from "@/app/components/button";
 import { SnakeBackground } from "@/app/components/snake-background";
-import { containerVariants, itemVariants } from "@/animation";
+import { containerVariants, heroReveal, itemVariants } from "@/animation";
 import { projectsData } from "@/data/projects";
-import type { Variants } from "framer-motion";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -40,20 +39,6 @@ export default function Home() {
   const experienceItems = (t.raw("experience.items") as ExperienceItem[]) ?? [];
 
   const featuredProjects = projectsData.slice(0, 3);
-  const heroReveal: Variants = {
-    hidden: {
-      opacity: 0,
-      clipPath: "inset(0 100% 0 0)",
-      filter: "blur(12px)"
-    },
-    visible: {
-      opacity: 1,
-      clipPath: "inset(0 0% 0 0)",
-      filter: "blur(0px)",
-      transition: { duration: 0.85, ease: [0.42, 0, 0.58, 1] }
-    }
-  };
-
   return (
     <div className="min-h-screen">
       <section className="relative isolate flex min-h-[52svh] flex-col justify-center overflow-hidden px-4 pb-8 pt-28 sm:min-h-[56svh] sm:px-8 sm:pb-10 sm:pt-36 lg:min-h-[85svh]">
