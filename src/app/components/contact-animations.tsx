@@ -108,17 +108,6 @@ export default function ContactAnimations() {
     hovered: socialsHovered
   });
 
-  const highlightItems = [
-    {
-      icon: "mdi:lightning-bolt-outline",
-      label: t("meta.response")
-    },
-    {
-      icon: "mdi:earth",
-      label: t("meta.remote")
-    }
-  ];
-
   return (
   <div className="flex items-start justify-center px-4 pt-16 pb-20 sm:px-6 sm:pt-28 sm:pb-24 lg:min-h-[25rem]">
       <motion.div

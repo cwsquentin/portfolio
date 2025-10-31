@@ -58,7 +58,11 @@ export default function Home() {
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-slate-950/85 via-slate-950/70 to-slate-950/90" />
         <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,rgba(45,212,191,0.25),transparent_65%)]" />
         <div className="absolute inset-0 z-20">
-          <SnakeBackground className="mix-blend-screen opacity-90" gridSize={32} tickMs={320} />
+          <SnakeBackground
+            className="mix-blend-screen opacity-90"
+            gridSize={32}
+            tickMs={320}
+          />
         </div>
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-72 bg-gradient-to-b from-teal-500/25 via-transparent to-transparent blur-3xl" />
 
@@ -77,7 +81,7 @@ export default function Home() {
 
           <motion.p
             variants={heroReveal}
-            className="max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg"
+            className="max-w-2xl text-base leading-relaxed text-slate-200 sm:text-2xl"
           >
             {t("hero.subheadline")}
           </motion.p>
@@ -147,26 +151,51 @@ export default function Home() {
       </section>
 
       <section className="px-4 py-16 sm:px-6 lg:py-20">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.12 }}
-          className="mx-auto max-w-6xl"
-        >
+        <div className="mx-auto max-w-6xl">
           <div className="flex flex-col items-start justify-between gap-6 text-left md:flex-row md:items-end">
-            <motion.div variants={itemVariants.fromBottom} className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-teal-300/80">
-                {t("projectsPreview.eyebrow")}
-              </p>
-              <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-                {t("projectsPreview.title")}
-              </h2>
-              <p className="mt-4 text-base text-slate-300 sm:text-lg">
+            <div className="max-w-2xl">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{
+                  once: true,
+                  amount: 0.01,
+                  margin: "0px 0px 240px 0px",
+                }}
+              >
+                <motion.p
+                  variants={itemVariants.fromBottom}
+                  className="text-sm font-semibold uppercase tracking-[0.3em] text-teal-300/80"
+                >
+                  {t("projectsPreview.eyebrow")}
+                </motion.p>
+
+                <motion.h2
+                  variants={itemVariants.fromBottom}
+                  className="mt-3 text-3xl font-bold sm:text-4xl"
+                >
+                  {t("projectsPreview.title")}
+                </motion.h2>
+              </motion.div>
+
+              <motion.p
+                variants={itemVariants.fromBottom}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.25 }}
+                className="mt-4 text-base text-slate-300 sm:text-lg"
+              >
                 {t("projectsPreview.description")}
-              </p>
-            </motion.div>
-            <motion.div variants={itemVariants.fromBottom}>
+              </motion.p>
+            </div>
+
+            <motion.div
+              variants={itemVariants.fromBottom}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.25 }}
+            >
               <Button
                 href="/projects"
                 background="transparentSoft"
@@ -178,7 +207,13 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="mt-10 grid gap-6 md:grid-cols-2"
+          >
             {featuredProjects.map((project, index) => {
               const title = projectsT(`items.${project.id}.title`);
               const description = projectsT(`items.${project.id}.description`);
@@ -201,7 +236,9 @@ export default function Home() {
                   <span className="absolute right-6 top-6 text-xs font-semibold uppercase tracking-widest text-teal-300/80">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="mt-4 text-2xl font-semibold text-slate-100">{title}</h3>
+                  <h3 className="mt-4 text-2xl font-semibold text-slate-100">
+                    {title}
+                  </h3>
                   <p className="mt-3 text-sm leading-relaxed text-slate-300">
                     {description}
                   </p>
@@ -225,7 +262,11 @@ export default function Home() {
                       background={isConfidential ? "none" : "teal"}
                       border={isConfidential ? "whiteSoft" : "none"}
                       size="sm"
-                      className={isConfidential ? "text-slate-200 hover:bg-white/5" : undefined}
+                      className={
+                        isConfidential
+                          ? "text-slate-200 hover:bg-white/5"
+                          : undefined
+                      }
                     >
                       {isConfidential ? (
                         <Icon icon="uis:lock" className="size-4" />
@@ -267,8 +308,8 @@ export default function Home() {
                 </motion.article>
               );
             })}
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       <section className="px-4 py-16 sm:px-6 lg:py-20">
@@ -279,11 +320,16 @@ export default function Home() {
           viewport={{ once: true, amount: 0.3 }}
           className="mx-auto max-w-6xl"
         >
-          <motion.div variants={itemVariants.fromBottom} className="mx-auto max-w-2xl text-center">
+          <motion.div
+            variants={itemVariants.fromBottom}
+            className="mx-auto max-w-2xl text-center"
+          >
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-teal-300/80">
               {t("experience.eyebrow")}
             </p>
-            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">{t("experience.title")}</h2>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+              {t("experience.title")}
+            </h2>
           </motion.div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -299,13 +345,20 @@ export default function Home() {
                 <h3 className="mt-4 text-2xl font-semibold text-slate-100">
                   {item.role}
                 </h3>
-                <p className="mt-1 text-sm font-medium text-teal-300">{item.company}</p>
-                <p className="mt-3 text-sm leading-relaxed text-slate-300">{item.summary}</p>
+                <p className="mt-1 text-sm font-medium text-teal-300">
+                  {item.company}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                  {item.summary}
+                </p>
               </motion.article>
             ))}
           </div>
 
-          <motion.div variants={itemVariants.fromBottom} className="mt-10 text-center">
+          <motion.div
+            variants={itemVariants.fromBottom}
+            className="mt-10 text-center"
+          >
             <Button
               href="/about"
               background="transparentSoft"
@@ -326,12 +379,19 @@ export default function Home() {
           viewport={{ once: true, amount: 0.3 }}
           className="mx-auto max-w-6xl rounded-3xl border border-white/10 bg-slate-900/40 p-8 sm:p-10"
         >
-          <motion.div variants={itemVariants.fromBottom} className="text-center">
+          <motion.div
+            variants={itemVariants.fromBottom}
+            className="text-center"
+          >
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-teal-300/80">
               {t("skills.eyebrow")}
             </p>
-            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">{t("skills.title")}</h2>
-            <p className="mt-4 text-base text-slate-300 sm:text-lg">{t("skills.description")}</p>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+              {t("skills.title")}
+            </h2>
+            <p className="mt-4 text-base text-slate-300 sm:text-lg">
+              {t("skills.description")}
+            </p>
           </motion.div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -368,20 +428,23 @@ export default function Home() {
           viewport={{ once: true, amount: 0.3 }}
           className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-teal-500/20 via-slate-900 to-slate-950 p-10 sm:p-14"
         >
-          <motion.div variants={itemVariants.fromBottom} className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <motion.div
+            variants={itemVariants.fromBottom}
+            className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between"
+          >
             <div className="max-w-xl">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-teal-300/80">
                 {t("ctaBanner.eyebrow")}
               </p>
-              <h2 className="mt-3 text-3xl font-bold sm:text-4xl">{t("ctaBanner.title")}</h2>
-              <p className="mt-4 text-base text-slate-200 sm:text-lg">{t("ctaBanner.description")}</p>
+              <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+                {t("ctaBanner.title")}
+              </h2>
+              <p className="mt-4 text-base text-slate-200 sm:text-lg">
+                {t("ctaBanner.description")}
+              </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Button
-                href="/contact"
-                background="teal"
-                size="lg"
-              >
+              <Button href="/contact" background="teal" size="lg">
                 {t("ctaBanner.primary")}
               </Button>
               <Button
