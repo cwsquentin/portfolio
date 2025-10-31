@@ -83,7 +83,6 @@ export function ProjectCard({
             alt={title}
             className="object-cover"
             fill
-            placeholder="blur"
           />
         </div>
 
