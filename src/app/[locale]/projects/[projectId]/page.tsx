@@ -19,7 +19,6 @@ type DetailSection = {
 
 type ProjectDetailMessages = {
   hero?: {
-    eyebrow?: string;
     title: string;
     subtitle?: string;
     period?: string;
@@ -121,11 +120,6 @@ export default async function ProjectDetailPage({
   const heroSummaryRaw = hero.summary;
   const summaryParagraph =
     typeof heroSummaryRaw === "string" ? heroSummaryRaw.trim() : "";
-  const summaryItems = Array.isArray(heroSummaryRaw)
-    ? heroSummaryRaw
-        .map((item) => (typeof item === "string" ? item.trim() : ""))
-        .filter((item) => item.length > 0)
-    : [];
   const metaItems = Array.isArray(detail.meta) ? detail.meta : [];
   const heroCtaLabel = hero.ctaLabel?.trim();
   const showDemoCta = Boolean(heroCtaLabel && project.demo);
@@ -162,19 +156,9 @@ export default async function ProjectDetailPage({
 
           <div className="mt-10 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
             <div className="space-y-6">
-              {hero.eyebrow ? (
-                <p className="text-sm font-semibold uppercase tracking-[0.32em] text-indigo-300/80">
-                  {hero.eyebrow}
-                </p>
-              ) : null}
               <h1 className="text-4xl font-bold text-white sm:text-5xl">
                 {hero.title}
               </h1>
-              {hero.subtitle ? (
-                <p className="text-lg text-slate-200 sm:text-xl">
-                  {hero.subtitle}
-                </p>
-              ) : null}
 
               <div className="flex flex-wrap gap-2 text-sm text-slate-300">
                 {hero.period ? (
@@ -199,23 +183,6 @@ export default async function ProjectDetailPage({
                   <p className="mt-4 whitespace-pre-line text-base text-slate-200">
                     {summaryParagraph}
                   </p>
-                </div>
-              ) : summaryItems.length ? (
-                <div>
-                  <h2 className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-300">
-                    {t("detail.summaryTitle")}
-                  </h2>
-                  <ul className="mt-4 space-y-3 text-base text-slate-200">
-                    {summaryItems.map((item, index) => (
-                      <li
-                        key={`${project.id}-summary-${index}`}
-                        className="flex items-start gap-3"
-                      >
-                        <span className="mt-2 inline-block size-2 rounded-full bg-indigo-400" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               ) : null}
 

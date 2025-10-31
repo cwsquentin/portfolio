@@ -27,45 +27,34 @@
     },
     "paris92": {
       "title": "Plateforme web - Paris 92",
-      "description": "Développement d'une plateforme web pour la collecte et l'analyse de données des performances sportives du club de handball Paris 92, destinée à son staff. Détails et livrables confidentiels."
+      "description": "Développement d'une plateforme web pour la collecte et l'analyse de données des performances sportives du club de handball Paris 92, destinée à son staff. \n Détails et livrables confidentiels."
     }
   },
   "details": {
     "musicStory": {
       "hero": {
-        "eyebrow": "Refonte web",
-        "title": "Music Story - refonte du site",
-        "subtitle": "Migration du site WordPress vers une plateforme Next.js pérenne.",
+        "title": "Music Story",
         "period": "Avril - Septembre 2025",
-        "summary": [
-          "Pilotage de la migration du site marketing public vers Next.js (App Router) avec Tailwind CSS et gestion multilingue.",
-          "Création de composants réutilisables, amélioration des performances et définition d'un workflow durable avec l'équipe interne."
-        ],
-        "ctaLabel": "Voir le site en ligne"
+        "summary": "Music Story est un fournisseur professionnel de métadonnées musicales et de services d’enrichissement pour les acteurs B2B : médias, plateformes et ayants droit. J’ai participé à la refonte de leur site web vitrine en faisant évoluer une base WordPress hétérogène vers une plateforme Next.js plus moderne, construite sur des composants réutilisables et déployée par itérations avec relectures de code aux côtés de l’équipe. Cette refonte a rendu le site plus rapide et cohérent, entièrement internationalisé et mieux référencé, tout en simplifiant la maintenance et en accélérant la création de nouvelles pages et la mise en ligne.",
+        "ctaLabel": "Voir le projet"
       },
       "meta": [
-        { "label": "Type", "value": "Refonte de site marketing B2B" },
-        { "label": "Rôle", "value": "Développeur Next.js full-stack (stagiaire)" },
-        { "label": "Équipe", "value": "2 développeurs, 1 designer, 1 product owner" },
+        { "label": "Type", "value": "Développement du site web Music Story" },
+        { "label": "Rôle", "value": "Développeur web stagiaire" },
+        { "label": "Équipe", "value": "Développement mené en solo, encadré par des développeurs référents assurant la relecture et la validation de mes pull requests sur GitHub" },
         { "label": "Calendrier", "value": "6 mois" }
       ]
     },
     "paris92": {
       "hero": {
-        "eyebrow": "Plateforme data",
-        "title": "Paris 92 - tableau de bord performance",
-        "subtitle": "Centralisation des statistiques et analyses pour le staff du club de handball Paris 92.",
+        "title": "Paris 92",
         "period": "Janvier - Mai 2025",
-        "summary": [
-          "Conception et réalisation d'un tableau de bord sécurisé rassemblant données de match, vidéos et métriques physiques pour le staff.",
-          "Co-construction avec la préparatrice physique afin de proposer des visualisations adaptées aux besoins quotidiens."
-        ],
-        "ctaLabel": ""
+        "summary": "Paris 92 est un club de handball féminin reconnu sur la scène nationale et européenne qui cherche à optimiser la gestion et l'analyse de ses données. \nJ’ai participé à la conception et à la réalisation d’une plateforme sécurisée centralisant données de match, vidéos et métriques physiques, en collaboration avec cinq étudiants de l'ISEN. Mon rôle a été un développeur polyvalent front/back avec une interface en Next.js et back-end Python pour le traitement des données. \nCette plateforme permet aux entraîneurs, analystes et préparateurs de suivre la charge, comparer les performances, préparer les rencontres et générer des bilans en quelques clics, ce qui fluidifie la collaboration, fiabilise la collecte d’informations et accélère la prise de décision. \n Le code et le livrable sont confidentiels, mais vous pouvez me poser des questions à leur sujet !"
       },
       "meta": [
-        { "label": "Type", "value": "Application web analytique" },
+        { "label": "Type", "value": "Plateforme web pour la collecte et l'analyse de données des performances sportives du club de handball Paris 92" },
         { "label": "Rôle", "value": "Développeur full-stack" },
-        { "label": "Équipe", "value": "Projet solo avec retours hebdomadaires du staff" },
+        { "label": "Équipe", "value": "Équipe de six étudiants ISEN" },
         { "label": "Calendrier", "value": "4 mois" }
       ]
     },

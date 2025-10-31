@@ -24,49 +24,38 @@
     },
     "musicStory": {
       "title": "Homepage redesign - Music Story",
-      "description": "Migration of the WordPress homepage to Next.js (App Router) with TailwindCSS, a scroll-reactive header and localization (next-intl). Deliverables are confidential."
+      "description": "Redesign of the Music Story website: migration of WordPress content to Next.js/Tailwind CSS, with improved performance and maintainability."
     },
     "paris92": {
       "title": "Homepage redesign - Paris 92",
-      "description": "Next.js rebuild with modern UI and localization. Details and deliverables are confidential."
+      "description": "Development of a web platform for collecting and analyzing sports performance data for the Paris 92 handball club, intended for use by its staff. \n Details and deliverables are confidential."
     }
   },
   "details": {
     "musicStory": {
       "hero": {
-        "eyebrow": "Website redesign",
-        "title": "Music Story - Website redesign",
-        "subtitle": "Migrating a legacy WordPress site to a maintainable Next.js platform.",
+        "title": "Music Story",
         "period": "April - September 2025",
-        "summary": [
-          "Led the end-to-end migration of the public marketing website to the Next.js App Router with Tailwind CSS and localization.",
-          "Introduced reusable components, improved page performance, and set up a robust workflow for future iterations with the internal team."
-        ],
-        "ctaLabel": "Visit the live site"
+        "summary": "Music Story is a professional provider of music metadata and enrichment services for B2B players: media, platforms, and rights holders. I participated in the redesign of their showcase website by upgrading a heterogeneous WordPress base to a more modern Next.js platform, built on reusable components and deployed iteratively with code reviews alongside the team. This redesign made the site faster and more consistent, fully internationalized and better referenced, while simplifying maintenance and speeding up the creation of new pages and their publication online.",
+        "ctaLabel": "View the project"
       },
       "meta": [
-        { "label": "Type", "value": "B2B marketing website redesign" },
-        { "label": "Role", "value": "Full-stack Next.js developer (intern)" },
-        { "label": "Team", "value": "2 developers, 1 designer, 1 product owner" },
+        { "label": "Type", "value": "Development of the Music Story website" },
+        { "label": "Role", "value": "Web developer intern" },
+        { "label": "Team", "value": "Solo development, supervised by lead developers who review and approve my pull requests on GitHub." },
         { "label": "Timeline", "value": "6 months" }
       ]
     },
     "paris92": {
       "hero": {
-        "eyebrow": "Data platform",
-        "title": "Paris 92 - Performance dashboard",
-        "subtitle": "Centralizing match statistics and analytics for the Paris 92 handball staff.",
+        "title": "Paris 92",
         "period": "January - May 2025",
-        "summary": [
-          "Designed and shipped a secure internal dashboard to gather match data, video analysis and physical metrics for the staff.",
-          "Collaborated with the performance coach to define visualizations that answer day-to-day questions during the season."
-        ],
-        "ctaLabel": ""
+        "summary": "Paris 92 is a women's handball club recognized on the national and European scene that seeks to optimize the management and analysis of its data. \n I participated in the design and implementation of a secure platform that centralizes match data, videos, and physical metrics, in collaboration with five students from ISEN. My role was that of a versatile front/back developer with a Next.js interface and Python back-end for data processing. \n This platform allows coaches, analysts, and trainers to track workload, compare performance, prepare for matches, and generate reports in just a few clicks, which streamlines collaboration, makes information gathering more reliable, and speeds up decision-making. \n The code and deliverables are confidential, but you can ask me about them!"
       },
       "meta": [
-        { "label": "Type", "value": "Analytics web application" },
+        { "label": "Type", "value": "Web platform for collecting and analyzing sports performance data for the Paris 92 handball club" },
         { "label": "Role", "value": "Full-stack developer" },
-        { "label": "Team", "value": "Solo delivery with weekly staff feedback" },
+        { "label": "Team", "value": "Team of six ISEN students" },
         { "label": "Timeline", "value": "4 months" }
       ]
     },
