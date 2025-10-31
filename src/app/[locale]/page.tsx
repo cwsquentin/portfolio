@@ -107,10 +107,10 @@ export default function Home() {
               background="glass"
               border="whiteSoft"
               size="compact"
-              className="group items-center gap-2 rounded-full px-3 py-1.5 text-sm sm:px-4"
+              className="group items-center gap-2 rounded-full px-3 py-1 text-sm sm:px-2"
             >
               <span className="flex items-center gap-2">
-                <span className="relative flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-slate-950/70">
+                <span className="relative flex size-8 items-center justify-center rounded-full border border-white/10 bg-slate-950/70">
                   <span
                     aria-hidden="true"
                     className="absolute inset-0 rounded-full border border-slate-100/25"
@@ -120,7 +120,7 @@ export default function Home() {
                     alt="Quentin Petiteville"
                     width={24}
                     height={24}
-                    className="h-6 w-6 rounded-full object-cover"
+                    className="size-6 rounded-full object-cover"
                   />
                 </span>
                 <span className="flex items-center text-slate-100 transition-transform duration-300 group-hover:-translate-x-1">
