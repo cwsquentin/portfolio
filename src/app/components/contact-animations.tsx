@@ -89,7 +89,7 @@ export default function ContactAnimations() {
   const t = useTranslations("contact");
   const [emailHovered, setEmailHovered] = useState(false);
   const [socialsHovered, setSocialsHovered] = useState(false);
-  const email = "contact@quentinpetiteville.me";
+  const email = "quentin.petiteville@student.junia.com";
   const mailtoSubject = encodeURIComponent(t("mailtoSubject"));
   const mailtoBody = encodeURIComponent(t("mailtoBody"));
   const emailOffset = useMarqueeOffset({
@@ -108,17 +108,6 @@ export default function ContactAnimations() {
     hovered: socialsHovered
   });
 
-  const highlightItems = [
-    {
-      icon: "mdi:lightning-bolt-outline",
-      label: t("meta.response")
-    },
-    {
-      icon: "mdi:earth",
-      label: t("meta.remote")
-    }
-  ];
-
   return (
   <div className="flex items-start justify-center px-4 pt-16 pb-20 sm:px-6 sm:pt-28 sm:pb-24 lg:min-h-[25rem]">
       <motion.div
@@ -127,7 +116,7 @@ export default function ContactAnimations() {
         animate="visible"
         className="w-full max-w-5xl"
       >
-        <div className="relative mb-20 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-950/70 to-slate-900/40 p-8 text-left shadow-[0_25px_60px_-45px_rgba(15,118,110,0.6)] sm:p-12">
+        <div className="relative mb-20 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-950/70 to-slate-900/40 p-8 text-left shadow-teal-md sm:p-12">
           <div className="absolute -right-6 -top-6 hidden rotate-12 rounded-full border border-teal-500/30 bg-teal-500/10 p-6 text-teal-300 sm:block">
             <Icon icon="mdi:cursor-default-click-outline" className="size-8 opacity-80" />
           </div>
@@ -178,18 +167,6 @@ export default function ContactAnimations() {
                 <Icon icon="mdi:linkedin" className="size-4" />
                 LinkedIn
               </Link>
-            </div>
-
-            <div className="flex flex-wrap gap-3 text-xs text-slate-400">
-              {highlightItems.map((item, idx) => (
-                <span
-                  key={`${item.icon}-${idx}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1"
-                >
-                  <Icon icon={item.icon} className="size-3.5 text-teal-300" />
-                  {item.label}
-                </span>
-              ))}
             </div>
           </div>
         </div>

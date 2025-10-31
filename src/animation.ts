@@ -10,6 +10,20 @@ export const containerVariants: Variants = {
   },
 };
 
+export const heroReveal: Variants = {
+  hidden: {
+    opacity: 0,
+    clipPath: "inset(0 100% 0 0)",
+    filter: "blur(12px)",
+  },
+  visible: {
+    opacity: 1,
+    clipPath: "inset(0 0% 0 0)",
+    filter: "blur(0px)",
+    transition: { duration: 0.85, ease: [0.42, 0, 0.58, 1] },
+  },
+};
+
 export const itemVariants: Record<string, Variants> = {
   fromBottom: {
     hidden: { 

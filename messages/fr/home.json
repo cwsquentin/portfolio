@@ -3,60 +3,17 @@
     "title": "Accueil"
   },
   "name": "Quentin Petiteville",
-  "title": "Étudiant en ingénierie informatique",
-    "description": "Développeur passionné, je crée des expériences web accessibles et soignées en combinant conception et pilotage de projets. \nMon parcours a été rempli de projets diversifiés et d'enseignements précieux qui nourrit aujourd'hui mon travail en dernière année d'école d'ingénieur informatique.",
-  "availability": "Disponible pour un stage de 6 mois à partir du 4 mars 2026 !",
+  "title": "Étudiant en ingénierie logicielle",
   "hero": {
-    "focus": [
-      "Ingénierie logicielle moderne et développement axé sur le produit",
-      "Conception et livraison sans faille, du concept au livrable",
-      "Collaboration bilingue auprès d'équipes françaises et internationales"
-    ],
-    "stats": [
-      { "label": "Basé à", "value": "Lille, France" },
-      { "label": "Expertise", "value": "Ingénierie informatique" },
-      { "label": "Actuellement", "value": "Étudiant en M2 d'ingénierie informatique, dernière année d’école d’ingénieurs" }
-    ],
-    "sidebar": {
-      "eyebrow": "Profil",
-      "title": "Ce que j'apporte à votre équipe",
-      "description": "Un ingénieur axé sur le produit, focalisé sur une livraison claire et fiable.",
-      "availabilityLabel": "Prochaine disponibilité",
-      "contact": "Discutons de votre projet"
-    }
-  },
-  "cta": {
-    "primary": "Découvrir mes projets",
-    "secondary": "Télécharger mon CV",
-  "secondaryHref": "/downloads/CV_FR_EN.pdf"
-  },
-  "highlights": {
-    "eyebrow": "Créer de la valeur",
-    "title": "Un regard produit au service du code",
-    "description": "J’assemble UX, outils modernes et fiabilité pour livrer des produits inclusifs et fiables sur lesquelles les équipes peuvent compter.",
-    "items": {
-      "craft": {
-        "title": "Interfaces soignées",
-        "description": "Design systems, maquettes responsives et interactions accessibles pour transformer des parcours complexes en expériences fluides."
-      },
-      "performance": {
-        "title": "Obsédé par la performance",
-        "description": "Mesurer, itérer et optimiser la vitesse et la stabilité, du concept à l'utilisation dans le monde réel."
-      },
-      "collaboration": {
-        "title": "Esprit d’équipe",
-        "description": "Travailler avec les concepteurs, product managers et parties prenantes afin de clarifier les besoins et livrer à temps."
-      },
-      "delivery": {
-        "title": "Livraison de bout en bout",
-        "description": "De l’idée à la production : planification, automatisation de la qualité et itérations à partir des commentaires pour obtenir un impact mesurable."
-      }
-    }
+    "headline": "Relier produit et code avec exigence",
+    "subheadline": "Je m'appelle Quentin, étudiant en ingénierie informatique, et je conçois et développe des produits web clairs et utiles.",
+    "availability": "Disponible pour un stage de 6 mois à partir du 4 mars 2026 !",
+    "cta": "À propos - Quentin Petiteville"
   },
   "skills": {
     "eyebrow": "Compétences",
     "title": "Expertises clés",
-    "description": "Un ensemble de compétences développées à travers mon expérience et la réalisation de mes projets.",
+    "description": "Un ensemble de compétences développées au fil de mon expérience et de la réalisation de mes projets.",
     "categories": [
       {
         "title": "Langages & frameworks",
@@ -105,7 +62,7 @@
   },
   "projectsPreview": {
     "eyebrow": "Réalisations",
-    "title": "Projets mis en avant",
+    "title": "Mes projets",
     "description": "Un aperçu de mes derniers projets :",
     "viewAll": "Voir tous les projets",
     "viewProject": "Voir le projet",
@@ -113,18 +70,18 @@
     "demo": "Démo en ligne"
   },
   "experience": {
-    "eyebrow": "Expérience",
+    "eyebrow": "Expériences",
     "title": "Missions récentes",
     "cta": "Découvrir mon parcours",
     "items": [
       {
-        "period": "Avr. 2025 — Sep. 2025",
+        "period": "Avr. 2025 - Sep. 2025",
         "role": "Stagiaire développeur web",
         "company": "Music Story, Lille",
         "summary": "Refonte du site Music Story : migration du contenu WordPress vers Next.js/Tailwind CSS, avec amélioration de la performance et de la maintenabilité."
       },
       {
-        "period": "Mai 2022 — Août 2022",
+        "period": "Mai 2022 - Août 2022",
         "role": "Stagiaire développeur web",
         "company": "Celaneo, Paris",
         "summary": "Pilotage de projets guidés par les besoins clients tout en concevant et développant des sites web, en créant des algorithmes et en nettoyant les bases de données pour répondre à chaque exigence."
@@ -134,9 +91,9 @@
   "ctaBanner": {
     "eyebrow": "Travaillons ensemble",
     "title": "Prêt à lancer votre prochain projet ?",
-    "description": "Je recherche un stage à partir du 4 mars 2026, afin de contribuer activement à des projets à fort impact et d'apprendre au contact d’une équipe ambitieuse.",
+    "description": "Je recherche un stage à partir du 4 mars 2026 afin de contribuer activement à des projets à fort impact et d'apprendre au contact d'une équipe ambitieuse.",
     "primary": "Contactez-moi !",
     "secondary": "Voir mon CV",
-  "secondaryHref": "/downloads/CV_FR_EN.pdf"
+    "secondaryHref": "/downloads/CV_FR_EN.pdf"
   }
 }

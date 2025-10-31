@@ -1,7 +1,7 @@
 {
   "page": {
-      "title": "Projects"
-    },
+    "title": "Projects"
+  },
   "title": "Projects",
   "intro": "A selection of projects that showcase my skills and passion for creating meaningful digital experiences.",
   "code": "Code",
@@ -9,14 +9,69 @@
   "codePrivate": "Private code",
   "demoUnavailable": "Preview unavailable",
   "confidential": "Confidential",
+  "detail": {
+    "openProject": "Open the detailed page for {project}",
+    "back": "Back to projects",
+    "technologies": "Technologies",
+    "metaTitle": "Project quick facts",
+    "summaryTitle": "Project overview",
+    "confidentialBadge": "Confidential code"
+  },
   "items": {
+    "medchemStructureGenius": {
+      "title": "MedChem Structure Genius",
+      "description": "MedChem Structure Genius is an e-learning application designed for students at the University of Lille Faculty of Pharmacy to help them study molecules and their relationships.\nProject in progress - feel free to ask me about it!"
+    },
     "musicStory": {
-      "title": "Homepage redesign — Music Story",
-      "description": "Migration of the WordPress homepage to Next.js (App Router) with TailwindCSS, a scroll-reactive header and localization (next-intl). Deliverables are confidential."
+      "title": "Music Story",
+      "description": "Redesign of the Music Story website: migration of WordPress content to Next.js/Tailwind CSS, with improved performance and maintainability."
     },
     "paris92": {
-      "title": "Homepage redesign — Paris 92",
-      "description": "Next.js rebuild with modern UI and localization. Details and deliverables are confidential."
+      "title": "Paris 92",
+      "description": "Development of a web platform for collecting and analyzing sports performance data for the Paris 92 handball club, intended for use by its staff. \n Details and deliverables are confidential."
+    }
+  },
+  "details": {
+    "musicStory": {
+      "hero": {
+        "title": "Music Story",
+        "period": "April - September 2025",
+        "summary": "Music Story is a professional provider of music metadata and enrichment services for B2B players: media, platforms, and rights holders. I participated in the redesign of their showcase website by upgrading a heterogeneous WordPress base to a more modern Next.js platform, built on reusable components and deployed iteratively with code reviews alongside the team. This redesign made the site faster and more consistent, fully internationalized and better referenced, while simplifying maintenance and speeding up the creation of new pages and their publication online.",
+        "ctaLabel": "View the project"
+      },
+      "meta": [
+        { "label": "Type", "value": "Development of the Music Story website" },
+        { "label": "Role", "value": "Web developer intern" },
+        { "label": "Team", "value": "Solo development, supervised by lead developers who review and approve my pull requests on GitHub." },
+        { "label": "Timeline", "value": "6 months" }
+      ]
+    },
+    "paris92": {
+      "hero": {
+        "title": "Paris 92",
+        "period": "January - May 2025",
+        "summary": "Paris 92 is a women's handball club recognized on the national and European scene that seeks to optimize the management and analysis of its data. \n I participated in the design and implementation of a secure platform that centralizes match data, videos, and physical metrics, in collaboration with five students from ISEN. My role was that of a versatile front/back developer with a Next.js interface and Python back-end for data processing. \n This platform allows coaches, analysts, and trainers to track workload, compare performance, prepare for matches, and generate reports in just a few clicks, which streamlines collaboration, makes information gathering more reliable, and speeds up decision-making. \n The code and deliverables are confidential, but you can ask me about them!"
+      },
+      "meta": [
+        { "label": "Type", "value": "Web platform for collecting and analyzing sports performance data for the Paris 92 handball club" },
+        { "label": "Role", "value": "Full-stack developer" },
+        { "label": "Team", "value": "Team of six ISEN students" },
+        { "label": "Timeline", "value": "4 months" }
+      ]
+    },
+    "medchemStructureGenius": {
+      "hero": {
+        "title": "MedChem Structure Genius",
+        "period": "October 2025 - Present",
+        "summary": "MedChem Structure Genius is an e-learning application designed for students at the Faculty of Pharmacy at the University of Lille to help them study molecules and their relationships. \nIn collaboration with a team of five students from ISEN, I am leading this project by defining the client's needs, facilitating weekly meetings, and ensuring follow-up while contributing directly to development. \nWe are improving the reliability and usability of the application: fixing display bugs on Android and the web, resolving quiz generation errors, improving the review and score tracking interfaces, optimizing the code, correcting texts, and creating an explanatory diagram of the quiz generation mechanism and typical queries on Supabase to facilitate data exploration. \nThe project is still in progress, so feel free to ask me any questions you may have!",
+        "ctaLabel": "View the project"
+      },
+      "meta": [
+        { "label": "Type", "value": "Development of a web and mobile e-learning application on drug structure" },
+        { "label": "Role", "value": "Project lead & developer" },
+        { "label": "Timeline", "value": "October 2025 - Present" },
+        { "label": "Status", "value": "Project still in progress - feel free to ask me any questions about it!" }
+      ]
     }
   }
 }

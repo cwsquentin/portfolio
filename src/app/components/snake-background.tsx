@@ -13,6 +13,7 @@ type SnakeBackgroundProps = {
   maxFoods?: number
   spawnIntervalMs?: number
   initialFoods?: number
+  className?: string
 }
 
 export function SnakeBackground({
@@ -21,6 +22,7 @@ export function SnakeBackground({
   maxFoods = 5,
   spawnIntervalMs = 2000,
   initialFoods = 2,
+  className,
 }: SnakeBackgroundProps = {}) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
@@ -38,14 +40,14 @@ export function SnakeBackground({
     resizeCanvas()
     window.addEventListener("resize", resizeCanvas)
 
-  const gridSize = gridSizeProp
-  const snake: Point[] = [{ x: 10, y: 10 }]
-  const foods: Point[] = []
-  let direction: Point = { x: 1, y: 0 }
+    const gridSize = gridSizeProp
+    const snake: Point[] = [{ x: 10, y: 10 }]
+    const foods: Point[] = []
+    let direction: Point = { x: 1, y: 0 }
 
-    const snakeColor = "#3b82f6" // Blue color
-  const foodColor = "#10b981" // Green color
-    const gridColor = "#e5e7eb" // Light gray
+    const snakeColor = "#14b8a6" // Teal
+    const foodColor = "#38bdf8" // Sky
+    const gridColor = "#38bdf8" // Light teal grid
 
     // Prevent 180° turns: reject opposite direction
     const trySetDirection = (next: Point) => {
@@ -81,8 +83,8 @@ export function SnakeBackground({
 
     const drawGrid = () => {
       ctx.strokeStyle = gridColor
-      ctx.globalAlpha = 0.1
-      ctx.lineWidth = 0.5
+      ctx.globalAlpha = 0.22
+      ctx.lineWidth = 0.75
 
       for (let x = 0; x < canvas.width; x += gridSize) {
         ctx.beginPath()
@@ -102,7 +104,7 @@ export function SnakeBackground({
 
     const drawSnake = () => {
       snake.forEach((segment, index) => {
-        const alpha = Math.max(0.15 - index * 0.02, 0.05)
+        const alpha = Math.max(0.3 - index * 0.05, 0.1)
         ctx.fillStyle = snakeColor
         ctx.globalAlpha = alpha
         ctx.fillRect(segment.x * gridSize + 1, segment.y * gridSize + 1, gridSize - 2, gridSize - 2)
@@ -112,7 +114,7 @@ export function SnakeBackground({
 
     const drawFood = () => {
       ctx.fillStyle = foodColor
-      ctx.globalAlpha = 0.2
+      ctx.globalAlpha = 0.35
       for (const f of foods) {
         ctx.beginPath()
         ctx.arc(
@@ -198,7 +200,7 @@ export function SnakeBackground({
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none"
+      className={`absolute inset-0 pointer-events-none ${className ?? ""}`}
       style={{ zIndex: 0 }}
       aria-hidden="true"
       role="presentation"

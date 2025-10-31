@@ -1,13 +1,14 @@
 import { Button } from "@/app/components/button";
 import { SnakeBackground } from "@/app/components/snake-background";
-import * as motion from "motion/react-client";
+import { containerVariants, heroReveal, itemVariants } from "@/animation";
+import { projectsData } from "@/data/projects";
 import { Icon } from "@iconify/react";
-import { Link } from "@/i18n/navigation";
-import { useTranslations } from "next-intl";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { containerVariants, itemVariants } from "@/animation";
-import { projectsData } from "@/data/projects";
+import { useTranslations } from "next-intl";
+import * as motion from "motion/react-client";
+import Duck from "@/app/favicon.ico";
 
 export async function generateMetadata({
   params,
@@ -37,290 +38,166 @@ export default function Home() {
   const skillCategories = (t.raw("skills.categories") as SkillCategory[]) ?? [];
   const experienceItems = (t.raw("experience.items") as ExperienceItem[]) ?? [];
 
-  const highlights: Array<{
-    key: "craft" | "performance" | "collaboration" | "delivery";
-    icon: string;
-  }> = [
-    { key: "craft", icon: "mdi:palette" },
-    { key: "performance", icon: "mdi:lightning-bolt" },
-    { key: "collaboration", icon: "mdi:account-group" },
-    { key: "delivery", icon: "mdi:toolbox-outline" }
-  ];
-
   const featuredProjects = projectsData.slice(0, 3);
-  const heroFocus = (t.raw("hero.focus") as string[]) ?? [];
-  const heroStats =
-    (t.raw("hero.stats") as Array<{ label: string; value: string }>) ?? [];
-
   return (
     <div className="min-h-screen">
-      <section className="relative flex min-h-[65svh] flex-col items-center justify-center overflow-hidden px-4 py-20 sm:px-8 sm:py-24 lg:min-h-220 lg:py-28">
-        <div className="relative w-full max-w-6xl">
-          <div className="pointer-events-none absolute inset-x-0 -top-24 mx-auto h-56 w-[80%] rounded-full bg-teal-500/20 blur-3xl" />
+      <section className="relative isolate flex min-h-[52svh] flex-col justify-center overflow-hidden px-4 pb-8 pt-28 sm:min-h-[56svh] sm:px-8 sm:pb-10 sm:pt-36 lg:min-h-[85svh]">
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-slate-950/85 via-slate-950/70 to-slate-950/90" />
+        <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,rgba(45,212,191,0.25),transparent_65%)]" />
+        <div className="absolute inset-0 z-20">
+          <SnakeBackground
+            className="mix-blend-screen opacity-90"
+            gridSize={32}
+            tickMs={320}
+          />
+        </div>
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-72 bg-gradient-to-b from-teal-500/25 via-transparent to-transparent blur-3xl" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 h-48 bg-gradient-to-b from-transparent via-slate-950/80 to-slate-950" />
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="relative z-40 mx-auto flex w-full max-w-4xl flex-col items-center gap-8 text-center"
+        >
+          <motion.h1
+            variants={heroReveal}
+            className="text-4xl font-semibold leading-tight tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl"
+          >
+            {t("hero.headline")}
+          </motion.h1>
+
+          <motion.p
+            variants={heroReveal}
+            className="max-w-2xl text-base leading-relaxed text-slate-200 sm:text-2xl"
+          >
+            {t("hero.subheadline")}
+          </motion.p>
 
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/60 shadow-[0_30px_80px_-40px_rgba(15,118,110,0.65)] backdrop-blur-xl"
+            variants={heroReveal}
+            className="flex flex-wrap items-center justify-center gap-3"
           >
-            <SnakeBackground gridSize={28} tickMs={260} />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-950/85 via-slate-900/30 to-teal-500/15" />
-            <div className="pointer-events-none absolute inset-0 opacity-60 [mask-image:radial-gradient(circle_at_top,white,transparent_65%)]">
-              <div className="absolute -left-10 top-10 size-32 rounded-full bg-teal-500/30 blur-3xl" />
-              <div className="absolute bottom-10 -right-10 size-40 rounded-full bg-sky-500/30 blur-3xl" />
-            </div>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-slate-100 shadow-sm backdrop-blur-sm sm:text-base">
+              <Icon icon="mdi:calendar-star" className="size-5 text-teal-300" />
+              {t("hero.availability")}
+            </span>
+          </motion.div>
 
-            <div className="relative z-10 flex flex-col gap-10 p-8 sm:p-12 lg:flex-row lg:items-center lg:gap-14">
-              <div className="flex-1 text-left">
-                <motion.h1
+          <motion.div
+            variants={heroReveal}
+            className="flex flex-col items-center gap-4"
+          >
+            <Button
+              href="/about"
+              background="glass"
+              border="whiteSoft"
+              size="compact"
+              className="group items-center gap-2 rounded-full px-3 py-1 text-sm sm:px-2"
+            >
+              <span className="flex items-center gap-2">
+                <span className="relative flex size-8 items-center justify-center rounded-full border border-white/10 bg-slate-950/70">
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-0 rounded-full border border-slate-100/25"
+                  />
+                  <Image
+                    src={Duck}
+                    alt="Quentin Petiteville"
+                    width={24}
+                    height={24}
+                    className="size-6 rounded-full object-cover"
+                  />
+                </span>
+                <span className="flex items-center text-slate-100 transition-transform duration-300 group-hover:-translate-x-1">
+                  {t("hero.cta")}
+                </span>
+                <span className="flex w-0 items-center justify-center overflow-hidden opacity-0 transition-all duration-300 group-hover:w-4 group-hover:opacity-100">
+                  <Icon
+                    icon="mdi:arrow-right"
+                    className="translate-x-2 text-slate-100 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+                  />
+                </span>
+              </span>
+            </Button>
+          </motion.div>
+
+          <motion.div
+            variants={heroReveal}
+            className="flex items-center gap-4 text-slate-300"
+          >
+            <motion.a
+              href="https://github.com/cwsquentin"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.15, rotate: 4 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex size-11 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-white transition hover:border-white/30 hover:text-teal-300"
+              aria-label="GitHub"
+            >
+              <Icon icon="mdi:github" className="size-6" />
+            </motion.a>
+            <motion.a
+              href="https://www.linkedin.com/in/quentin-petiteville/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.15, rotate: -4 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex size-11 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-white transition hover:border-white/30 hover:text-teal-300"
+              aria-label="LinkedIn"
+            >
+              <Icon icon="mdi:linkedin" className="size-6" />
+            </motion.a>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      <section className="relative z-40 px-4 pt-20 pb-16 sm:px-6 sm:pt-24 lg:pb-20 bg-slate-950">
+        <div className="mx-auto max-w-6xl">
+          <div className="flex flex-col items-start justify-between gap-6 text-left md:flex-row md:items-end">
+            <div className="max-w-2xl">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{
+                  once: true,
+                  amount: 0.01,
+                  margin: "0px 0px 240px 0px",
+                }}
+              >
+                <motion.p
                   variants={itemVariants.fromBottom}
-                  className="mt-4 text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl"
+                  className="text-sm font-semibold uppercase tracking-[0.3em] text-teal-300/80"
                 >
-                  {t("name")}
-                </motion.h1>
+                  {t("projectsPreview.eyebrow")}
+                </motion.p>
 
                 <motion.h2
                   variants={itemVariants.fromBottom}
-                  className="mt-2 text-xl font-light text-slate-200 sm:text-2xl lg:text-3xl"
+                  className="mt-3 text-3xl font-bold sm:text-4xl"
                 >
-                  {t("title")}
+                  {t("projectsPreview.title")}
                 </motion.h2>
-
-                <motion.p
-                  variants={itemVariants.fromBottom}
-                  className="mt-6 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg whitespace-pre-line"
-                >
-                  {t("description")}
-                </motion.p>
-
-                {heroFocus.length > 0 && (
-                  <motion.ul
-                    variants={containerVariants}
-                    className="mt-6 grid gap-3 sm:grid-cols-2"
-                  >
-                    {heroFocus.map((point, idx) => (
-                      <motion.li
-                        key={`${point}-${idx}`}
-                        variants={itemVariants.fromBottom}
-                        className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 text-sm text-slate-200 shadow-sm backdrop-blur sm:text-base"
-                      >
-                        <span className="mt-1 inline-block size-2.5 flex-none rounded-full bg-teal-400" />
-                        <span>{point}</span>
-                      </motion.li>
-                    ))}
-                  </motion.ul>
-                )}
-
-                <motion.div
-                  variants={itemVariants.fromBottom}
-                  className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4"
-                >
-                  <Button
-                    href="/projects"
-                    background="teal"
-                    size="lg"
-                    className="shadow-lg shadow-teal-500/30"
-                  >
-                      <Icon icon="mdi:arrow-right" className="size-5" />
-                    {t("cta.primary")}
-                  </Button>
-                  <Button
-                    href={t("cta.secondaryHref")}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    background="glass"
-                    border="whiteSoft"
-                    size="lg"
-                    external
-                  >
-                    {t("cta.secondary")}
-                  </Button>
-                </motion.div>
-
-                <motion.div
-                  variants={itemVariants.fromBottom}
-                  className="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-300 sm:text-base"
-                >
-                  <div className="flex items-center gap-4">
-                    <motion.a
-                      href="https://github.com/cwsquentin"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.15, rotate: 4 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-white transition hover:border-white/30 hover:text-teal-300"
-                      aria-label="GitHub"
-                    >
-                          <Icon icon="mdi:github" className="size-6" />
-                    </motion.a>
-                    <motion.a
-                      href="https://www.linkedin.com/in/quentin-petiteville/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.15, rotate: -4 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-white transition hover:border-white/30 hover:text-teal-300"
-                      aria-label="LinkedIn"
-                    >
-                      <Icon icon="mdi:linkedin" className="size-6" />
-                    </motion.a>
-                  </div>
-                </motion.div>
-              </div>
-
-              <motion.aside
-                variants={itemVariants.fromBottom}
-                className="w-full max-w-sm rounded-2xl border border-white/10 bg-slate-950/75 p-6 text-left shadow-xl backdrop-blur"
-              >
-                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-teal-300/80">
-                  {t("hero.sidebar.eyebrow")}
-                </p>
-                <h3 className="mt-3 text-2xl font-semibold text-white">
-                  {t("hero.sidebar.title")}
-                </h3>
-                <p className="mt-2 text-sm text-slate-300">
-                  {t("hero.sidebar.description")}
-                </p>
-
-                {heroStats.length > 0 && (
-                  <dl className="mt-6 space-y-4">
-                    {heroStats.map((stat, idx) => (
-                      <div key={`${stat.label}-${idx}`}>
-                        <dt className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-200/70">
-                          {stat.label}
-                        </dt>
-                        <dd className="mt-1 text-sm font-medium text-slate-100">
-                          {stat.value}
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
-                )}
-
-                <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200 shadow-inner">
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-teal-200/80">
-                    {t("hero.sidebar.availabilityLabel")}
-                  </p>
-                  <p className="mt-2 text-base font-semibold text-white">
-                    {t("availability")}
-                  </p>
-                </div>
-
-                <Link
-                  href="/contact"
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full border border-teal-500/40 bg-teal-500/10 px-5 py-2.5 text-sm font-semibold text-teal-200 transition hover:border-teal-400 hover:bg-teal-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60"
-                >
-                  <Icon icon="mdi:arrow-right" className="size-4" />
-                  {t("hero.sidebar.contact")}
-                </Link>
-              </motion.aside>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="px-4 py-16 sm:px-6 lg:py-20">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="mx-auto max-w-6xl"
-        >
-          <motion.div variants={itemVariants.fromBottom} className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-teal-300/80">
-              {t("highlights.eyebrow")}
-            </p>
-            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">{t("highlights.title")}</h2>
-            <p className="mt-4 text-base text-slate-300 sm:text-lg">{t("highlights.description")}</p>
-          </motion.div>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {highlights.map(({ key, icon }) => (
-              <motion.article
-                key={key}
-                variants={itemVariants.fromBottom}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 p-6 transition hover:border-teal-500/40 hover:bg-slate-900"
-              >
-                <div className="flex size-12 items-center justify-center rounded-2xl bg-teal-500/15 text-teal-300">
-                  <Icon icon={icon} className="size-6" />
-                </div>
-                <h3 className="mt-6 text-xl font-semibold">
-                  {t(`highlights.items.${key}.title`)}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">
-                  {t(`highlights.items.${key}.description`)}
-                </p>
-              </motion.article>
-            ))}
-          </div>
-        </motion.div>
-      </section>
-
-      <section className="px-4 py-16 sm:px-6 lg:py-20">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="mx-auto max-w-6xl rounded-3xl border border-white/10 bg-slate-900/40 p-8 sm:p-10"
-        >
-          <motion.div variants={itemVariants.fromBottom} className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-teal-300/80">
-              {t("skills.eyebrow")}
-            </p>
-            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">{t("skills.title")}</h2>
-            <p className="mt-4 text-base text-slate-300 sm:text-lg">{t("skills.description")}</p>
-          </motion.div>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {skillCategories.map((category, idx) => (
-              <motion.div
-                key={`${category.title}-${idx}`}
-                variants={itemVariants.fromBottom}
-                className="rounded-2xl border border-white/10 bg-slate-950/60 p-6"
-              >
-                <h3 className="text-lg font-semibold text-slate-100">
-                  {category.title}
-                </h3>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {category.items.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full bg-white/5 px-3 py-1 text-sm text-slate-200"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
               </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:py-20">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="mx-auto max-w-6xl"
-        >
-          <div className="flex flex-col items-start justify-between gap-6 text-left md:flex-row md:items-end">
-            <motion.div variants={itemVariants.fromBottom} className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-teal-300/80">
-                {t("projectsPreview.eyebrow")}
-              </p>
-              <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-                {t("projectsPreview.title")}
-              </h2>
-              <p className="mt-4 text-base text-slate-300 sm:text-lg">
+              <motion.p
+                variants={itemVariants.fromBottom}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.25 }}
+                className="mt-4 text-base text-slate-300 sm:text-lg"
+              >
                 {t("projectsPreview.description")}
-              </p>
-            </motion.div>
-            <motion.div variants={itemVariants.fromBottom}>
+              </motion.p>
+            </div>
+
+            <motion.div
+              variants={itemVariants.fromBottom}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.25 }}
+            >
               <Button
                 href="/projects"
                 background="transparentSoft"
@@ -332,7 +209,13 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="mt-10 grid gap-6 md:grid-cols-2"
+          >
             {featuredProjects.map((project, index) => {
               const title = projectsT(`items.${project.id}.title`);
               const description = projectsT(`items.${project.id}.description`);
@@ -355,7 +238,9 @@ export default function Home() {
                   <span className="absolute right-6 top-6 text-xs font-semibold uppercase tracking-widest text-teal-300/80">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="mt-4 text-2xl font-semibold text-slate-100">{title}</h3>
+                  <h3 className="mt-4 text-2xl font-semibold text-slate-100">
+                    {title}
+                  </h3>
                   <p className="mt-3 text-sm leading-relaxed text-slate-300">
                     {description}
                   </p>
@@ -379,7 +264,11 @@ export default function Home() {
                       background={isConfidential ? "none" : "teal"}
                       border={isConfidential ? "whiteSoft" : "none"}
                       size="sm"
-                      className={isConfidential ? "text-slate-200 hover:bg-white/5" : undefined}
+                      className={
+                        isConfidential
+                          ? "text-slate-200 hover:bg-white/5"
+                          : undefined
+                      }
                     >
                       {isConfidential ? (
                         <Icon icon="uis:lock" className="size-4" />
@@ -421,8 +310,8 @@ export default function Home() {
                 </motion.article>
               );
             })}
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       <section className="px-4 py-16 sm:px-6 lg:py-20">
@@ -433,11 +322,16 @@ export default function Home() {
           viewport={{ once: true, amount: 0.3 }}
           className="mx-auto max-w-6xl"
         >
-          <motion.div variants={itemVariants.fromBottom} className="mx-auto max-w-2xl text-center">
+          <motion.div
+            variants={itemVariants.fromBottom}
+            className="mx-auto max-w-2xl text-center"
+          >
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-teal-300/80">
               {t("experience.eyebrow")}
             </p>
-            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">{t("experience.title")}</h2>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+              {t("experience.title")}
+            </h2>
           </motion.div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -453,13 +347,20 @@ export default function Home() {
                 <h3 className="mt-4 text-2xl font-semibold text-slate-100">
                   {item.role}
                 </h3>
-                <p className="mt-1 text-sm font-medium text-teal-300">{item.company}</p>
-                <p className="mt-3 text-sm leading-relaxed text-slate-300">{item.summary}</p>
+                <p className="mt-1 text-sm font-medium text-teal-300">
+                  {item.company}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                  {item.summary}
+                </p>
               </motion.article>
             ))}
           </div>
 
-          <motion.div variants={itemVariants.fromBottom} className="mt-10 text-center">
+          <motion.div
+            variants={itemVariants.fromBottom}
+            className="mt-10 text-center"
+          >
             <Button
               href="/about"
               background="transparentSoft"
@@ -472,6 +373,55 @@ export default function Home() {
         </motion.div>
       </section>
 
+      <section className="px-4 pb-24 sm:px-6 lg:pb-28">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="mx-auto max-w-6xl rounded-3xl border border-white/10 bg-slate-900/40 p-8 sm:p-10"
+        >
+          <motion.div
+            variants={itemVariants.fromBottom}
+            className="text-center"
+          >
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-teal-300/80">
+              {t("skills.eyebrow")}
+            </p>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+              {t("skills.title")}
+            </h2>
+            <p className="mt-4 text-base text-slate-300 sm:text-lg">
+              {t("skills.description")}
+            </p>
+          </motion.div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {skillCategories.map((category, idx) => (
+              <motion.div
+                key={`${category.title}-${idx}`}
+                variants={itemVariants.fromBottom}
+                className="rounded-2xl border border-white/10 bg-slate-950/60 p-6"
+              >
+                <h3 className="text-lg font-semibold text-slate-100">
+                  {category.title}
+                </h3>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {category.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full bg-white/5 px-3 py-1 text-sm text-slate-200"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
       <section className="px-4 pb-20 sm:px-6">
         <motion.div
           variants={containerVariants}
@@ -480,20 +430,23 @@ export default function Home() {
           viewport={{ once: true, amount: 0.3 }}
           className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-teal-500/20 via-slate-900 to-slate-950 p-10 sm:p-14"
         >
-          <motion.div variants={itemVariants.fromBottom} className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <motion.div
+            variants={itemVariants.fromBottom}
+            className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between"
+          >
             <div className="max-w-xl">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-teal-300/80">
                 {t("ctaBanner.eyebrow")}
               </p>
-              <h2 className="mt-3 text-3xl font-bold sm:text-4xl">{t("ctaBanner.title")}</h2>
-              <p className="mt-4 text-base text-slate-200 sm:text-lg">{t("ctaBanner.description")}</p>
+              <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+                {t("ctaBanner.title")}
+              </h2>
+              <p className="mt-4 text-base text-slate-200 sm:text-lg">
+                {t("ctaBanner.description")}
+              </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Button
-                href="/contact"
-                background="teal"
-                size="lg"
-              >
+              <Button href="/contact" background="teal" size="lg">
                 {t("ctaBanner.primary")}
               </Button>
               <Button
@@ -514,3 +467,4 @@ export default function Home() {
     </div>
   );
 }
+

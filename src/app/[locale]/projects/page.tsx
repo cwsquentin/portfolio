@@ -23,15 +23,22 @@ export default async function ProjectsPage({ params }: Params) {
   const t = await getTranslations({ locale, namespace: "projects" });
 
   return (
-    <section className="min-h-screen px-4 py-16 sm:px-6 sm:py-20">
-      <div className="mx-auto w-full max-w-6xl">
+    <section className="relative min-h-screen overflow-hidden px-4 py-16 sm:px-6 sm:py-20">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 flex justify-center"
+      >
+        <div className="h-[46rem] w-full max-w-6xl -translate-y-28 bg-[radial-gradient(circle_at_center,rgba(45,218,191,0.21),transparent_75%)] opacity-70 blur-3xl" />
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-6xl">
         <div className="space-y-4">
           <h2 className="text-3xl font-bold text-slate-100 sm:text-4xl">{t("title")}</h2>
           <div className="h-1 w-16 bg-indigo-500" />
           <p className="text-base text-slate-400 sm:text-lg">{t("intro")}</p>
         </div>
 
-        <div className="mt-10 space-y-8">
+        <div className="mt-10 space-y-8 whitespace-pre-line">
           {projectsData.map((p) => (
             <ProjectCard
               key={p.id}
@@ -42,6 +49,7 @@ export default async function ProjectsPage({ params }: Params) {
               github={p.github}
               demo={p.demo}
               confidential={p.confidential}
+              href={`/projects/${p.slug}`}
             />
           ))}
         </div>

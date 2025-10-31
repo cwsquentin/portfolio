@@ -1,26 +1,48 @@
 import type { StaticImageData } from "next/image";
-import MusicStory from "/public/projects/musicstory.webp";
-import Paris92 from "/public/projects/paris92.webp";
 
 export type ProjectItem = {
-  id: "musicStory" | "paris92" | "taskFlow";
+  id: "musicStory" | "paris92" | "taskFlow" | "medchemStructureGenius";
+  slug: string;
   image: string | StaticImageData;
   technologies: string[];
   github?: string;
   demo?: string;
   confidential?: boolean;
+  gallery?: Array<string | StaticImageData>;
 };
 
 export const projectsData: ProjectItem[] = [
   {
+    id: "medchemStructureGenius",
+    slug: "medchemstructuregenius",
+    image: "/projects/medchemstructuregenius/project.webp",
+    technologies: ["Next.js", "TypeScript", "PostgreSQL", "React Native (Expo)", "Supabase"],
+    confidential: true,
+    demo: "https://www.medchemstructuregenius.eu/",
+    gallery: [
+      "/projects/medchemstructuregenius/main.webp",
+      "/projects/medchemstructuregenius/quiz.webp",
+      "/projects/medchemstructuregenius/backoffice.webp",
+    ],
+  },
+  {
     id: "musicStory",
-    image: MusicStory,
+    slug: "musicstory",
+    image: "/projects/musicstory/home.webp",
     technologies: ["Next.js", "TailwindCSS", "TypeScript", "next-intl", "Framer Motion"],
+    confidential: true,
     demo: "https://www.music-story.com",
+    gallery: [
+      "/projects/musicstory/home.webp",
+      "/projects/musicstory/metadata.webp",
+      "/projects/musicstory/map.webp",
+      "/projects/musicstory/customers.webp",
+    ],
   },
   {
     id: "paris92",
-    image: Paris92,
+    slug: "paris92",
+    image: "/projects/paris92.webp",
     technologies: ["Python", "Next.js", "TailwindCSS", "TypeScript", "PostgreSQL"],
     confidential: true,
   },
