@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://quentinpetiteville.me/sitemap.xml
