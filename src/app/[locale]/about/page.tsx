@@ -82,7 +82,7 @@ export default function AboutPage() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 z-0 flex justify-center"
       >
-        <div className="h-[45rem] w-full max-w-6xl -translate-y-32 bg-[radial-gradient(circle_at_center,rgba(45,218,191,0.18),transparent_70%)] opacity-75 blur-3xl" />
+        <div className="h-180 w-full max-w-6xl -translate-y-32 bg-[radial-gradient(circle_at_center,rgba(45,218,191,0.18),transparent_70%)] opacity-75 blur-3xl" />
       </div>
 
       <SideScrollNav links={sectionLinks} />

@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <section className="relative isolate flex min-h-[52svh] flex-col justify-center overflow-hidden px-4 pb-8 pt-28 sm:min-h-[56svh] sm:px-8 sm:pb-10 sm:pt-36 lg:min-h-[85svh]">
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-slate-950/85 via-slate-950/70 to-slate-950/90" />
+        <div className="absolute inset-0 z-0 bg-linear-to-b from-slate-950/85 via-slate-950/70 to-slate-950/90" />
         <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,rgba(45,212,191,0.25),transparent_65%)]" />
         <div className="absolute inset-0 z-20">
           <SnakeBackground
@@ -51,8 +51,8 @@ export default function Home() {
             tickMs={320}
           />
         </div>
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-72 bg-gradient-to-b from-teal-500/25 via-transparent to-transparent blur-3xl" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 h-48 bg-gradient-to-b from-transparent via-slate-950/80 to-slate-950" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-72 bg-linear-to-b from-teal-500/25 via-transparent to-transparent blur-3xl" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 h-48 bg-linear-to-b from-transparent via-slate-950/80 to-slate-950" />
 
         <motion.div
           variants={containerVariants}
@@ -428,7 +428,7 @@ export default function Home() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-teal-500/20 via-slate-900 to-slate-950 p-10 sm:p-14"
+          className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-teal-500/20 via-slate-900 to-slate-950 p-10 sm:p-14"
         >
           <motion.div
             variants={itemVariants.fromBottom}

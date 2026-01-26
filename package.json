@@ -12,19 +12,19 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.68",
+    "@iconify-json/lucide": "^1.2.87",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/ph": "^1.2.2",
     "@iconify-json/streamline": "^1.2.5",
     "@iconify-json/uis": "^1.2.3",
     "@iconify/react": "^6.0.2",
     "clsx": "^2.1.1",
-    "framer-motion": "^12.23.22",
-    "motion": "^12.23.22",
-    "next": "^16.0.7",
-    "next-intl": "^4.4.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "framer-motion": "^12.29.2",
+    "motion": "^12.29.2",
+    "next": "^16.1.4",
+    "next-intl": "^4.7.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "swiper": "^12.0.3"
   },
   "devDependencies": {
@@ -32,13 +32,13 @@
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@types/node": "^25",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.5.4",
+    "eslint-config-next": "16.1.4",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "unplugin-icons": "^22.4.2"
+    "unplugin-icons": "^23.0.1"
   }
 }
