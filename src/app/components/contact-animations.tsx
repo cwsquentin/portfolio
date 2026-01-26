@@ -109,14 +109,14 @@ export default function ContactAnimations() {
   });
 
   return (
-  <div className="flex items-start justify-center px-4 pt-16 pb-20 sm:px-6 sm:pt-28 sm:pb-24 lg:min-h-[25rem]">
+  <div className="flex items-start justify-center px-4 pt-16 pb-20 sm:px-6 sm:pt-28 sm:pb-24 lg:min-h-100">
       <motion.div
         variants={itemVariants.fromBottom}
         initial="hidden"
         animate="visible"
         className="w-full max-w-5xl"
       >
-        <div className="relative mb-20 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-950/70 to-slate-900/40 p-8 text-left shadow-teal-md sm:p-12">
+        <div className="relative mb-20 overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-slate-950/90 via-slate-950/70 to-slate-900/40 p-8 text-left shadow-teal-md sm:p-12">
           <div className="absolute -right-6 -top-6 hidden rotate-12 rounded-full border border-teal-500/30 bg-teal-500/10 p-6 text-teal-300 sm:block">
             <Icon icon="mdi:cursor-default-click-outline" className="size-8 opacity-80" />
           </div>

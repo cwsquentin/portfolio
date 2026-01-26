@@ -28,7 +28,7 @@ export default async function ProjectsPage({ params }: Params) {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 z-0 flex justify-center"
       >
-        <div className="h-[46rem] w-full max-w-6xl -translate-y-28 bg-[radial-gradient(circle_at_center,rgba(45,218,191,0.21),transparent_75%)] opacity-70 blur-3xl" />
+        <div className="h-184 w-full max-w-6xl -translate-y-28 bg-[radial-gradient(circle_at_center,rgba(45,218,191,0.21),transparent_75%)] opacity-70 blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl">

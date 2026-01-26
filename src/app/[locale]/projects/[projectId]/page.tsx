@@ -139,10 +139,10 @@ export default async function ProjectDetailPage({
 
   return (
     <article className="pb-24">
-      <section className="relative overflow-hidden border-b border-white/10 bg-gradient-to-br from-slate-950 via-indigo-950/40 to-slate-950 px-4 pb-20 pt-28 sm:px-6">
+      <section className="relative overflow-hidden border-b border-white/10 bg-linear-to-br from-slate-950 via-indigo-950/40 to-slate-950 px-4 pb-20 pt-28 sm:px-6">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(129,140,248,0.28),_transparent_60%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(129,140,248,0.28),transparent_60%)]"
         />
 
         <div className="relative mx-auto w-full max-w-6xl">
@@ -261,7 +261,7 @@ export default async function ProjectDetailPage({
 
       <section className="mx-auto w-full max-w-6xl px-4 sm:px-6">
         <div className="-mt-16 overflow-hidden rounded-3xl border border-white/10 bg-slate-900/80 shadow-indigo-xl">
-          <div className="relative aspect-[16/9] w-full">
+          <div className="relative aspect-video w-full">
             {hasGallery ? (
               <ProjectGallery images={galleryImages} alt={hero.title} />
             ) : (

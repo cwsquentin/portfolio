@@ -77,7 +77,7 @@ export function ProjectCard({
       onKeyDown={href ? handleKeyDown : undefined}
     >
       <div className="md:flex">
-        <div className="relative h-56 overflow-hidden sm:h-64 md:h-auto md:min-h-[18rem] md:w-1/2">
+        <div className="relative h-56 overflow-hidden sm:h-64 md:h-auto md:min-h-72 md:w-1/2">
           <Image
             src={image}
             alt={title}
