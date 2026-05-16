@@ -18,6 +18,8 @@
     "@iconify-json/streamline": "^1.2.5",
     "@iconify-json/uis": "^1.2.3",
     "@iconify/react": "^6.0.2",
+    "@react-three/fiber": "^9.6.1",
+    "@react-three/rapier": "^2.2.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.29.2",
     "motion": "^12.29.2",
@@ -25,20 +27,21 @@
     "next-intl": "^4.7.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "swiper": "^12.0.3"
+    "swiper": "^12.0.3",
+    "three": "^0.184.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^25",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.4",
+    "@types/three": "^0.184.1",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.6",
     "tailwindcss": "^4",
-    "typescript": "^5",
+    "typescript": "^6.0.3",
     "unplugin-icons": "^23.0.1"
   }
 }

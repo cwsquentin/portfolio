@@ -1,18 +1,13 @@
 {
-    "page": {
-        "title": "Contact"
-    },
-    "title": "Contact me here !",
-    "socialsTitle": "You can find me on",
-    "cta": {
-        "title": "Let’s work together !",
-        "subtitle": "Open to collaborations, interesting opportunities and questions. I’m happy to chat about projects, roles or new technologies !"
-    },
-    "actions": {
-        "email": "Write me an email !",
-        "resume": "Download my resume"
-    },
-    "resumeHref": "/downloads/CV_FR_EN.pdf",
-    "mailtoSubject": "Portfolio contact",
-    "mailtoBody": "Hi Quentin, I came across your portfolio and would like to get in touch about..."
+  "page": {
+    "title": "Contact"
+  },
+  "hero": {
+    "title": "LET'S TALK.",
+    "intro": "Open to collaborations, opportunities, and questions. I’m happy to chat about projects, roles or new technologies !"
+  },
+  "title": "Reach out",
+  "socialsTitle": "Socials",
+  "mailtoSubject": "Inbound from the portfolio",
+  "mailtoBody": "Hi Quentin,\n\nI'm reaching out about "
 }

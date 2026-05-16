@@ -1,6 +1,6 @@
 {
   "page": {
-    "defaultDescription": "Quentin Petiteville's Portfolio"
+    "defaultDescription": "Quentin Petiteville's portfolio"
   },
   "navigation": {
     "home": "Home",
@@ -13,17 +13,16 @@
     "sections": "Page sections"
   },
   "menubtn": "Menu",
+  "closebtn": "Close",
   "footer": {
-    "cta": "Contact Me !",
-    "tagline": "Got a project in mind? Let's build something amazing together !",
-    "rights": "© All rights reserved 2026",
+    "rights": "© All rights reserved, designed by Quentin Petiteville",
     "navigationLabel": "Footer navigation"
   },
   "social": {
     "github": "GitHub",
     "linkedin": "LinkedIn"
   },
-  "error404":{
-    "notfound": "Page Not Found"
+  "error404": {
+    "notfound": "Page not found"
   }
 }

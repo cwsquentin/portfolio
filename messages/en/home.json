@@ -2,18 +2,17 @@
   "page": {
     "title": "Home"
   },
-  "name": "Quentin Petiteville",
-  "title": "Software Engineering Student",
   "hero": {
-    "headline": "Bridging thoughtful products with reliable code",
-    "subheadline": "I'm Quentin, a software engineering student designing and developing clear and useful web products.",
-    "availability": "Available for a 6-month end-of-studies internship starting March 2, 2026 !",
-    "cta": "About - Quentin Petiteville"
+    "headline": "Connecting product and code with intent",
+    "subheadline": "I’m Quentin, a software engineering student, and I design and build clear, useful web products.",
+    "availability": "Available for a 6-month internship starting March 2, 2026!",
+    "current": "Currently Full Stack Python Developer intern @ Worldline",
+    "cta": "About - Quentin Petiteville",
+    "ctaAriaLabel": "Go to the About page of Quentin Petiteville"
   },
   "skills": {
-    "eyebrow": "Skills",
     "title": "Core capabilities",
-    "description": "A set of skills developed through my experience and the completion of my projects.",
+    "description": "A toolkit built up through my studies, my projects, and the work I’ve shipped.",
     "categories": [
       {
         "title": "Languages & frameworks",
@@ -21,7 +20,6 @@
           "Java",
           "Python",
           "C / C++ / C#",
-          "Swift",
           "JavaScript",
           "TypeScript",
           "React",
@@ -51,48 +49,47 @@
           "Docker",
           "GitHub Actions",
           "CI / CD pipelines",
+          "Cloud computing — Azure, GCP, AWS",
           "Autonomy",
           "Problem solving",
           "Emotional intelligence",
-          "Multi-cultural collaboration",
+          "Multicultural collaboration",
           "Agile teamwork"
         ]
       }
     ]
   },
   "projectsPreview": {
-    "eyebrow": "Projects",
-    "title": "My works",
-    "description": "An overview of my latest projects:",
-    "viewAll": "See every project",
-    "viewProject": "View project",
-    "github": "GitHub",
-    "demo": "Live demo"
+    "title": "My work",
+    "description": "A look at what I’ve shipped recently.",
+    "viewAll": "See every project"
   },
   "experience": {
-    "eyebrow": "Experiences",
     "title": "Recent missions",
-    "cta": "Explore my journey",
     "items": [
       {
+        "period": "Mar 2026 - Present",
+        "role": "Full-stack Python developer intern",
+        "company": "Worldline, Seclin",
+        "summary": "Design and development of WL Benchmark, a multi-tenant observability platform that automates the generation of benchmark reports and predicts performance regressions between releases using machine learning."
+      },
+      {
         "period": "Apr 2025 - Sep 2025",
-        "role": "Web Developer Intern",
+        "role": "Web developer intern",
         "company": "Music Story, Lille",
         "summary": "Rebuilt the Music Story website by migrating WordPress content to Next.js/Tailwind CSS, improving performance and maintainability."
       },
       {
         "period": "May 2022 - Aug 2022",
-        "role": "Web Developer Intern",
+        "role": "Web developer intern",
         "company": "Celaneo, Paris",
-        "summary": "Led client-driven projects while designing and developing websites, crafting algorithms, and cleaning databases to meet every requirement."
+        "summary": "Led client-driven projects: designed and built websites, crafted algorithms, and cleaned databases to meet every requirement."
       }
     ]
   },
   "ctaBanner": {
-    "eyebrow": "Let's collaborate",
     "title": "Ready to build your next project?",
-    "description": "I am looking for an internship starting March 4, 2026, to actively contribute to high-impact projects and learn from an ambitious team.",
-    "primary": "Start a conversation!",
+    "primary": "Contact me",
     "secondary": "See my resume",
     "secondaryHref": "/downloads/CV_FR_EN.pdf"
   }

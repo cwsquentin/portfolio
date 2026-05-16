@@ -2,18 +2,17 @@
   "page": {
     "title": "Accueil"
   },
-  "name": "Quentin Petiteville",
-  "title": "Étudiant en ingénierie logicielle",
   "hero": {
     "headline": "Relier produit et code avec exigence",
-    "subheadline": "Je m'appelle Quentin, étudiant en ingénierie informatique, et je conçois et développe des produits web clairs et utiles.",
+    "subheadline": "Je m’appelle Quentin, étudiant en ingénierie informatique, et je conçois et développe des produits web clairs et utiles.",
     "availability": "Disponible pour un stage de 6 mois à partir du 2 mars 2026 !",
-    "cta": "À propos - Quentin Petiteville"
+    "current": "Actuellement Développeur full stack Python en stage @ Worldline",
+    "cta": "À propos - Quentin Petiteville",
+    "ctaAriaLabel": "Aller à la page À propos de Quentin Petiteville"
   },
   "skills": {
-    "eyebrow": "Compétences",
     "title": "Expertises clés",
-    "description": "Un ensemble de compétences développées au fil de mon expérience et de la réalisation de mes projets.",
+    "description": "Un socle de compétences construit au fil de mes projets et de mon expérience.",
     "categories": [
       {
         "title": "Langages & frameworks",
@@ -21,7 +20,6 @@
           "Java",
           "Python",
           "C / C++ / C#",
-          "Swift",
           "JavaScript",
           "TypeScript",
           "React",
@@ -51,48 +49,47 @@
           "Docker",
           "GitHub Actions",
           "Pipelines CI / CD",
+          "Cloud computing — Azure, GCP, AWS",
           "Autonomie",
           "Résolution de problèmes",
           "Intelligence émotionnelle",
-          "Collaboration multiculturelle",
-          "Travail d'équipe agile"
+          "Collaboration interculturelle",
+          "Travail en équipe agile"
         ]
       }
     ]
   },
   "projectsPreview": {
-    "eyebrow": "Réalisations",
     "title": "Mes projets",
-    "description": "Un aperçu de mes derniers projets :",
-    "viewAll": "Voir tous les projets",
-    "viewProject": "Voir le projet",
-    "github": "GitHub",
-    "demo": "Démo en ligne"
+    "description": "Un aperçu de mes réalisations récentes.",
+    "viewAll": "Voir tous les projets"
   },
   "experience": {
-    "eyebrow": "Expériences",
     "title": "Missions récentes",
-    "cta": "Découvrir mon parcours",
     "items": [
+      {
+        "period": "Mars 2026 - Aujourd’hui",
+        "role": "Stagiaire développeur full stack Python",
+        "company": "Worldline, Seclin",
+        "summary": "Conception et développement de WL Benchmark, plateforme d'observabilité multi-tenant qui automatise la génération des rapports de benchmarks et anticipe les régressions de performance entre releases grâce au Machine Learning."
+      },
       {
         "period": "Avr. 2025 - Sep. 2025",
         "role": "Stagiaire développeur web",
         "company": "Music Story, Lille",
-        "summary": "Refonte du site Music Story : migration du contenu WordPress vers Next.js/Tailwind CSS, avec amélioration de la performance et de la maintenabilité."
+        "summary": "Refonte du site Music Story : migration du contenu WordPress vers Next.js/Tailwind CSS, avec gains de performance et de maintenabilité."
       },
       {
         "period": "Mai 2022 - Août 2022",
         "role": "Stagiaire développeur web",
         "company": "Celaneo, Paris",
-        "summary": "Pilotage de projets guidés par les besoins clients tout en concevant et développant des sites web, en créant des algorithmes et en nettoyant les bases de données pour répondre à chaque exigence."
+        "summary": "Pilotage de projets clients : conception et développement de sites web, écriture d’algorithmes et fiabilisation des bases de données."
       }
     ]
   },
   "ctaBanner": {
-    "eyebrow": "Travaillons ensemble",
     "title": "Prêt à lancer votre prochain projet ?",
-    "description": "Je recherche un stage à partir du 4 mars 2026 afin de contribuer activement à des projets à fort impact et d'apprendre au contact d'une équipe ambitieuse.",
-    "primary": "Contactez-moi !",
+    "primary": "Contactez-moi",
     "secondary": "Voir mon CV",
     "secondaryHref": "/downloads/CV_FR_EN.pdf"
   }

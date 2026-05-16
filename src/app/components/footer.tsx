@@ -1,99 +1,95 @@
 "use client";
 
 import { Icon } from "@iconify/react";
-import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
+import { cn } from "@/lib/cn";
+import { SnakeGameMini } from "@/app/components/snake-game-mini";
 
-type NavKey = "home" | "about" | "projects" | "contact";
+type SecondaryNavKey = "about" | "projects" | "contact";
 
-const NAV: { key: NavKey; href: string }[] = [
-  { key: "home", href: "/" },
+const SECONDARY_NAV: { key: SecondaryNavKey; href: `/${SecondaryNavKey}` }[] = [
   { key: "about", href: "/about" },
   { key: "projects", href: "/projects" },
-  { key: "contact", href: "/contact" }
+  { key: "contact", href: "/contact" },
+];
+
+const SOCIAL_LINKS = [
+  {
+    key: "github" as const,
+    href: "https://github.com/cwsquentin",
+    icon: "mdi:github",
+  },
+  {
+    key: "linkedin" as const,
+    href: "https://www.linkedin.com/in/quentin-petiteville/",
+    icon: "mdi:linkedin",
+  },
 ];
 
 export default function Footer() {
   const t = useTranslations("common");
   const pathname = usePathname();
 
+  const basePath = pathname || "/";
+  const isLinkActive = (href: string) =>
+    basePath === href || (href !== "/" && basePath.startsWith(href));
+
   return (
-    <footer className="mt-auto overflow-hidden rounded-t-3xl border-t border-white/10 bg-black">
-      <div className="mx-auto max-w-6xl px-4 pt-16 pb-3 sm:px-6 sm:pt-20">
-        <div className="flex flex-col items-start justify-between gap-10 sm:flex-row">
-          <div className="space-y-3">
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-2 text-3xl font-bold text-teal-400 font-heading sm:text-4xl"
-            >
-              <span>{t("footer.cta")}</span>
-              <Icon
-                icon="mdi:arrow-right"
-                className="size-6 transition-transform duration-200 group-hover:translate-x-1"
-              />
-            </Link>
+    <footer
+      className="relative isolate overflow-hidden border-t-2 border-ink bg-ink text-paper"
+      aria-label={t("footer.navigationLabel")}
+    >
+      <SnakeGameMini />
 
-            <p className="max-w-xs text-base text-slate-400">
-              {t("footer.tagline")}
-            </p>
-          </div>
-
-          <div className="flex w-full flex-col items-start gap-6 sm:w-auto sm:flex-row sm:items-start sm:gap-7">
-            <nav
-              className="flex flex-wrap gap-1 sm:flex-col"
-              aria-label={t("footer.navigationLabel")}
-            >
-              {NAV.map((item) => {
-                const basePath = pathname.replace(/^\/[a-z]{2}/, '') || '/';
-                const isActive = basePath === item.href || (item.href !== "/" && basePath.startsWith(item.href));
-                return (
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 py-8 sm:px-12 sm:py-10 sm:flex-row sm:items-start sm:justify-between sm:gap-12">
+        <nav
+          className="flex flex-col gap-2"
+          aria-label={t("footer.navigationLabel")}
+        >
+          <ul className="flex flex-col gap-2">
+            {SECONDARY_NAV.map(({ key, href }) => {
+              const active = isLinkActive(href);
+              return (
+                <li key={key}>
                   <Link
-                    key={item.key}
-                    href={item.href}
-                    className={`rounded-md border border-transparent p-1 text-sm font-medium transition-colors hover:bg-teal-400/10 hover:text-teal-400 sm:text-base ${
-                      isActive ? "text-teal-400" : "text-slate-200"
-                    }`}
+                    href={href}
+                    aria-current={active ? "page" : undefined}
+                    className={cn(
+                      "text-mono-label inline-flex items-center gap-2 text-paper transition-opacity hover:opacity-70 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-ink",
+                      active && "border-b-2 border-paper pb-0.5",
+                    )}
                   >
-                    {t(`navigation.${item.key}`)}
+                    {t(`navigation.${key}`)}
                   </Link>
-                );
-              })}
-            </nav>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
 
-            <div className="flex gap-3 pt-1 sm:flex-col">
-              <Link
-                href="https://github.com/cwsquentin"
+        <ul className="flex flex-col items-start gap-3 sm:items-end">
+          {SOCIAL_LINKS.map(({ key, href, icon }) => (
+            <li key={key}>
+              <a
+                href={href}
                 target="_blank"
-                rel="noreferrer"
-                className="text-slate-400 rounded-md border border-transparent hover:bg-teal-400/10 hover:text-teal-400 transition-colors p-1"
-                aria-label={t("social.github")}
-                title={t("social.github")}
+                rel="noopener noreferrer"
+                aria-label={t(`social.${key}`)}
+                title={t(`social.${key}`)}
+                className="inline-flex size-9 items-center justify-center border-2 border-paper text-paper transition-colors hover:bg-paper hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
               >
-                <Icon icon="mdi:github" className="size-8.75" />
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/quentin-petiteville/"
-                target="_blank"
-                rel="noreferrer"
-                className="text-slate-400 rounded-md border border-transparent hover:bg-teal-400/10 hover:text-teal-400 transition-colors p-1"
-                aria-label={t("social.linkedin")}
-                title={t("social.linkedin")}
-              >
-                <Icon icon="mdi:linkedin" className="size-8.75" />
-              </Link>
-            </div>
-          </div>
-        </div>
+                <Icon icon={icon} className="size-4" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-        <div className="pt-5">
-          <p className="text-center text-xs text-slate-400">
-            {t("footer.rights")} 
-            <span className="text-teal-400"> | </span> 
-            Designed by 
-            <span className="font-bold text-slate-400"> Quentin Petiteville</span>
-          </p>
-        </div>
+      <div className="relative z-10 px-6 pb-4 sm:px-12 sm:pb-6">
+        <p className="text-mono-label text-center text-paper/60">
+          {t("footer.rights")}
+        </p>
       </div>
     </footer>
   );

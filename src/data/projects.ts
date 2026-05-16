@@ -1,7 +1,12 @@
 import type { StaticImageData } from "next/image";
 
 export type ProjectItem = {
-  id: "musicStory" | "paris92" | "taskFlow" | "medchemStructureGenius";
+  id:
+    | "worldline"
+    | "medchemStructureGenius"
+    | "dochub"
+    | "musicStory"
+    | "paris92";
   slug: string;
   image: string | StaticImageData;
   technologies: string[];
@@ -13,6 +18,14 @@ export type ProjectItem = {
 
 export const projectsData: ProjectItem[] = [
   {
+    id: "worldline",
+    slug: "worldline",
+    image: "/projects/worldline.webp",
+    technologies: ["Python", "Pandas", "Scikit-learn", "BigQuery"],
+    confidential: true,
+    gallery: ["/projects/worldline.webp"],
+  },
+  {
     id: "medchemStructureGenius",
     slug: "medchemstructuregenius",
     image: "/projects/medchemstructuregenius/project.webp",
@@ -23,6 +36,18 @@ export const projectsData: ProjectItem[] = [
       "/projects/medchemstructuregenius/main.webp",
       "/projects/medchemstructuregenius/quiz.webp",
       "/projects/medchemstructuregenius/backoffice.webp",
+    ],
+  },
+  {
+    id: "dochub",
+    slug: "dochub",
+    image: "/projects/dochub/project.webp",
+    technologies: ["Vue.js", "PostgreSQL", "Docker", "GitHub Actions"],
+    confidential: true,
+    gallery: [
+      "/projects/dochub/DocHub-1.webp",
+      "/projects/dochub/DocHub-2.webp",
+      "/projects/dochub/DocHub-3.webp",
     ],
   },
   {

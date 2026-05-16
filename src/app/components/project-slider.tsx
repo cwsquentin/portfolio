@@ -33,6 +33,19 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
 
   return (
     <div className="absolute inset-0">
+      <style>{`
+        .project-gallery .swiper-pagination-bullet {
+          background-color: var(--color-ink);
+          opacity: 0.4;
+          border-radius: 0;
+          width: 12px;
+          height: 4px;
+        }
+        .project-gallery .swiper-pagination-bullet-active {
+          background-color: var(--color-ink);
+          opacity: 1;
+        }
+      `}</style>
       <Swiper
         modules={[Autoplay, Pagination]}
         onSwiper={(instance) => {
@@ -79,7 +92,7 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
           <button
             type="button"
             onClick={() => swiperRef.current?.slidePrev()}
-            className="absolute top-1/2 -left-9 -translate-y-1/2 rounded-full bg-slate-950/70 p-2 text-white shadow-lg backdrop-blur transition hover:bg-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 sm:-left-12 lg:-left-16"
+            className="absolute top-1/2 -left-9 -translate-y-1/2 rounded-none border-2 border-ink bg-paper p-2 text-ink shadow-block-sm transition hover:bg-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-paper sm:-left-12 lg:-left-16"
             aria-label="Previous image"
           >
             <Icon icon="mdi:chevron-left" className="size-6" />
@@ -87,7 +100,7 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
           <button
             type="button"
             onClick={() => swiperRef.current?.slideNext()}
-            className="absolute top-1/2 -translate-y-1/2 -right-9 rounded-full bg-slate-950/70 p-2 text-white shadow-lg backdrop-blur transition hover:bg-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 sm:-right-12 lg:-right-16"
+            className="absolute top-1/2 -right-9 -translate-y-1/2 rounded-none border-2 border-ink bg-paper p-2 text-ink shadow-block-sm transition hover:bg-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-paper sm:-right-12 lg:-right-16"
             aria-label="Next image"
           >
             <Icon icon="mdi:chevron-right" className="size-6" />

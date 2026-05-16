@@ -8,7 +8,7 @@
     "subtitle": "Software Engineering Student",
     "p1": "I am a 21-year-old student in my fifth year of engineering studies based in Lille, France.",
     "p2": "I enjoy solving real-world problems and turning ideas into robust, reliable, and easily maintainable solutions, while continuously improving performance and quality.",
-    "p3": "Looking for new opportunities and projects, I’m seeking a six-month end-of-studies internship starting on March 2, 2026.",
+    "p3": "Looking for new opportunities and projects, I’m open to discussions about future collaborations.",
     "ctaLead": "Got a project in mind ?",
     "ctaBtn": "Contact Me !"
   },
@@ -18,11 +18,11 @@
   },
   "sections": {
     "introduction": "Introduction",
-    "experiences": "Experiences",
+    "experiences": "Journey",
     "skills": "Skills"
   },
   "timeline": {
-    "title": "Experiences"
+    "title": "Journey"
   },
   "skills": {
     "title": "Skills",
@@ -33,8 +33,7 @@
         "items": [
           "Java",
           "Python",
-          "C / C++ / C#",
-          "Swift"
+          "C / C++ / C#"
         ]
       },
       {
@@ -68,7 +67,8 @@
           "Git",
           "Docker",
           "GitHub Actions",
-          "CI / CD pipelines"
+          "CI / CD pipelines",
+          "Cloud computing — Azure, GCP, AWS"
         ]
       },
       {
@@ -84,6 +84,13 @@
     ]
   },
   "experience": [
+    {
+      "year": "March 2026 - Present",
+      "title": "Full-Stack Python Developer Internship",
+      "institution": "Worldline, Seclin",
+      "description": "Design and development of WL Benchmark, a multi-tenant observability platform that automates the generation of benchmark reports and predicts performance regressions between releases using machine learning.",
+      "side": "left"
+    },
     {
       "year": "April 2025 - September 2025",
       "title": "Web Development Internship",

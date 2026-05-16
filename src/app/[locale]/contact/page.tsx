@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-import ContactAnimations from "@/app/components/contact-animations";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+
+import { ContactHero } from "@/app/components/contact/contact-hero";
+import ContactMarquees from "@/app/components/contact-marquees";
 
 export async function generateMetadata({
   params,
@@ -8,15 +10,26 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'contact' });
-  
+  const t = await getTranslations({ locale, namespace: "contact" });
+
   return {
-    title: t('page.title'),
+    title: t("page.title"),
   };
 }
 
-export default function ContactPage() {
+export default async function ContactPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "contact" });
+
   return (
-      <ContactAnimations />
+    <>
+      <ContactHero title={t("hero.title")} intro={t("hero.intro")} />
+      <ContactMarquees />
+    </>
   );
 }

@@ -1,21 +1,21 @@
-import { Button } from "@/app/components/button";
-import TimelineRoadmap, { type TimelineEntry } from "@/app/components/timeline-roadmap";
-import SideScrollNav from "@/app/components/side-scroll-nav";
-import { containerVariants, itemVariants } from "@/animation";
-import { Link } from "@/i18n/navigation";
-import * as motion from "motion/react-client";
-import { Icon } from "@iconify/react";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-import { useTranslations } from "next-intl";
-import clsx from "clsx";
+import { Icon } from "@iconify/react";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
+import { Button } from "@/app/components/button";
+import { Display } from "@/app/components/primitives/display";
+import { Block } from "@/app/components/primitives/block";
+import { MonoLabel } from "@/app/components/primitives/mono-label";
+import SideScrollNav from "@/app/components/side-scroll-nav";
+import TimelineRoadmap, {
+  type TimelineEntry,
+} from "@/app/components/timeline-roadmap";
+import { cn } from "@/lib/cn";
 
-type TimelineItem = TimelineEntry;
 type SkillCategory = { title: string; items: string[] };
 
 export async function generateMetadata({
-  params
+  params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
@@ -23,237 +23,237 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "about" });
 
   return {
-    title: t("page.title")
+    title: t("page.title"),
   };
 }
 
-export default function AboutPage() {
-  const t = useTranslations("about");
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "about" });
 
-  const experience = (t.raw("experience") as TimelineItem[]) ?? [];
-  const education = (t.raw("education") as TimelineItem[]) ?? [];
+  const experience = (t.raw("experience") as TimelineEntry[]) ?? [];
+  const education = (t.raw("education") as TimelineEntry[]) ?? [];
   const skillCategories =
     (t.raw("skills.categories") as SkillCategory[]) ?? [];
+
   const sectionLinks = [
     { id: "introduction", label: t("sections.introduction") },
     { id: "experiences", label: t("sections.experiences") },
-    { id: "skills", label: t("sections.skills") }
+    { id: "skills", label: t("sections.skills") },
   ];
-
-  const xlColumnCount = 3;
-  const xlTailCount = skillCategories.length % xlColumnCount;
-  const xlTailStartIndex =
-    xlTailCount === 0 ? skillCategories.length : skillCategories.length - xlTailCount;
-  const hasOddCountForMd = skillCategories.length % 2 === 1;
-
-  const renderCategoryCard = (
-    category: SkillCategory,
-    index: number,
-    extraClassName?: string
-  ) => (
-    <motion.div
-      key={`${category.title}-${index}`}
-      variants={itemVariants.fromBottom}
-      className={clsx(
-        "rounded-2xl border border-white/10 bg-slate-950/70 p-6 shadow-teal-sm",
-        extraClassName
-      )}
-    >
-      <h3 className="text-lg font-semibold text-white">{category.title}</h3>
-      <ul className="mt-4 space-y-2 text-sm text-slate-300">
-        {category.items.map((item, itemIdx) => (
-          <li key={`${item}-${itemIdx}`} className="flex items-start gap-2">
-            <span className="mt-1 size-1.5 rounded-full bg-teal-400" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </motion.div>
-  );
 
   const resumeHref = t("resume.href");
   const timelineTitle = t("timeline.title");
   const skillsTitle = t("skills.title");
   const skillsLead = t("skills.lead");
 
-  return (
-    <div className="relative overflow-hidden pb-24">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 z-0 flex justify-center"
-      >
-        <div className="h-180 w-full max-w-6xl -translate-y-32 bg-[radial-gradient(circle_at_center,rgba(45,218,191,0.18),transparent_70%)] opacity-75 blur-3xl" />
-      </div>
+  const xlColumnCount = 3;
+  const xlTailCount = skillCategories.length % xlColumnCount;
+  const xlTailStartIndex =
+    xlTailCount === 0
+      ? skillCategories.length
+      : skillCategories.length - xlTailCount;
+  const hasOddCountForMd = skillCategories.length % 2 === 1;
 
+  return (
+    <div className="relative bg-paper pb-24 text-ink">
       <SideScrollNav links={sectionLinks} />
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-20 sm:px-6 lg:px-8 xl:pl-32">
-        <motion.section
-          id="introduction"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="py-16 sm:py-24 lg:py-32"
-        >
-          <motion.div
-            variants={itemVariants.fromBottom}
-            className="mx-auto max-w-3xl"
-          >
-            <p className="text-sm font-medium text-slate-200 sm:text-base">
-              {t("hero.intro")}
-            </p>
+      <div className="mx-auto w-full max-w-6xl px-4 pt-20 sm:px-6 lg:px-8 xl:pl-32">
+        <section id="introduction" className="py-16 sm:py-24 lg:py-32">
+          <div className="mx-auto max-w-3xl">
+            <MonoLabel className="text-cyan">{t("hero.intro")}</MonoLabel>
 
-            <h1 className="mt-2 text-4xl font-extrabold leading-tight tracking-tight text-teal-400 sm:text-5xl lg:text-6xl">
+            <Display
+              size="section"
+              as="h1"
+              weight={700}
+              className="mt-4 text-magenta"
+            >
               {t("hero.name")}
-            </h1>
-            <p className="mt-3 text-base text-grey-300 sm:text-lg">
+            </Display>
+
+            <p className="mt-3 font-body text-lg leading-relaxed text-ink/70 sm:text-xl">
               {t("hero.subtitle")}
             </p>
 
-            <div className="mt-4 flex flex-wrap items-center gap-2 sm:gap-3">
-              <Link
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <a
                 href="https://github.com/cwsquentin"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm transition hover:bg-white/10"
                 aria-label="GitHub"
                 title="GitHub"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-ink bg-paper px-4 py-2 shadow-block-sm transition-colors hover:bg-yellow focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
               >
-                  <Icon icon="mdi:github" className="size-4" />
-                <span>GitHub</span>
-              </Link>
-              <Link
+                <Icon icon="mdi:github" className="size-4" aria-hidden="true" />
+                <span className="text-mono-label">GitHub</span>
+              </a>
+              <a
                 href="https://www.linkedin.com/in/quentin-petiteville/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm transition hover:bg-white/10"
                 aria-label="LinkedIn"
                 title="LinkedIn"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-ink bg-paper px-4 py-2 shadow-block-sm transition-colors hover:bg-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
               >
-                  <Icon icon="mdi:linkedin" className="size-4" />
-                <span>LinkedIn</span>
-              </Link>
+                <Icon
+                  icon="mdi:linkedin"
+                  className="size-4"
+                  aria-hidden="true"
+                />
+                <span className="text-mono-label">LinkedIn</span>
+              </a>
             </div>
 
-            <div className="mt-6 space-y-4 text-sm leading-relaxed text-slate-200 sm:text-base">
+            <div className="mt-8 space-y-4 font-body text-base leading-relaxed text-ink sm:text-lg">
               <p>{t("hero.p1")}</p>
               <p>{t("hero.p2")}</p>
               <p>{t("hero.p3")}</p>
             </div>
 
-            <div className="mt-8">
-              <p className="mb-3 text-sm font-medium text-teal-400/90 sm:text-base">
+            <div className="mt-10">
+              <p className="mb-3 text-mono-label text-cyan">
                 {t("hero.ctaLead")}
               </p>
               <Button
                 href="/contact"
-                background="tealStrong"
-                border="whiteBase"
-                radius="xl"
-                size="mdTall"
-                className="shadow"
+                variant="block"
+                color="magenta"
+                size="lg"
               >
                 {t("hero.ctaBtn")}
               </Button>
             </div>
-          </motion.div>
-        </motion.section>
+          </div>
+        </section>
 
-        <motion.section
+        <section
           id="experiences"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="scroll-mt-37.5 pb-16 pt-4 sm:pb-20"
+          className="scroll-mt-32 pb-16 pt-4 sm:pb-20"
         >
-          <motion.div
-            variants={itemVariants.fromBottom}
-            className="mx-auto max-w-2xl text-center"
-          >
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">
+          <div className="mx-auto max-w-2xl text-center">
+            <Display size="section" as="h2" weight={700}>
               {timelineTitle}
-            </h2>
-          </motion.div>
+            </Display>
+          </div>
 
           <div className="mt-12">
             <TimelineRoadmap items={[...experience, ...education]} />
           </div>
 
-          <motion.div
-            variants={itemVariants.fromBottom}
-            className="mt-12 text-center"
-          >
+          <div className="mt-12 flex justify-center">
             <Button
               href={resumeHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              background="tealStrong"
-              border="whiteBase"
-              radius="xl"
-              size="mdTall"
-              className="shadow"
               external
+              target="_blank"
+              variant="block"
+              color="yellow"
+              size="lg"
             >
-              <Icon icon="streamline:download-file" className="size-4" />
+              <Icon
+                icon="streamline:download-file"
+                className="size-4"
+                aria-hidden="true"
+              />
               {t("resume.button")}
             </Button>
-          </motion.div>
-        </motion.section>
+          </div>
+        </section>
 
-        <motion.section
-          id="skills"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-          className="scroll-mt-37.5 pb-6"
-        >
-          <motion.div
-            variants={itemVariants.fromBottom}
-            className="mx-auto max-w-3xl text-center"
-          >
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">
+        <section id="skills" className="scroll-mt-32 pb-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <Display size="section" as="h2" weight={700}>
               {skillsTitle}
-            </h2>
-            <p className="mt-3 text-base text-slate-300 sm:text-lg">
+            </Display>
+            <p className="mt-3 font-body text-base leading-relaxed text-ink/80 sm:text-lg">
               {skillsLead}
             </p>
-          </motion.div>
+          </div>
 
-          <div className="mt-10 space-y-6">
+          <div className="mt-10">
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {skillCategories.map((category, idx) => {
                 const isMdCenteredTail =
                   hasOddCountForMd && idx === skillCategories.length - 1;
                 const hideAtXl =
-                  xlTailCount === 2 && idx >= xlTailStartIndex ? "xl:hidden" : undefined;
+                  xlTailCount === 2 && idx >= xlTailStartIndex
+                    ? "xl:hidden"
+                    : undefined;
 
-                const extraClassName = clsx(
-                  isMdCenteredTail &&
-                    "md:col-span-2 md:justify-self-center xl:col-span-1 xl:justify-self-auto",
-                  hideAtXl
+                return (
+                  <Block
+                    key={`${category.title}-${idx}`}
+                    color="paper"
+                    shadow="sm"
+                    className={cn(
+                      "p-6",
+                      isMdCenteredTail &&
+                        "md:col-span-2 md:justify-self-center md:w-full md:max-w-md xl:col-span-1 xl:justify-self-auto xl:max-w-none",
+                      hideAtXl,
+                    )}
+                  >
+                    <h3 className="font-display text-xl font-bold leading-none tracking-[-0.02em] text-ink">
+                      {category.title}
+                    </h3>
+                    <ul className="mt-4 space-y-2 font-body text-base text-ink/80">
+                      {category.items.map((item, itemIdx) => (
+                        <li
+                          key={`${item}-${itemIdx}`}
+                          className="flex items-start gap-2"
+                        >
+                          <span
+                            aria-hidden="true"
+                            className="mt-2 size-1.5 shrink-0 rounded-full bg-magenta"
+                          />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Block>
                 );
-
-                return renderCategoryCard(category, idx, extraClassName);
               })}
 
               {xlTailCount === 2 && (
                 <div className="hidden xl:col-span-3 xl:flex xl:justify-center xl:gap-6">
                   {skillCategories
                     .slice(xlTailStartIndex)
-                    .map((category, idx) =>
-                      renderCategoryCard(
-                        category,
-                        xlTailStartIndex + idx + skillCategories.length,
-                        "xl:w-full xl:max-w-sm"
-                      )
-                    )}
+                    .map((category, tailIdx) => (
+                      <Block
+                        key={`tail-${category.title}-${tailIdx}`}
+                        color="paper"
+                        shadow="sm"
+                        className="p-6 xl:w-full xl:max-w-sm"
+                      >
+                        <h3 className="font-display text-xl font-bold leading-none tracking-[-0.02em] text-ink">
+                          {category.title}
+                        </h3>
+                        <ul className="mt-4 space-y-2 font-body text-base text-ink/80">
+                          {category.items.map((item, itemIdx) => (
+                            <li
+                              key={`${item}-${itemIdx}`}
+                              className="flex items-start gap-2"
+                            >
+                              <span
+                                aria-hidden="true"
+                                className="mt-2 size-1.5 shrink-0 rounded-full bg-magenta"
+                              />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </Block>
+                    ))}
                 </div>
               )}
             </div>
           </div>
-        </motion.section>
+        </section>
       </div>
     </div>
   );

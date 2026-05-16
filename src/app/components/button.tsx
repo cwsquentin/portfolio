@@ -1,78 +1,47 @@
+"use client";
+
 import { Link } from "@/i18n/navigation";
-import clsx from "clsx";
-import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
+import { cn } from "@/lib/cn";
+import { createElement } from "react";
+import type {
+  ComponentPropsWithoutRef,
+  ElementType,
+  ReactNode,
+} from "react";
+import { ColorFlood } from "@/app/components/motion/color-flood";
+import { MechanicalPress } from "@/app/components/motion/mechanical-press";
 
-type ButtonSize = "xs" | "compact" | "sm" | "md" | "mdTall" | "lg";
-type ButtonBackground =
-  | "none"
-  | "teal"
-  | "tealStrong"
-  | "glass"
-  | "transparentSoft"
-  | "transparentStrong"
-  | "indigo"
-  | "slate";
-type ButtonBorder =
-  | "none"
-  | "whiteSoft"
-  | "whiteStrong"
-  | "whiteBase"
-  | "slate"
-  | "slateMuted";
-type ButtonRadius = "full" | "xl" | "md";
-type ButtonWeight = "medium" | "semibold";
-
-const baseClass =
-  "inline-flex items-center gap-2 text-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/60";
+export type ButtonVariant = "block" | "flood" | "ghost";
+export type ButtonColor = "paper" | "cyan" | "magenta" | "yellow" | "ink";
+export type ButtonFloodColor = "cyan" | "magenta" | "yellow" | "ink";
+export type ButtonSize = "compact" | "sm" | "default" | "lg";
 
 const sizeClassMap: Record<ButtonSize, string> = {
-  xs: "px-3 py-1.5",
-  compact: "px-3 py-2",
-  sm: "px-4 py-2",
-  md: "px-5 py-2.5",
-  mdTall: "px-5 py-3",
-  lg: "px-6 py-3"
+  compact: "px-3 py-2 text-xs",
+  sm: "px-4 py-2 text-sm",
+  default: "px-6 py-3 text-sm",
+  lg: "px-8 py-4 text-base",
 };
 
-const backgroundClassMap: Record<ButtonBackground, string> = {
-  none: "",
-  teal: "bg-teal-500 text-white hover:bg-teal-400",
-  tealStrong: "bg-teal-500 text-white hover:bg-teal-600",
-  glass: "bg-white/5 text-slate-100 hover:bg-white/10",
-  transparentSoft: "text-slate-100 hover:bg-white/5",
-  transparentStrong: "text-slate-100 hover:bg-white/10",
-  indigo: "bg-indigo-600 text-white hover:bg-indigo-500",
-  slate: "bg-slate-700/60 text-slate-300"
+const blockColorClassMap: Record<ButtonColor, string> = {
+  paper: "bg-paper text-ink",
+  cyan: "bg-cyan text-ink",
+  magenta: "bg-magenta text-paper",
+  yellow: "bg-yellow text-ink",
+  ink: "bg-ink text-paper",
 };
 
-const borderClassMap: Record<ButtonBorder, string> = {
-  none: "",
-  whiteSoft: "border border-white/15 hover:border-white/30",
-  whiteStrong: "border border-white/20 hover:border-white/40",
-  whiteBase: "border border-white/10",
-  slate: "border border-slate-600 hover:border-indigo-500",
-  slateMuted: "border border-slate-600"
-};
-
-const radiusClassMap: Record<ButtonRadius, string> = {
-  full: "rounded-full",
-  xl: "rounded-xl",
-  md: "rounded-md"
-};
-
-const weightClassMap: Record<ButtonWeight, string> = {
-  medium: "font-medium",
-  semibold: "font-semibold"
-};
+const baseClass =
+  "inline-flex items-center gap-2 font-mono font-medium uppercase tracking-[0.1em] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-paper";
 
 type ButtonOwnProps<C extends ElementType> = {
   as?: C;
   external?: boolean;
   size?: ButtonSize;
-  background: ButtonBackground;
-  border?: ButtonBorder;
-  radius?: ButtonRadius;
-  weight?: ButtonWeight;
+  variant: ButtonVariant;
+  color?: ButtonColor;
+  floodColor?: ButtonFloodColor;
+  pill?: boolean;
   className?: string;
   children: ReactNode;
   disabled?: boolean;
@@ -84,11 +53,11 @@ export type ButtonProps<C extends ElementType> = ButtonOwnProps<C> &
 export function Button<C extends ElementType = typeof Link>({
   as,
   external,
-  size = "md",
-  background,
-  border = "none",
-  radius = "full",
-  weight = "semibold",
+  size = "default",
+  variant,
+  color = "paper",
+  floodColor = "cyan",
+  pill = false,
   className,
   children,
   disabled,
@@ -100,20 +69,36 @@ export function Button<C extends ElementType = typeof Link>({
 
   const Component = (as ?? (shouldUseAnchor ? "a" : Link)) as ElementType;
 
-  const buttonClassName = clsx(
+  const radiusClass = pill ? "rounded-full" : "rounded-none";
+
+  const variantClass = (() => {
+    switch (variant) {
+      case "block":
+        return cn(
+          blockColorClassMap[color],
+          "border-2 border-ink shadow-block-md",
+        );
+      case "flood":
+        return "border-2 border-ink";
+      case "ghost":
+        return "text-ink hover:underline underline-offset-4 decoration-2";
+      default:
+        return "";
+    }
+  })();
+
+  const buttonClassName = cn(
     baseClass,
     sizeClassMap[size],
-    backgroundClassMap[background],
-    borderClassMap[border],
-    radiusClassMap[radius],
-    weightClassMap[weight],
-    disabled && "pointer-events-none cursor-not-allowed opacity-70",
-    className
+    radiusClass,
+    variantClass,
+    disabled && "pointer-events-none cursor-not-allowed opacity-50",
+    className,
   );
 
   const mergedProps: Record<string, unknown> = {
     className: buttonClassName,
-    ...props
+    ...props,
   };
 
   if (shouldUseAnchor && mergedProps["target"] === "_blank" && !mergedProps["rel"]) {
@@ -128,5 +113,29 @@ export function Button<C extends ElementType = typeof Link>({
     }
   }
 
-  return <Component {...(mergedProps as ComponentPropsWithoutRef<C>)}>{children}</Component>;
+  if (variant === "block") {
+    return (
+      <MechanicalPress as={Component} {...(mergedProps as ComponentPropsWithoutRef<typeof Component>)}>
+        {children}
+      </MechanicalPress>
+    );
+  }
+
+  if (variant === "flood") {
+    return (
+      <ColorFlood
+        as={Component}
+        floodColor={floodColor}
+        {...(mergedProps as ComponentPropsWithoutRef<typeof Component>)}
+      >
+        {children}
+      </ColorFlood>
+    );
+  }
+
+  return createElement(
+    Component as ElementType,
+    mergedProps as ComponentPropsWithoutRef<C>,
+    children,
+  );
 }

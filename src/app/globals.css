@@ -1,14 +1,58 @@
 @import "tailwindcss";
 
 @theme {
-  --color-grey-300: #B2B2B2;
-  --shadow-teal-xl: 0 30px 80px -40px rgba(15,118,110,0.65);
-  --shadow-teal-md: 0 25px 60px -45px rgba(15,118,110,0.6);
-  --shadow-teal-sm: 0 18px 40px -32px rgba(15,118,110,0.55);
+  --color-ink: #1B1814;
+  --color-paper: #EBE2CD;
+  --color-cyan: #3F5466;
+  --color-magenta: #A8533A;
+  --color-yellow: #D29A3B;
+  --color-alert: #A8533A;
 
-  --shadow-sky-lg: 0 24px 60px -40px rgba(96,165,250,0.6);
+  --color-marquee-surface: var(--color-ink);
+  --color-marquee-on: var(--color-paper);
+  --color-marquee-accent: var(--color-magenta);
 
-  --shadow-indigo-xl: 0 32px 80px -48px rgba(99,102,241,0.7);
-  --shadow-indigo-md: 0 18px 40px -32px rgba(79,70,229,0.4);
-  --shadow-indigo-sm: 0 18px 48px -40px rgba(79,70,229,0.45);
+  --shadow-block-sm: 4px 4px 0 0 rgba(27, 24, 20, 0.45);
+  --shadow-block-md: 6px 6px 0 0 rgba(27, 24, 20, 0.45);
+  --shadow-block-lg: 10px 10px 0 0 rgba(27, 24, 20, 0.45);
+
+  --font-display: var(--font-big-shoulders), Impact, system-ui, sans-serif;
+  --font-body: var(--font-plex-sans), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), "SF Mono", Menlo, monospace;
+
+  --space-unit: 8px;
+}
+
+@layer base {
+  html { color-scheme: light; }
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  ::selection { background: var(--color-magenta); color: var(--color-paper); }
+}
+
+@utility text-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+}
+
+@utility text-mono-label {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
