@@ -3,7 +3,7 @@
     "title": "Projets"
   },
   "title": "Projets",
-  "intro": "Une sélection de projets illustrant mes compétences et mon envie de créer des expériences utiles.",
+  "intro": "Une sélection de projets qui illustrent mes compétences et mon goût pour les produits utiles.",
   "code": "Code",
   "demo": "Démo",
   "codePrivate": "Code confidentiel",
@@ -14,28 +14,82 @@
     "back": "Retour aux projets",
     "technologies": "Technologies",
     "summaryTitle": "Description du projet",
-    "confidentialBadge": "Code confidentiel"
+    "metaTitle": "Repères du projet",
+    "confidentialBadge": "Code confidentiel",
+    "nav": {
+      "prev": "Projet précédent",
+      "next": "Projet suivant",
+      "allProjects": "Tous les projets"
+    },
+    "narrative": {
+      "context": "Contexte"
+    },
+    "metaLabels": {
+      "year": "Année",
+      "role": "Rôle",
+      "stack": "Stack",
+      "status": "Statut"
+    }
   },
   "items": {
+    "worldline": {
+      "title": "Worldline",
+      "description": "Conception et développement d’une plateforme interne d’observabilité multi-tenant pour comparer les performances entre releases, détecter les anomalies et prédire les tendances par Machine Learning.\nDétails et livrables confidentiels.\nStage en cours — n’hésitez pas à me poser vos questions."
+    },
     "medchemStructureGenius": {
       "title": "MedChem Structure Genius",
-      "description": "MedChem Structure Genius est une application d’e-learning destinée aux étudiants de la Faculté de Pharmacie de l'Université de Lille pour les aider à étudier les molécules et leurs relations.\n Projet en cours — n’hésitez pas à me poser vos questions !"
+      "description": "MedChem Structure Genius est une application d’e-learning destinée aux étudiants de la Faculté de Pharmacie de l’Université de Lille pour les aider à étudier les molécules et leurs relations."
+    },
+    "dochub": {
+      "title": "DocHub",
+      "description": "Plateforme de prise de rendez-vous en ligne, développée durant mes études à l’ISEN. L’application réunit un backend FastAPI, une interface Vue.js et une base de données PostgreSQL, le tout déployé automatiquement grâce à Docker et GitHub Actions. Projet réalisé pour découvrir et mettre en pratique les méthodes DevOps et l’automatisation du déploiement."
     },
     "musicStory": {
       "title": "Music Story",
-      "description": "Refonte du site Music Story : migration du contenu WordPress vers Next.js/Tailwind CSS, avec amélioration de la performance et de la maintenabilité."
+      "description": "Refonte du site Music Story : migration du contenu WordPress vers Next.js/Tailwind CSS, avec gains de performance et de maintenabilité."
     },
     "paris92": {
       "title": "Paris 92",
-      "description": "Développement d'une plateforme web pour la collecte et l'analyse de données des performances sportives du club de handball Paris 92, destinée à son staff. \n Détails et livrables confidentiels."
+      "description": "Développement d’une plateforme web pour la collecte et l’analyse des performances sportives du club de handball Paris 92, à destination de son staff.\nDétails et livrables confidentiels."
     }
   },
   "details": {
+    "worldline": {
+      "hero": {
+        "title": "Worldline",
+        "period": "Mars 2026 - Aujourd’hui",
+        "summary": "Worldline est le leader européen des services de paiement et de transactions sécurisées. Au sein de l’équipe bench, je participe à la conception et au développement de WL Benchmark, une plateforme interne d’observabilité multi-tenant destinée à comparer les performances entre deux releases ou deux périodes, à détecter les anomalies et à prédire les tendances grâce au Machine Learning.\nL’enjeu principal : automatiser la génération des rapports CR Bench, rédigés jusqu’ici manuellement, en croisant les données Gatling locales et les dashboards GCP Cloud Monitoring. La plateforme s’appuie sur un cœur projet-agnostique et une configuration par tenant pour s’adapter à chaque équipe sans modifier le code.\nLes détails et livrables sont confidentiels car le projet est interne à Worldline. Le projet est encore en cours — n’hésitez pas à me poser vos questions."
+      },
+      "meta": [
+        { "label": "Type", "value": "Plateforme interne d’observabilité et de benchmark en Python, ML et GCP" },
+        { "label": "Rôle", "value": "Développeur full stack Python" },
+        { "label": "Équipe", "value": "Stage de fin d’études au sein de l’équipe bench" },
+        { "label": "Statut", "value": "Projet encore en cours de réalisation, n’hésitez pas à me poser vos questions !" }
+      ],
+      "year": "2026",
+      "role": "Développeur full stack Python",
+      "status": "En cours"
+    },
+    "dochub": {
+      "hero": {
+        "title": "DocHub",
+        "period": "Janvier 2026 - Février 2026",
+        "summary": "DocHub est une plateforme distribuée de prise de rendez-vous, réalisée dans le cadre d’un cours d’initiation au DevOps. L’application repose sur cinq services conteneurisés indépendamment — base de données PostgreSQL, API FastAPI, frontend Vue.js, reverse proxy Nginx et worker Python pour les traitements par lots — orchestrés via Docker avec gestion des dépendances et healthchecks ordonnés. Un pipeline GitHub Actions automatise le build et le push des images vers GitHub Container Registry, puis exécute deux suites de tests. Le projet met en œuvre les pratiques DevOps clés : configuration YAML reproductible, conteneurs non-root, infrastructure-as-code, tests automatisés et orchestration."},
+      "meta": [
+        { "label": "Type", "value": "Plateforme distribuée de prise de rendez-vous, initiation au DevOps, au CI/CD et au YAML" },
+        { "label": "Rôle", "value": "Développeur full-stack & DevOps" },
+        { "label": "Équipe", "value": "Projet réalisé en autonomie" },
+        { "label": "Calendrier", "value": "2 mois — Janvier à Février 2026" }
+      ],
+      "year": "2026",
+      "role": "Développeur full-stack & DevOps",
+      "status": "Livré"
+    },
     "musicStory": {
       "hero": {
         "title": "Music Story",
         "period": "Avril - Septembre 2025",
-        "summary": "Music Story est un fournisseur professionnel de métadonnées musicales et de services d’enrichissement pour les acteurs B2B : médias, plateformes et ayants droit. J’ai participé à la refonte de leur site web vitrine en faisant évoluer une base WordPress hétérogène vers une plateforme Next.js plus moderne, construite sur des composants réutilisables et déployée par itérations avec relectures de code aux côtés de l’équipe. Cette refonte a rendu le site plus rapide et cohérent, entièrement internationalisé et mieux référencé, tout en simplifiant la maintenance et en accélérant la création de nouvelles pages et la mise en ligne.",
+        "summary": "Music Story est un fournisseur professionnel de métadonnées musicales et de services d’enrichissement pour les acteurs B2B : médias, plateformes et ayants droit. J’ai participé à la refonte de leur site vitrine en faisant évoluer une base WordPress hétérogène vers une plateforme Next.js plus moderne, construite sur des composants réutilisables et déployée par itérations avec relectures de code aux côtés de l’équipe. Cette refonte a rendu le site plus rapide et cohérent, entièrement internationalisé et mieux référencé, tout en simplifiant la maintenance et en accélérant la création de nouvelles pages.",
         "ctaLabel": "Voir le projet"
       },
       "meta": [
@@ -43,34 +97,42 @@
         { "label": "Rôle", "value": "Développeur web stagiaire" },
         { "label": "Équipe", "value": "Développement mené en solo, encadré par des développeurs référents assurant la relecture et la validation de mes pull requests sur GitHub" },
         { "label": "Calendrier", "value": "6 mois" }
-      ]
+      ],
+      "year": "2025",
+      "role": "Développeur web stagiaire",
+      "status": "En ligne"
     },
     "paris92": {
       "hero": {
         "title": "Paris 92",
         "period": "Janvier - Mai 2025",
-        "summary": "Paris 92 est un club de handball féminin reconnu sur la scène nationale et européenne qui cherche à optimiser la gestion et l'analyse de ses données. \nJ’ai participé à la conception et à la réalisation d’une plateforme sécurisée centralisant données de match, vidéos et métriques physiques, en collaboration avec cinq étudiants de l'ISEN. Mon rôle a été un développeur polyvalent front/back avec une interface en Next.js et back-end Python pour le traitement des données. \nCette plateforme permet aux entraîneurs, analystes et préparateurs de suivre la charge, comparer les performances, préparer les rencontres et générer des bilans en quelques clics, ce qui fluidifie la collaboration, fiabilise la collecte d’informations et accélère la prise de décision. \n Le code et le livrable sont confidentiels, mais vous pouvez me poser des questions à leur sujet !"
+        "summary": "Paris 92 est un club de handball féminin reconnu sur la scène nationale et européenne qui cherche à optimiser la gestion et l’analyse de ses données.\nJ’ai participé à la conception et à la réalisation d’une plateforme sécurisée centralisant données de match, vidéos et métriques physiques, en collaboration avec cinq étudiants de l’ISEN. Mon rôle : développeur polyvalent front/back avec une interface en Next.js et un back-end Python pour le traitement des données.\nCette plateforme permet aux entraîneurs, analystes et préparateurs de suivre la charge, comparer les performances, préparer les rencontres et générer des bilans en quelques clics, ce qui fluidifie la collaboration, fiabilise la collecte d’informations et accélère la prise de décision.\nLe code et le livrable sont confidentiels, mais vous pouvez me poser des questions à leur sujet."
       },
       "meta": [
-        { "label": "Type", "value": "Plateforme web pour la collecte et l'analyse de données des performances sportives du club de handball Paris 92" },
+        { "label": "Type", "value": "Plateforme web pour la collecte et l’analyse des performances sportives du club de handball Paris 92" },
         { "label": "Rôle", "value": "Développeur full-stack" },
         { "label": "Équipe", "value": "Équipe de six étudiants ISEN" },
         { "label": "Calendrier", "value": "4 mois" }
-      ]
+      ],
+      "year": "2025",
+      "role": "Développeur full-stack",
+      "status": "Confidentiel"
     },
     "medchemStructureGenius": {
       "hero": {
         "title": "MedChem Structure Genius",
-        "period": "Octobre 2025 - aujourd'hui",
-        "summary": "MedChem Structure Genius est une application d’e-learning destinée aux étudiants de la Faculté de Pharmacie de l'Université de Lille pour les aider à étudier les molécules et leurs relations.\nEn collaboration avec une équipe de cinq étudiants de l'ISEN, je mène ce projet en cadrant le besoin avec le client, en animant les réunions hebdomadaires et en assurant le suivi tout en contribuant directement au développement.\nNous améliorons la fiabilité et l’ergonomie de l’application : correction des bugs d’affichage sur Android et sur le web, résolution des erreurs de génération de quiz, amélioration des interfaces de révision et de suivi des scores, optimisation du code, rectification des textes, création d’un schéma explicatif du mécanisme de génération des quiz et de requêtes types sur Supabase pour faciliter l’exploration des données.\nLe projet est encore en cours de réalisation, n'hésitez pas à me poser vos questions !",
+        "period": "Octobre 2025 - Janvier 2026",
+        "summary": "MedChem Structure Genius est une application d’e-learning destinée aux étudiants de la Faculté de Pharmacie de l’Université de Lille pour les aider à étudier les molécules et leurs relations.\nEn collaboration avec une équipe de cinq étudiants de l’ISEN, j’ai mené ce projet en cadrant le besoin avec le client, en animant les réunions hebdomadaires et en assurant le suivi tout en contribuant directement au développement.\nNous avons amélioré la fiabilité et l’ergonomie de l’application : correction des bugs d’affichage sur Android et sur le web, résolution des erreurs de génération de quiz, refonte des interfaces de révision et de suivi des scores, optimisation du code, rectification des textes, création d’un schéma explicatif du mécanisme de génération de quiz et de requêtes types sur Supabase pour faciliter l’exploration des données.",
         "ctaLabel": "Voir le projet"
       },
       "meta": [
         { "label": "Type", "value": "Développement d’une application web et mobile d’e-learning sur la structure du médicament" },
         { "label": "Rôle", "value": "Chef de projet & développeur" },
-        { "label": "Calendrier", "value": "Octobre 2025 - aujourd'hui" },
-        { "label": "Statut", "value": "Projet encore en cours de réalisation, n'hésitez pas à me poser vos questions !" }
-      ]
+        { "label": "Calendrier", "value": "Octobre 2025 - Janvier 2026" }
+      ],
+      "year": "2025-2026",
+      "role": "Chef de projet & développeur",
+      "status": "Terminé"
     }
   }
 }

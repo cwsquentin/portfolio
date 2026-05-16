@@ -1,13 +1,17 @@
 import { Button } from "@/app/components/button";
+import { Block } from "@/app/components/primitives/block";
+import { Display } from "@/app/components/primitives/display";
+import { MonoLabel } from "@/app/components/primitives/mono-label";
 import { ProjectGallery } from "@/app/components/project-slider";
 import { projectsData } from "@/data/projects";
 import { routing } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
+import { cn } from "@/lib/cn";
 import { Icon } from "@iconify/react";
 import type { Metadata } from "next";
 import Image, { type StaticImageData } from "next/image";
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 type DetailListItem = { label: string; value: string };
 
@@ -61,17 +65,14 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "projects" });
 
   if (!project) {
-    return {
-      title: t("page.title"),
-    };
+    return { title: t("page.title") };
   }
 
   const detail = t.raw(`details.${project.id}`) as
     | ProjectDetailMessages
     | undefined;
 
-  const heroTitle =
-    detail?.hero?.title ?? t(`items.${project.id}.title`);
+  const heroTitle = detail?.hero?.title ?? t(`items.${project.id}.title`);
   const heroSummaryRaw = detail?.hero?.summary;
   let descriptionSource = t(`items.${project.id}.description`);
 
@@ -101,6 +102,7 @@ export default async function ProjectDetailPage({
   params: Promise<{ locale: string; projectId: string }>;
 }) {
   const { locale, projectId } = await params;
+  setRequestLocale(locale);
   const project = getProjectBySlug(projectId);
 
   if (!project) {
@@ -121,12 +123,20 @@ export default async function ProjectDetailPage({
   const summaryParagraph =
     typeof heroSummaryRaw === "string" ? heroSummaryRaw.trim() : "";
   const metaItems = Array.isArray(detail.meta) ? detail.meta : [];
+  const sections = Array.isArray(detail.sections) ? detail.sections : [];
+  const highlights = Array.isArray(detail.highlights) ? detail.highlights : [];
+  const deliverables = Array.isArray(detail.deliverables)
+    ? detail.deliverables
+    : [];
+  const results = Array.isArray(detail.results) ? detail.results : [];
+  const confidentialNote =
+    typeof detail.confidentialNote === "string"
+      ? detail.confidentialNote.trim()
+      : "";
+
   const heroCtaLabel = hero.ctaLabel?.trim();
   const showDemoCta = Boolean(heroCtaLabel && project.demo);
   const showGithubCta = Boolean(project.github);
-
-  const cardBaseClass =
-    "rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-sky-lg";
 
   const galleryImages = Array.isArray(project.gallery)
     ? project.gallery.filter(
@@ -137,38 +147,40 @@ export default async function ProjectDetailPage({
   const isStaticImage = typeof project.image !== "string";
   const heroPlaceholder = isStaticImage ? "blur" : "empty";
 
-  return (
-    <article className="pb-24">
-      <section className="relative overflow-hidden border-b border-white/10 bg-linear-to-br from-slate-950 via-indigo-950/40 to-slate-950 px-4 pb-20 pt-28 sm:px-6">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(129,140,248,0.28),transparent_60%)]"
-        />
+  const hasNarrativeContent =
+    sections.length > 0 ||
+    highlights.length > 0 ||
+    deliverables.length > 0 ||
+    results.length > 0 ||
+    Boolean(confidentialNote);
 
-        <div className="relative mx-auto w-full max-w-6xl">
+  return (
+    <article className="bg-paper text-ink">
+      <section className="border-b-2 border-ink px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+        <div className="mx-auto w-full max-w-6xl">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 transition hover:text-white"
+            className="text-mono-label inline-flex items-center gap-2 text-ink/70 transition hover:text-magenta"
           >
             <Icon icon="mdi:arrow-left" className="size-4" />
             {t("detail.back")}
           </Link>
 
-          <div className="mt-10 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
+          <div className="mt-10 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-14">
             <div className="space-y-6">
-              <h1 className="text-4xl font-bold text-white sm:text-5xl">
+              <Display size="section" as="h1">
                 {hero.title}
-              </h1>
+              </Display>
 
-              <div className="flex flex-wrap gap-2 text-sm text-slate-300">
+              <div className="flex flex-wrap gap-2">
                 {hero.period ? (
-                  <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5">
+                  <span className="inline-flex items-center gap-2 rounded-full border-2 border-ink bg-paper px-4 py-1.5 text-mono-label text-ink">
                     <Icon icon="mdi:calendar" className="size-4" />
                     {hero.period}
                   </span>
                 ) : null}
                 {project.confidential ? (
-                  <span className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-500/10 px-4 py-1.5 text-amber-200">
+                  <span className="inline-flex items-center gap-2 rounded-full border-2 border-ink bg-yellow px-4 py-1.5 text-mono-label text-ink">
                     <Icon icon="mdi:shield-lock" className="size-4" />
                     {t("detail.confidentialBadge")}
                   </span>
@@ -176,11 +188,9 @@ export default async function ProjectDetailPage({
               </div>
 
               {summaryParagraph ? (
-                <div>
-                  <h2 className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-300">
-                    {t("detail.summaryTitle")}
-                  </h2>
-                  <p className="mt-4 whitespace-pre-line text-base text-slate-200">
+                <div className="space-y-4">
+                  <MonoLabel as="p">{t("detail.summaryTitle")}</MonoLabel>
+                  <p className="whitespace-pre-line font-body text-base leading-relaxed text-ink/80 sm:text-lg">
                     {summaryParagraph}
                   </p>
                 </div>
@@ -193,10 +203,8 @@ export default async function ProjectDetailPage({
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      background="indigo"
-                      border="none"
-                      radius="xl"
-                      size="mdTall"
+                      variant="block"
+                      color="magenta"
                     >
                       {heroCtaLabel}
                       <Icon icon="ph:arrow-square-out" className="size-5" />
@@ -207,10 +215,8 @@ export default async function ProjectDetailPage({
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      background="transparentStrong"
-                      border="whiteStrong"
-                      radius="xl"
-                      size="mdTall"
+                      variant="block"
+                      color="paper"
                     >
                       {t("code")}
                       <Icon icon="mdi:github" className="size-5" />
@@ -222,46 +228,73 @@ export default async function ProjectDetailPage({
 
             <aside className="space-y-6">
               {metaItems.length ? (
-                <div className={cardBaseClass}>
-                  <dl className="space-y-5 text-sm text-slate-200">
+                <Block
+                  color="paper"
+                  border
+                  shadow="sm"
+                  as="section"
+                  className="p-6 sm:p-8"
+                >
+                  <MonoLabel as="p" className="mb-5 text-ink/70">
+                    {t("detail.metaTitle")}
+                  </MonoLabel>
+                  <dl className="space-y-5">
                     {metaItems.map((item, index) => (
-                      <div key={`${project.id}-meta-${index}`} className="border-b border-white/10 pb-4 last:border-none last:pb-0">
-                        <dt className="text-sm font-semibold text-slate-300">
+                      <div
+                        key={`${project.id}-meta-${index}`}
+                        className="border-b border-ink/15 pb-4 last:border-none last:pb-0"
+                      >
+                        <dt className="text-mono-label text-ink/70">
                           {item.label}
                         </dt>
-                        <dd className="mt-1 text-base text-white">
+                        <dd className="mt-1 font-body text-base text-ink">
                           {item.value}
                         </dd>
                       </div>
                     ))}
                   </dl>
-                </div>
+                </Block>
               ) : null}
 
-              <div className={cardBaseClass}>
-                <h3 className="text-xs font-semibold uppercase tracking-[0.32em] text-indigo-200/80">
+              <Block
+                color="paper"
+                border
+                shadow="sm"
+                as="section"
+                className="p-6 sm:p-8"
+              >
+                <MonoLabel as="p" className="mb-4 text-ink/70">
                   {t("detail.technologies")}
-                </h3>
-                <div className="mt-4 flex flex-wrap gap-2">
+                </MonoLabel>
+                <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
                     <span
                       key={`${project.id}-${tech}`}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200"
+                      className="rounded-none border-2 border-ink bg-paper px-2 py-1 text-mono-label text-ink"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-              </div>
-
+              </Block>
             </aside>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-        <div className="-mt-16 overflow-hidden rounded-3xl border border-white/10 bg-slate-900/80 shadow-indigo-xl">
-          <div className="relative aspect-video w-full">
+      <section
+        className={cn(
+          "bg-paper px-4 py-16 sm:px-6 lg:px-8",
+          hasNarrativeContent && "border-b-2 border-ink",
+        )}
+      >
+        <div className="mx-auto w-full max-w-6xl">
+          <Block
+            color="paper"
+            border
+            shadow="md"
+            className="relative aspect-video w-full overflow-hidden"
+          >
             {hasGallery ? (
               <ProjectGallery images={galleryImages} alt={hero.title} />
             ) : (
@@ -271,14 +304,151 @@ export default async function ProjectDetailPage({
                 fill
                 className="object-cover"
                 placeholder={heroPlaceholder}
-                sizes="(min-width: 1280px) 960px, 100vw"
+                sizes="(min-width: 1280px) 1152px, 100vw"
                 priority
               />
             )}
-          </div>
+          </Block>
         </div>
       </section>
 
+      {hasNarrativeContent && (
+        <section className="px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-6xl space-y-8">
+          {sections.length
+            ? sections.map((section, index) => (
+                <Block
+                  key={`${project.id}-section-${index}`}
+                  color="paper"
+                  border
+                  shadow="sm"
+                  as="section"
+                  className="p-6 sm:p-8"
+                >
+                  <Display size="block" as="h2">
+                    {section.title}
+                  </Display>
+                  {Array.isArray(section.paragraphs)
+                    ? section.paragraphs.map((paragraph, paraIndex) => (
+                        <p
+                          key={`${project.id}-section-${index}-p-${paraIndex}`}
+                          className="mt-4 whitespace-pre-line font-body text-base leading-relaxed text-ink/80"
+                        >
+                          {paragraph}
+                        </p>
+                      ))
+                    : null}
+                  {Array.isArray(section.bullets) && section.bullets.length ? (
+                    <ul className="mt-4 list-disc space-y-2 pl-5 font-body text-base text-ink/80 marker:text-magenta">
+                      {section.bullets.map((bullet, bulletIndex) => (
+                        <li
+                          key={`${project.id}-section-${index}-b-${bulletIndex}`}
+                        >
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </Block>
+              ))
+            : null}
+
+          {highlights.length ? (
+            <Block
+              color="paper"
+              border
+              shadow="sm"
+              as="section"
+              className="p-6 sm:p-8"
+            >
+              <Display size="block" as="h2">
+                {t("detail.summaryTitle")}
+              </Display>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {highlights.map((highlight, index) => (
+                  <div
+                    key={`${project.id}-highlight-${index}`}
+                    className="border-l-2 border-magenta pl-4"
+                  >
+                    <p className="font-display text-lg font-bold text-ink">
+                      {highlight.title}
+                    </p>
+                    <p className="mt-2 font-body text-sm leading-relaxed text-ink/80">
+                      {highlight.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </Block>
+          ) : null}
+
+          {deliverables.length ? (
+            <Block
+              color="paper"
+              border
+              shadow="sm"
+              as="section"
+              className="p-6 sm:p-8"
+            >
+              <Display size="block" as="h2">
+                {t("detail.summaryTitle")}
+              </Display>
+              <ul className="mt-4 list-disc space-y-2 pl-5 font-body text-base text-ink/80 marker:text-magenta">
+                {deliverables.map((item, index) => (
+                  <li key={`${project.id}-deliverable-${index}`}>{item}</li>
+                ))}
+              </ul>
+            </Block>
+          ) : null}
+
+          {results.length ? (
+            <Block
+              color="paper"
+              border
+              shadow="sm"
+              as="section"
+              className="p-6 sm:p-8"
+            >
+              <Display size="block" as="h2">
+                {t("detail.summaryTitle")}
+              </Display>
+              <dl className="mt-6 grid gap-5 sm:grid-cols-2">
+                {results.map((item, index) => (
+                  <div key={`${project.id}-result-${index}`}>
+                    <dt className="text-mono-label text-ink/70">
+                      {item.label}
+                    </dt>
+                    <dd className="mt-1 font-body text-base text-ink">
+                      {item.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </Block>
+          ) : null}
+
+          {confidentialNote ? (
+            <Block
+              color="yellow"
+              border
+              shadow="sm"
+              as="section"
+              className="p-6 sm:p-8"
+            >
+              <div className="flex items-start gap-3">
+                <Icon
+                  icon="mdi:shield-lock"
+                  className="mt-1 size-5 shrink-0 text-ink"
+                />
+                <p className="whitespace-pre-line font-body text-base leading-relaxed text-ink">
+                  {confidentialNote}
+                </p>
+              </div>
+            </Block>
+          ) : null}
+        </div>
+        </section>
+      )}
     </article>
   );
 }

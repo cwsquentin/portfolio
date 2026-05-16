@@ -6,9 +6,9 @@
     "intro": "Je m’appelle",
     "name": "Quentin Petiteville",
     "subtitle": "Étudiant en ingénierie informatique",
-    "p1": "Je suis un étudiant de 21 ans en cinquième année du cycle ingénieur basé à Lille, France",
+    "p1": "Je suis un étudiant de 21 ans en cinquième année du cycle ingénieur basé à Lille, France.",
     "p2": "J’aime résoudre des problèmes réels et transformer des idées en solutions robustes, fiables et facilement maintenables, tout en améliorant en continu la performance et la qualité.",
-    "p3": "À la recherche de nouvelles opportunités et de projets, je cherche un stage de fin d’études de six mois à partir du 2 mars 2026.",
+    "p3": "À la recherche de nouvelles opportunités et de projets, je suis ouvert aux échanges autour de prochaines collaborations.",
     "ctaLead": "Un projet en tête ?",
     "ctaBtn": "Contactez-moi !"
   },
@@ -17,7 +17,12 @@
     "href": "/downloads/CV_FR_EN.pdf"
   },
   "timeline": {
-    "title": "Expériences"
+    "title": "Parcours"
+  },
+  "sections": {
+    "introduction": "Introduction",
+    "experiences": "Parcours",
+    "skills": "Compétences"
   },
   "skills": {
     "title": "Compétences",
@@ -28,8 +33,7 @@
         "items": [
           "Java",
           "Python",
-          "C / C++ / C#",
-          "Swift"
+          "C / C++ / C#"
         ]
       },
       {
@@ -63,7 +67,8 @@
           "Git",
           "Docker",
           "GitHub Actions",
-          "Pipelines CI / CD"
+          "Pipelines CI / CD",
+          "Cloud computing — Azure, GCP, AWS"
         ]
       },
       {
@@ -79,6 +84,13 @@
     ]
   },
   "experience": [
+    {
+      "year": "Mars 2026 - Aujourd’hui",
+      "title": "Stage de fin d’études — Développeur full stack Python",
+      "institution": "Worldline, Seclin",
+      "description": "Conception et développement de WL Benchmark, plateforme d'observabilité multi-tenant qui automatise la génération des rapports de benchmarks et anticipe les régressions de performance entre releases grâce au Machine Learning.",
+      "side": "left"
+    },
     {
       "year": "Avril 2025 - Septembre 2025",
       "title": "Stage en développement web",
@@ -109,10 +121,5 @@
       "description": "Spécialisation en développement logiciel, analyse de données et IA. Expérience pratique en laboratoires avancés et sur des projets concrets dans un environnement IT international.",
       "side": "left"
     }
-  ],
-  "sections": {
-    "introduction": "Introduction",
-    "experiences": "Expériences",
-    "skills": "Compétences"
-  }
+  ]
 }

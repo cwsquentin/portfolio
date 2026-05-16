@@ -1,18 +1,13 @@
 {
-    "page": {
-        "title": "Contact"
-    },
-    "title": "Contactez-moi ici !",
-    "socialsTitle": "Vous pouvez me trouver sur",
-    "cta": {
-        "title": "Travaillons ensemble",
-        "subtitle": "Ouvert aux collaborations, opportunités et questions.\nDiscutons de vos projets, de postes ou simplement de nouvelles technologies !"
-    },
-    "actions": {
-        "email": "Écrivez-moi un e‑mail !",
-        "resume": "Télécharger mon CV"
-    },
-    "resumeHref": "/downloads/CV_FR_EN.pdf",
-    "mailtoSubject": "Contact portfolio",
-    "mailtoBody": "Bonjour Quentin, j’ai découvert votre portfolio et souhaite échanger à propos de..."
+  "page": {
+    "title": "Contact"
+  },
+  "hero": {
+    "title": "DISCUTONS.",
+    "intro": "Ouvert aux collaborations, opportunités et questions. Discutons de vos projets, de postes ou simplement de nouvelles technologies !"
+  },
+  "title": "Écrivez-moi",
+  "socialsTitle": "Réseaux",
+  "mailtoSubject": "Prise de contact via le portfolio",
+  "mailtoBody": "Bonjour Quentin,\n\nJe vous contacte au sujet de "
 }

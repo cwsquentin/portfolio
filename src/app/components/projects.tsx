@@ -1,17 +1,15 @@
 "use client";
 
 import { Button } from "@/app/components/button";
-import { useRouter } from "@/i18n/navigation";
+import { Display } from "@/app/components/primitives/display";
+import { Link } from "@/i18n/navigation";
 import { Icon } from "@iconify/react";
 import clsx from "clsx";
-import * as motion from "motion/react-client";
+import { motion } from "motion/react";
 import Image, { type StaticImageData } from "next/image";
 import { useTranslations } from "next-intl";
-import {
-  useCallback,
-  type KeyboardEvent,
-  type MouseEvent,
-} from "react";
+
+type CardAccent = "cyan" | "magenta" | "yellow";
 
 export type ProjectProps = {
   title: string;
@@ -22,6 +20,8 @@ export type ProjectProps = {
   demo?: string;
   confidential?: boolean;
   href?: string;
+  accentColor?: CardAccent;
+  priority?: boolean;
 };
 
 export function ProjectCard({
@@ -33,35 +33,13 @@ export function ProjectCard({
   demo,
   confidential = false,
   href,
+  priority = false,
 }: ProjectProps) {
   const t = useTranslations("projects");
-  const router = useRouter();
-
-  const navigateToDetails = useCallback(() => {
-    if (href) {
-      router.push(href);
-    }
-  }, [href, router]);
-
-  const handleKeyDown = useCallback(
-    (event: KeyboardEvent<HTMLDivElement>) => {
-      if (!href) return;
-
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        navigateToDetails();
-      }
-    },
-    [href, navigateToDetails],
-  );
-
-  const stopPropagation = useCallback((event: MouseEvent<HTMLElement>) => {
-    event.stopPropagation();
-  }, []);
 
   const cardClassName = clsx(
-    "w-full overflow-hidden rounded-2xl border border-slate-700 bg-slate-800/60 shadow-md transition-all duration-300 hover:border-indigo-500/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/70",
-    href && "cursor-pointer",
+    "group relative w-full overflow-hidden rounded-none border-2 border-ink bg-paper text-ink shadow-block-md transition-transform duration-200 ease-out focus-within:ring-2 focus-within:ring-cyan focus-within:ring-offset-2 focus-within:ring-offset-paper",
+    href && "cursor-pointer hover:-translate-x-1 hover:-translate-y-1",
   );
 
   return (
@@ -70,65 +48,63 @@ export function ProjectCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, type: "spring" }}
       className={cardClassName}
-      role={href ? "link" : undefined}
-      tabIndex={href ? 0 : undefined}
-      aria-label={href ? t("detail.openProject", { project: title }) : undefined}
-      onClick={href ? navigateToDetails : undefined}
-      onKeyDown={href ? handleKeyDown : undefined}
     >
+      {href ? (
+        <Link
+          href={href}
+          aria-label={t("detail.openProject", { project: title })}
+          className="absolute inset-0 z-0 focus:outline-none"
+        >
+          <span className="sr-only">{title}</span>
+        </Link>
+      ) : null}
+
       <div className="md:flex">
-        <div className="relative h-56 overflow-hidden sm:h-64 md:h-auto md:min-h-72 md:w-1/2">
+        <div className="relative h-56 overflow-hidden border-b-2 border-ink sm:h-64 md:h-auto md:min-h-72 md:w-1/2 md:border-b-0 md:border-r-2">
           <Image
             src={image}
             alt={title}
             className="object-cover"
             fill
+            sizes="(min-width: 768px) 576px, 100vw"
+            priority={priority}
           />
         </div>
 
-        <div className="p-5 md:w-1/2 md:p-6">
-          <div className="space-y-4">
-            <motion.h3
-              className="text-xl font-bold text-slate-100 sm:text-2xl"
-              whileHover={{ x: 4 }}
-            >
+        <div className="p-6 md:w-1/2 md:p-8">
+          <div className="space-y-5">
+            <Display size="block" as="h3">
               {title}
-            </motion.h3>
-            <p className="mt-2 text-sm leading-relaxed text-slate-300 sm:text-base">
+            </Display>
+
+            <p className="font-body text-sm leading-relaxed text-ink/80 sm:text-base">
               {description}
             </p>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="relative z-10 flex flex-wrap gap-2 pt-1">
               {technologies.map((tech, index) => (
                 <motion.span
                   key={`${title}-${tech}-${index}`}
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  whileHover={{ scale: 1.08 }}
-                  className="cursor-default rounded bg-slate-700 px-2 py-1 text-xs text-slate-200"
+                  whileHover={{ scale: 1.05 }}
+                  className="cursor-default rounded-none border-2 border-ink bg-paper px-2 py-1 text-mono-label text-ink"
                 >
                   {tech}
                 </motion.span>
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-3 pt-2">
+            <div className="relative z-10 flex flex-wrap gap-3 pt-3">
               {github ? (
                 <Button
-                  as={motion.a}
                   href={github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  background="none"
-                  border="slate"
-                  radius="md"
+                  variant="flood"
+                  floodColor="cyan"
                   size="compact"
-                  weight="medium"
-                  className="text-slate-100 hover:bg-slate-700/60"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={stopPropagation}
                 >
                   <Icon icon="mdi:github" className="mr-2 size-4" />
                   {t("code")}
@@ -139,15 +115,10 @@ export function ProjectCard({
                 <Button
                   as="button"
                   type="button"
-                  background="none"
-                  border="slateMuted"
-                  radius="md"
+                  variant="ghost"
                   size="compact"
-                  weight="medium"
-                  className="text-slate-100"
                   disabled
                   title={t("codePrivate")}
-                  onClick={stopPropagation}
                 >
                   <Icon icon="uis:lock" className="mr-2 size-4" />
                   {t("codePrivate")}
@@ -156,18 +127,12 @@ export function ProjectCard({
 
               {demo ? (
                 <Button
-                  as={motion.a}
                   href={demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  background="indigo"
-                  border="none"
-                  radius="md"
+                  variant="block"
+                  color="magenta"
                   size="compact"
-                  weight="medium"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={stopPropagation}
                 >
                   <Icon icon="ph:arrow-square-out" className="mr-2 size-4" />
                   {t("demo")}
@@ -176,14 +141,10 @@ export function ProjectCard({
                 <Button
                   as="button"
                   type="button"
-                  background="slate"
-                  border="none"
-                  radius="md"
+                  variant="ghost"
                   size="compact"
-                  weight="medium"
                   disabled
                   title={t("demoUnavailable")}
-                  onClick={stopPropagation}
                 >
                   <Icon icon="ph:arrow-square-out" className="mr-2 size-4" />
                   {t("demoUnavailable")}

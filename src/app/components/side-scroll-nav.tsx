@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
 import { useCallback, useEffect, useState } from "react";
 import type { MouseEvent } from "react";
-import * as motion from "motion/react-client";
-import clsx from "clsx";
-import { itemVariants } from "@/animation";
+import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
+import { cn } from "@/lib/cn";
+import { itemVariants } from "@/animation";
 
 type SectionLink = {
   id: string;
@@ -19,7 +19,7 @@ type SideScrollNavProps = {
 export default function SideScrollNav({ links }: SideScrollNavProps) {
   const t = useTranslations("common");
   const [activeId, setActiveId] = useState<string | null>(
-    links[0]?.id ?? null
+    links[0]?.id ?? null,
   );
 
   useEffect(() => {
@@ -69,7 +69,7 @@ export default function SideScrollNav({ links }: SideScrollNavProps) {
         window.history.replaceState(null, "", url.toString());
       }
     },
-    []
+    [],
   );
 
   return (
@@ -77,7 +77,7 @@ export default function SideScrollNav({ links }: SideScrollNavProps) {
       variants={itemVariants.fromBottom}
       initial="hidden"
       animate="visible"
-      className="fixed left-6 top-1/2 hidden -translate-y-1/2 flex-col gap-5 text-sm text-slate-400 xl:flex"
+      className="fixed left-6 top-1/2 z-30 hidden -translate-y-1/2 flex-col gap-5 xl:flex"
       aria-label={t("navigation.sections")}
     >
       {links.map((link) => {
@@ -88,23 +88,30 @@ export default function SideScrollNav({ links }: SideScrollNavProps) {
             key={link.id}
             href={`#${link.id}`}
             onClick={(event) => handleClick(event, link.id)}
-            className={clsx(
-              "group inline-flex items-center gap-3 py-1 font-medium transition",
-              isActive ? "text-teal-300" : "text-slate-400 hover:text-teal-300"
+            className={cn(
+              "group inline-flex items-center gap-3 py-1 transition-colors",
+              "text-mono-label",
+              isActive
+                ? "text-magenta"
+                : "text-ink/40 hover:text-magenta focus-visible:text-magenta",
+              "focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-paper",
             )}
           >
             <span
-              className={clsx(
-                "h-px w-6 bg-slate-600/50 transition-all",
+              aria-hidden="true"
+              className={cn(
+                "h-0.5 transition-all",
                 isActive
-                  ? "w-8 bg-teal-400"
-                  : "group-hover:w-8 group-hover:bg-teal-400"
+                  ? "w-8 bg-magenta"
+                  : "w-6 bg-ink/20 group-hover:w-8 group-hover:bg-magenta group-focus-visible:w-8 group-focus-visible:bg-magenta",
               )}
             />
             <span
-              className={clsx(
+              className={cn(
                 "transition-transform",
-                isActive ? "translate-x-1" : "group-hover:translate-x-1"
+                isActive
+                  ? "translate-x-1"
+                  : "group-hover:translate-x-1 group-focus-visible:translate-x-1",
               )}
             >
               {link.label}

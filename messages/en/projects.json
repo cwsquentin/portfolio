@@ -3,7 +3,7 @@
     "title": "Projects"
   },
   "title": "Projects",
-  "intro": "A selection of projects that showcase my skills and passion for creating meaningful digital experiences.",
+  "intro": "A selection of projects that showcase my skills and my taste for useful, well-crafted products.",
   "code": "Code",
   "demo": "Demo",
   "codePrivate": "Private code",
@@ -15,28 +15,82 @@
     "technologies": "Technologies",
     "metaTitle": "Project quick facts",
     "summaryTitle": "Project overview",
-    "confidentialBadge": "Confidential code"
+    "confidentialBadge": "Confidential code",
+    "nav": {
+      "prev": "Previous project",
+      "next": "Next project",
+      "allProjects": "All projects"
+    },
+    "narrative": {
+      "context": "Context"
+    },
+    "metaLabels": {
+      "year": "Year",
+      "role": "Role",
+      "stack": "Stack",
+      "status": "Status"
+    }
   },
   "items": {
+    "worldline": {
+      "title": "Worldline",
+      "description": "Design and development of a multi-tenant internal observability platform that compares performance between releases, detects anomalies and forecasts trends with Machine Learning.\nDetails and deliverables are confidential.\nInternship in progress — feel free to ask me about it."
+    },
     "medchemStructureGenius": {
       "title": "MedChem Structure Genius",
-      "description": "MedChem Structure Genius is an e-learning application designed for students at the University of Lille Faculty of Pharmacy to help them study molecules and their relationships.\nProject in progress - feel free to ask me about it!"
+      "description": "MedChem Structure Genius is an e-learning application designed for students at the University of Lille Faculty of Pharmacy to help them study molecules and their relationships."
+    },
+    "dochub": {
+      "title": "DocHub",
+      "description": "Online appointment-booking platform, developed during my studies at ISEN. The application combines a FastAPI backend, a Vue.js interface, and a PostgreSQL database, all deployed automatically using Docker and GitHub Actions. A project built to learn and apply DevOps methods and deployment automation."
     },
     "musicStory": {
       "title": "Music Story",
-      "description": "Redesign of the Music Story website: migration of WordPress content to Next.js/Tailwind CSS, with improved performance and maintainability."
+      "description": "Redesign of the Music Story website: migrating WordPress content to Next.js/Tailwind CSS with improved performance and maintainability."
     },
     "paris92": {
       "title": "Paris 92",
-      "description": "Development of a web platform for collecting and analyzing sports performance data for the Paris 92 handball club, intended for use by its staff. \n Details and deliverables are confidential."
+      "description": "Development of a web platform for collecting and analyzing sports performance data for the Paris 92 handball club, used by its staff.\nDetails and deliverables are confidential."
     }
   },
   "details": {
+    "worldline": {
+      "hero": {
+        "title": "Worldline",
+        "period": "March 2026 - Present",
+        "summary": "Worldline is the European leader in payment services and secure transactions. Within the bench team, I contribute to the design and development of WL Benchmark, a multi-tenant internal observability platform built to compare performance between two releases or two time periods, detect anomalies and forecast trends with Machine Learning.\nThe priority use case: automating the generation of CR Bench reports, previously written by hand, by crossing local Gatling data with GCP Cloud Monitoring dashboards. The platform relies on a project-agnostic core and per-tenant configuration so it can adapt to each team without code changes.\nThe details and deliverables are confidential because the project is internal to Worldline. The project is still in progress — feel free to ask me any questions about it."
+      },
+      "meta": [
+        { "label": "Type", "value": "Internal observability and benchmark platform in Python, ML and GCP" },
+        { "label": "Role", "value": "Full-stack Python developer" },
+        { "label": "Team", "value": "End-of-studies internship within the bench team" },
+        { "label": "Status", "value": "Project still in progress — feel free to ask me any questions about it!" }
+      ],
+      "year": "2026",
+      "role": "Full-stack Python developer",
+      "status": "In progress"
+    },
+    "dochub": {
+      "hero": {
+        "title": "DocHub",
+        "period": "January 2026 - February 2026",
+        "summary": "DocHub is a distributed appointment-booking platform built as part of an introductory DevOps course. The application is based on five independently containerized services — a PostgreSQL database, a FastAPI API, a Vue.js frontend, an Nginx reverse proxy, and a Python worker for batch processing — orchestrated with Docker, including dependency management and ordered healthchecks. A GitHub Actions pipeline automates building and pushing images to GitHub Container Registry, then runs two test suites. The project implements key DevOps practices: reproducible YAML configuration, non-root containers, infrastructure-as-code, automated testing, and orchestration."
+      },
+      "meta": [
+        { "label": "Type", "value": "Distributed appointment-booking platform, introducing DevOps, CI/CD and YAML" },
+        { "label": "Role", "value": "Full-stack & DevOps developer" },
+        { "label": "Team", "value": "Solo project" },
+        { "label": "Timeline", "value": "2 months — January to February 2026" }
+      ],
+      "year": "2026",
+      "role": "Full-stack & DevOps developer",
+      "status": "Delivered"
+    },
     "musicStory": {
       "hero": {
         "title": "Music Story",
         "period": "April - September 2025",
-        "summary": "Music Story is a professional provider of music metadata and enrichment services for B2B players: media, platforms, and rights holders. I participated in the redesign of their showcase website by upgrading a heterogeneous WordPress base to a more modern Next.js platform, built on reusable components and deployed iteratively with code reviews alongside the team. This redesign made the site faster and more consistent, fully internationalized and better referenced, while simplifying maintenance and speeding up the creation of new pages and their publication online.",
+        "summary": "Music Story is a professional provider of music metadata and enrichment services for B2B players: media, platforms, and rights holders. I contributed to the redesign of their showcase website by upgrading a heterogeneous WordPress base to a more modern Next.js platform built on reusable components and shipped iteratively, with code reviews alongside the team. The redesign made the site faster and more consistent, fully internationalized and better referenced, while simplifying maintenance and speeding up the creation of new pages.",
         "ctaLabel": "View the project"
       },
       "meta": [
@@ -44,34 +98,42 @@
         { "label": "Role", "value": "Web developer intern" },
         { "label": "Team", "value": "Solo development, supervised by lead developers who review and approve my pull requests on GitHub." },
         { "label": "Timeline", "value": "6 months" }
-      ]
+      ],
+      "year": "2025",
+      "role": "Web developer intern",
+      "status": "Live"
     },
     "paris92": {
       "hero": {
         "title": "Paris 92",
         "period": "January - May 2025",
-        "summary": "Paris 92 is a women's handball club recognized on the national and European scene that seeks to optimize the management and analysis of its data. \n I participated in the design and implementation of a secure platform that centralizes match data, videos, and physical metrics, in collaboration with five students from ISEN. My role was that of a versatile front/back developer with a Next.js interface and Python back-end for data processing. \n This platform allows coaches, analysts, and trainers to track workload, compare performance, prepare for matches, and generate reports in just a few clicks, which streamlines collaboration, makes information gathering more reliable, and speeds up decision-making. \n The code and deliverables are confidential, but you can ask me about them!"
+        "summary": "Paris 92 is a women’s handball club recognized on the national and European scene that wants to optimize how it manages and analyzes its data.\nI contributed to the design and implementation of a secure platform centralizing match data, videos, and physical metrics, in collaboration with five students from ISEN. My role: versatile front/back developer with a Next.js interface and a Python back-end for data processing.\nThe platform lets coaches, analysts, and trainers track workload, compare performance, prepare for matches, and generate reports in a few clicks — streamlining collaboration, making information gathering more reliable, and speeding up decision-making.\nCode and deliverables are confidential, but you can ask me about them."
       },
       "meta": [
         { "label": "Type", "value": "Web platform for collecting and analyzing sports performance data for the Paris 92 handball club" },
         { "label": "Role", "value": "Full-stack developer" },
         { "label": "Team", "value": "Team of six ISEN students" },
         { "label": "Timeline", "value": "4 months" }
-      ]
+      ],
+      "year": "2025",
+      "role": "Full-stack developer",
+      "status": "Confidential"
     },
     "medchemStructureGenius": {
       "hero": {
         "title": "MedChem Structure Genius",
-        "period": "October 2025 - Present",
-        "summary": "MedChem Structure Genius is an e-learning application designed for students at the Faculty of Pharmacy of the University of Lille to help them study molecules and their relationships. \nIn collaboration with a team of five students from ISEN, I am leading this project by defining the client's needs, facilitating weekly meetings, and ensuring follow-up while contributing directly to development. \nWe are improving the reliability and usability of the application: fixing display bugs on Android and the web, resolving quiz generation errors, improving the review and score tracking interfaces, optimizing the code, correcting texts, and creating an explanatory diagram of the quiz generation mechanism and typical queries on Supabase to facilitate data exploration. \nThe project is still in progress, so feel free to ask me any questions you may have!",
+        "period": "October 2025 - January 2026",
+        "summary": "MedChem Structure Genius is an e-learning application designed for students at the University of Lille Faculty of Pharmacy to help them study molecules and their relationships.\nIn collaboration with a team of five ISEN students, I led this project by scoping needs with the client, running weekly meetings, and ensuring follow-up while contributing directly to development.\nWe improved the reliability and usability of the app: fixing display bugs on Android and the web, resolving quiz-generation errors, reworking the review and score-tracking interfaces, optimising the code, correcting texts, and creating a diagram that explains the quiz-generation mechanism and typical Supabase queries to make data exploration easier.",
         "ctaLabel": "View the project"
       },
       "meta": [
         { "label": "Type", "value": "Development of a web and mobile e-learning application on drug structure" },
         { "label": "Role", "value": "Project lead & developer" },
-        { "label": "Timeline", "value": "October 2025 - Present" },
-        { "label": "Status", "value": "Project still in progress - feel free to ask me any questions about it!" }
-      ]
+        { "label": "Timeline", "value": "October 2025 - January 2026" }
+      ],
+      "year": "2025-2026",
+      "role": "Project lead & developer",
+      "status": "Delivered"
     }
   }
 }

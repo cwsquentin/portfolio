@@ -1,7 +1,8 @@
 import { ProjectCard } from "@/app/components/projects";
+import { Display } from "@/app/components/primitives/display";
 import { projectsData } from "@/data/projects";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata({
   params,
@@ -10,7 +11,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'projects' });
-  
+
   return {
     title: t('page.title'),
   };
@@ -18,28 +19,28 @@ export async function generateMetadata({
 
 type Params = { params: Promise<{ locale: string }> };
 
+const ACCENT_ROTATION = ["cyan", "magenta", "yellow"] as const;
+type CardAccent = (typeof ACCENT_ROTATION)[number];
+
 export default async function ProjectsPage({ params }: Params) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "projects" });
 
   return (
-    <section className="relative min-h-screen overflow-hidden px-4 py-16 sm:px-6 sm:py-20">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 z-0 flex justify-center"
-      >
-        <div className="h-184 w-full max-w-6xl -translate-y-28 bg-[radial-gradient(circle_at_center,rgba(45,218,191,0.21),transparent_75%)] opacity-70 blur-3xl" />
-      </div>
-
-      <div className="relative z-10 mx-auto w-full max-w-6xl">
-        <div className="space-y-4">
-          <h2 className="text-3xl font-bold text-slate-100 sm:text-4xl">{t("title")}</h2>
-          <div className="h-1 w-16 bg-indigo-500" />
-          <p className="text-base text-slate-400 sm:text-lg">{t("intro")}</p>
+    <section className="relative bg-paper px-6 py-24 text-ink sm:px-12">
+      <div className="mx-auto w-full max-w-6xl">
+        <div className="flex flex-col gap-6 border-b-2 border-ink pb-12">
+          <Display size="section" as="h1">
+            {t("title")}
+          </Display>
+          <p className="max-w-2xl font-body text-base leading-relaxed text-ink/80 sm:text-lg">
+            {t("intro")}
+          </p>
         </div>
 
-        <div className="mt-10 space-y-8 whitespace-pre-line">
-          {projectsData.map((p) => (
+        <div className="mt-16 space-y-12 whitespace-pre-line">
+          {projectsData.map((p, index) => (
             <ProjectCard
               key={p.id}
               title={t(`items.${p.id}.title`)}
@@ -50,6 +51,8 @@ export default async function ProjectsPage({ params }: Params) {
               demo={p.demo}
               confidential={p.confidential}
               href={`/projects/${p.slug}`}
+              accentColor={ACCENT_ROTATION[index % ACCENT_ROTATION.length] as CardAccent}
+              priority={index === 0}
             />
           ))}
         </div>

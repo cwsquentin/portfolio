@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({
@@ -17,6 +17,12 @@ export async function generateMetadata({
 }
 
 
-export default function CatchAllPage() {
+export default async function CatchAllPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   notFound();
 }

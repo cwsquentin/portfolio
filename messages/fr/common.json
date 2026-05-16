@@ -13,17 +13,16 @@
     "sections": "Sections de la page"
   },
   "menubtn": "Menu",
+  "closebtn": "Fermer",
   "footer": {
-    "cta": "Contactez-moi !",
-    "tagline": "Vous avez un projet en tête ? Construisons quelque chose d’extraordinaire ensemble !",
-    "rights": "© Tous droits réservés 2026",
+    "rights": "© Tous droits réservés, designed by Quentin Petiteville",
     "navigationLabel": "Navigation du pied de page"
   },
   "social": {
     "github": "GitHub",
     "linkedin": "LinkedIn"
   },
-  "error404":{
-    "notfound": "Page Non Trouvée"
+  "error404": {
+    "notfound": "Page non trouvée"
   }
 }

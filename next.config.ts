@@ -6,6 +6,9 @@ const withNextIntl = createNextIntlPlugin({});
 
 const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
   webpack(config) {
     config.plugins.push(
       Icons({

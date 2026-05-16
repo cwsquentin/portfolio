@@ -19,17 +19,19 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
 async function loadMessages(locale: string) {
   const messages: Record<string, object> = {};
-  const messageFiles = ['common', 'home', 'about', 'projects', 'contact']; // fichiers par page
+  const messageFiles = ['common', 'home', 'about', 'projects', 'contact'];
 
   for (const file of messageFiles) {
     try {
       const fileMessages = (await import(`../../messages/${locale}/${file}.json`)).default;
       messages[file] = fileMessages;
     } catch {
-      console.warn(`Could not load ${file}.json for locale ${locale}`);
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn(`Could not load ${file}.json for locale ${locale}`);
+      }
       messages[file] = {};
     }
   }
-  
+
   return messages;
 }
