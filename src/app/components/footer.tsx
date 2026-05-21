@@ -68,7 +68,7 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <ul className="flex flex-col items-start gap-3 sm:items-end">
+        <ul className="flex flex-row items-center gap-3 sm:flex-col sm:items-end">
           {SOCIAL_LINKS.map(({ key, href, icon }) => (
             <li key={key}>
               <a

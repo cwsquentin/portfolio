@@ -12,7 +12,7 @@ interface DisplayProps extends HTMLAttributes<HTMLElement> {
 }
 
 const sizeClasses: Record<DisplaySize, string> = {
-  hero: "text-[clamp(72px,12vw,160px)] leading-[0.85] tracking-[-0.05em]",
+  hero: "text-[clamp(56px,min(12vw,18cqi),160px)] leading-[0.85] tracking-[-0.05em]",
   section: "text-[clamp(40px,7vw,72px)] leading-[0.9] tracking-[-0.03em]",
   block: "text-[clamp(24px,3vw,32px)] leading-none tracking-[-0.02em]",
 };
