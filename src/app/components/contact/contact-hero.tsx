@@ -9,7 +9,7 @@ interface ContactHeroProps {
 export function ContactHero({ title, intro }: ContactHeroProps) {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[50svh] border-b-2 border-ink">
-      <Block color="magenta" border={false} className="flex items-center px-8 py-16 lg:px-16 lg:py-24">
+      <Block color="magenta" border={false} className="@container flex items-center px-8 pt-28 pb-16 lg:px-16 lg:py-24">
         <Display
           size="hero"
           as="h1"
